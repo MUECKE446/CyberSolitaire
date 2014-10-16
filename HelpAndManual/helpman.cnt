@@ -1,0 +1,210 @@
+:BASE helpman.hlp
+:TITLE Help & Manual online help 2.6.2
+1 Overview
+2 Introducing Help & Manual=Introduction@helpman.hlp>Main
+2 Why Help & Manual?=Goodreasons@helpman.hlp>Main
+2 What's new in version 2.7?=Whatsnew@helpman.hlp>Main
+2 What do you need to work with Help & Manual?=AboutHM@helpman.hlp>Main
+2 How to buy Help & Manual=Getfullversion@helpman.hlp>Main
+1 Help & Manual's user interface
+2 The main window=treepanewindow@helpman.hlp>Main
+2 Topic options=HmItemoptions@helpman.hlp>Main
+2 Tool bars and tool windows=HmToolbar@helpman.hlp>Main
+2 The File menu=HmMenuFile@helpman.hlp>Main
+2 The Topics menu=HmMenuTopics@helpman.hlp>Main
+2 The Edit menu=HmMenuEdit@helpman.hlp>Main
+2 The View menu=HmMenuView@helpman.hlp>Main
+2 The Insert menu=HmMenuInsert@helpman.hlp>Main
+2 The Bookmark menu=HmMenuBookmark@helpman.hlp>Main
+2 The Options menu=HmMenuOptions@helpman.hlp>Main
+2 The Report menu=HmMenuReport@helpman.hlp>Main
+2 The Run menu=HmMenuRun@helpman.hlp>Main
+2 The Tools menu=HmMenuMisc@helpman.hlp>Main
+2 The Help menu=HmMenuHelp@helpman.hlp>Main
+2 Customize Help & Manual=OptionsProgram@helpman.hlp>Main
+2 Keyboard shortcuts
+3 General keyboard shortcuts=KbshortcutsGeneral@helpman.hlp>Main
+3 Text editor shortcuts=Texteditorshortcuts@helpman.hlp>Main
+3 Navigation pane shortcuts=Navigationshortcuts@helpman.hlp>Main
+1 Creating a project with Help & Manual
+2 What is such a Help & Manual project?=HmprojectHM@helpman.hlp>Main
+2 How to start with your first help project
+3 Creating an empty new project=ProjectEmpty@helpman.hlp>Main
+3 Using a template file to create a new project=Usingtemplate@helpman.hlp>Main
+3 Importing existing help projects=ProjectImportnew@helpman.hlp>Main
+3 Decompiling help files=ProjectImportHLP@helpman.hlp>Main
+3 Importing other documents=ProjectImportRTF@helpman.hlp>Main
+3 Parsing Delphi projects=ImportDelphi@helpman.hlp>Main
+3 Batch import of text and rich text files=Batchimport@helpman.hlp>Main
+2 Modifying the project options
+3 Project options overview=OptionsOverview@helpman.hlp>Main
+3 General=OptionsGeneral@helpman.hlp>Main
+3 Fonts/Format=OptionsFonts@helpman.hlp>Main
+3 Search/Language=OptionsSearch@helpman.hlp>Main
+3 Windows=OptionsWindow@helpman.hlp>Main
+3 Browse=OptionsBrowse@helpman.hlp>Main
+3 Images=OptionsImages@helpman.hlp>Main
+3 Misc=OptionsMisc@helpman.hlp>Main
+2 Writing topics
+3 Adding items to the Table of contents=TOCItemsAdd@helpman.hlp>Main
+3 The Insert Item dialog box=TopicsOverview@helpman.hlp>Main
+3 Writing text=TopicWriting@helpman.hlp>Main
+3 Formatting text with layouts=News2@helpman.hlp>Main
+3 Using the built-in syntax highlighter=SyntaxHighlighter@helpman.hlp>Main
+3 Changing the options of a topic=HmItemoptions@helpman.hlp>Main
+3 Choosing a help window=TopicWindow@helpman.hlp>Main
+3 How to work with secondary help windows=SecondaryWindows@helpman.hlp>Main
+3 How to use the HelpContext=TopicHelpcontext@helpman.hlp>Main
+3 Adding keywords=TopicKeywords@helpman.hlp>Main
+3 A-keywords=TopicAKeywords@helpman.hlp>Main
+3 Adding a second reference to an existing topic=TopicReferenceTwice@helpman.hlp>Main
+3 Modifying the Table of contents=ContentDragdrop@helpman.hlp>Main
+3 Changing the icon of a topic=IconChange@helpman.hlp>Main
+3 Changing the ID of a topic=TopicsTopicID@helpman.hlp>Main
+2 Linking to other topics
+3 Overview: Types of links=LinkTypes@helpman.hlp>Main
+3 Inserting links in the topic text=LinkAdd@helpman.hlp>Main
+3 The Insert Link dialog box=Linkdialogbox@helpman.hlp>Main
+3 Changing a link=LinkEdit@helpman.hlp>Main
+3 Deleting a link=LinkDelete@helpman.hlp>Main
+3 Inserting links via drag & drop=LinkDragDrop@helpman.hlp>Main
+3 The difference between popup links and normal links=LinkPopupNormal@helpman.hlp>Main
+3 Adding jumps to the middle of a topic=TopicJumpTargets@helpman.hlp>Main
+3 Linking to topics outside this help project=Newlinkoptions@helpman.hlp>Main
+3 Links and secondary help windows=NewLinksSecondary@helpman.hlp>Main
+2 Adding images
+3 Inserting images and screen shots=ImageLinked@helpman.hlp>Main
+3 Using the screen capture function=ScreenCapture@helpman.hlp>Main
+3 Using the built-in bitmaps of the help compiler=builtinBitmap@helpman.hlp>Main
+3 Embedding images=ImageEmbedded@helpman.hlp>Main
+3 Multiple hotspot graphics (SHG)=ImageSHG@helpman.hlp>Main
+3 Using an image as a hotspot=ImageHotspot@helpman.hlp>Main
+3 Path tracking of images=ImagesPath@helpman.hlp>Main
+2 Using macros
+3 What are macros and what can they do?=MacrosCustomize@helpman.hlp>Main
+3 Overview: Types of macros=MacrosTypes@helpman.hlp>Main
+3 The Insert Macro dialog box=Macrodialogbox@helpman.hlp>Main
+3 Inserting a macro=MacrosAdd@helpman.hlp>Main
+3 Changing a macro=MacrosChange@helpman.hlp>Main
+3 Deleting a macro=MacrosDelete@helpman.hlp>Main
+2 Adding OLE objects
+3 What can OLE objects be used for?=OleAbout@helpman.hlp>Main
+3 Inserting OLE objects=OLEInsert@helpman.hlp>Main
+3 OLE examples=OLEExamples@helpman.hlp>Main
+2 Multimedia in help files
+3 Using audio files (WAV)=MMWav@helpman.hlp>Main
+3 Using video files (AVI)=MMAvi@helpman.hlp>Main
+2 Creating context sensitive help
+3 What is context sensitive help?=ContextHelp@helpman.hlp>Main
+3 Adding new popup topics=ContextHelpAdd@helpman.hlp>Main
+3 About popup topics=ContextHelpAbout@helpman.hlp>Main
+2 Documenting program source code
+3 Formatting source code=SyntaxHighlightAbout@helpman.hlp>Main
+3 The built-in syntax highlighter=SyntaxHighlighter@helpman.hlp>Main
+3 Customizing the syntax highlighter=SyntaxCustomize@helpman.hlp>Main
+3 Pascal syntax examples=SyntaxSamplePAS@helpman.hlp>Main
+3 C++ syntax examples=SyntaxSampleCPP@helpman.hlp>Main
+3 Visual Basic syntax examples=SyntaxSampleBAS@helpman.hlp>Main
+3 SQL examples=SyntaxSampleSQL@helpman.hlp>Main
+2 Testing your help project
+3 Locate a specific topic=FrmGotoTopic@helpman.hlp>Main
+3 Testing links=TestLinks@helpman.hlp>Main
+3 Testing browse sequences=TestBrowse@helpman.hlp>Main
+3 Bookmarks + annotations=News5@helpman.hlp>Main
+1 Making help files
+2 Document types that Help & Manual can create=ExportGeneral@helpman.hlp>Main
+2 Creating Winhelp files (.hlp)
+3 About Winhelp files=AboutWinhelp@helpman.hlp>Main
+3 The Make dialog box: Winhelp files=CreateHelpSteps@helpman.hlp>Main
+3 Is a Winhelp compiler installed?=CheckCompiler@helpman.hlp>Main
+3 Distribute Winhelp files=DistributeWinHelp@helpman.hlp>Main
+2 Creating standard HTML and HTML HELP (.chm)
+3 About the HTML HELP format=RevealHTMLhelp@helpman.hlp>Main
+3 HTML versus Winhelp=Htmlvshelp@helpman.hlp>Main
+3 Differences between Winhelp (HLP) and HTML HELP=HTMLhelpDifferences@helpman.hlp>Main
+3 The Make dialog box: HTML / HTML HELP=MakeHTMLhelp@helpman.hlp>Main
+3 Is the HTML HELP compiler installed?=CheckCompiler@helpman.hlp>Main
+3 Distribute HTML HELP=DistributeHTMLhelp@helpman.hlp>Main
+3 Distribute standard HTML=DistributeHTML@helpman.hlp>Main
+3 HTML options
+4 HTML options dialog=HTMLOptions@helpman.hlp>Main
+4 Choose a page layout=HTMLPageLayout@helpman.hlp>Main
+4 General=HTMLGeneral@helpman.hlp>Main
+4 Content=HTMLContent@helpman.hlp>Main
+4 Topics=HMTLTopics@helpman.hlp>Main
+4 Navigation=HTMLNavigate@helpman.hlp>Main
+4 Fonts=HTMLFonts@helpman.hlp>Main
+4 Misc=HTMLMisc@helpman.hlp>Main
+4 HTML HELP=HTMLhelp@helpman.hlp>Main
+2 Creating electronic manuals
+3 The Make dialog box: RTF manual=CreateManExport@helpman.hlp>Main
+3 Finishing the RTF manual=FinishRTF@helpman.hlp>Main
+3 Distribute your manual=DistributeRTF@helpman.hlp>Main
+1 Printing user manuals
+2 Printing manuals directly=Printingmanuals@helpman.hlp>Main
+2 The Print dialog box=Printdialogbox@helpman.hlp>Main
+2 Using a cover page=ManualCover@helpman.hlp>Main
+2 Page numbering and page alignment=ManualPagealignment@helpman.hlp>Main
+2 Manual options
+3 Page layout=TabPageLayout@helpman.hlp>Main
+3 Page headers and footers=TabHeaderFooter@helpman.hlp>Main
+3 Topic and chapter headings=TabHeadings@helpman.hlp>Main
+3 Settings for the table of contents=TabContent@helpman.hlp>Main
+3 Settings for the keyword index=TabIndex@helpman.hlp>Main
+1 Combine multiple help projects
+2 How to combine two or more help projects=NewIncludeaproject@helpman.hlp>Main
+2 Linking to topics in other project files=NewLinktoTopics@helpman.hlp>Main
+2 What happens when you create a help file?=NewCreateHelpincluded@helpman.hlp>Main
+2 Links to projects that are NOT included=NewLinknotincluded@helpman.hlp>Main
+2 What to take care of?=NewIncludeCare@helpman.hlp>Main
+1 Reference
+2 Command line options=Commandlineoptions@helpman.hlp>Main
+2 Keyboard shortcuts
+3 General command shortcuts=KbshortcutsGeneral@helpman.hlp>Main
+3 Text editor shortcuts=Texteditorshortcuts@helpman.hlp>Main
+3 Navigation pane shortcuts=Navigationshortcuts@helpman.hlp>Main
+2 Macro examples
+3 A text link with non-green text=MacrosExample1@helpman.hlp>Main
+3 Add a link to your homepage=MacrosExample3@helpman.hlp>Main
+3 Add your email address=MacrosExample2@helpman.hlp>Main
+3 Resize a window=MacrosExample4@helpman.hlp>Main
+3 Show the about box=MacrosExample5@helpman.hlp>Main
+3 Print the current topic=MacrosExample6@helpman.hlp>Main
+3 Print a whole chapter=MacrosExample7@helpman.hlp>Main
+3 Execute a file, if it exists=MacrosExample8@helpman.hlp>Main
+3 Display help on help=MacrosExample10@helpman.hlp>Main
+2 Text formatting examples
+3 How to create an unnumbered list=FormatExample2@helpman.hlp>Main
+3 How to create a numbered list=ExampleNumberedlist@helpman.hlp>Main
+3 Text example: technical=FormatExample1@helpman.hlp>Main
+2 Tips & tricks
+3 How to resize a screen shot without distorture=Howtoresizescreenshot@helpman.hlp>Main
+3 How to add keyboard shortcuts to a help file=TipsShortcut@helpman.hlp>Main
+3 How to hide topics from the Table of contents=Tips1@helpman.hlp>Main
+3 How to exclude topics from printing=ExcludeFromManual@helpman.hlp>Main
+3 Addendum stuff and similiar topics=Tips2@helpman.hlp>Main
+3 Link to another topic from a popup=Tips4@helpman.hlp>Main
+3 Call a HLP file from the command line=CallHLP@helpman.hlp>Main
+3 Call a CHM file from the command line=CallCHM@helpman.hlp>Main
+3 Make your HLP file "copy protected"=CopyProtection@helpman.hlp>Main
+2 Troubleshooting (Winhelp)
+3 Table of contents is missing when you open the help file=Displaycontent@helpman.hlp>Main
+3 The Index tab does not appear=TroubleNoindex@helpman.hlp>Main
+3 Compiler reports topic ## - how to find them?=NewFindtopic@helpman.hlp>Main
+3 Compiler reports "Out of memory"=CompilerOutofmem@helpman.hlp>Main
+3 Chapters with text do not appear=WinhelpChapterstext@helpman.hlp>Main
+3 Changed topic icons do not appear in Winhelp=Iconsmissing@helpman.hlp>Main
+3 Existing topics were not exported=Existingtopicswerenotexported@helpman.hlp>Main
+3 Topics disappear in the table of contents=TroubleTOC@helpman.hlp>Main
+3 Keywords are not sorted properly=TroubleKeywords@helpman.hlp>Main
+3 Punctuation characters appear on the next line=TroublePunctuationchars@helpman.hlp>Main
+3 How to create one help for all Windows versions=FAQ_16bit@helpman.hlp>Main
+2 Troubleshooting (HTML and HTML HELP)
+3 The browser displays different fonts=TroubleHTMLfonts@helpman.hlp>Main
+3 Tab stops do not appear in HTML=TroubleHTMLtabs@helpman.hlp>Main
+3 Paragraphs are not formatted correctly=TroubleHTMLparagraph@helpman.hlp>Main
+3 Images look awful in HTML=TroubleHTMLimages@helpman.hlp>Main
+2 Frequently asked questions
+3 Where to get a help compiler=FAQ_compiler@helpman.hlp>Main
+3 Additional dictionaries for the spell checker=FAQDictionary@helpman.hlp>Main
+3 How to move a help project=FAQMoveHelp@helpman.hlp>Main
