@@ -1,0 +1,1460 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CyberSolitaire.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standardkomponenten\r\n"
+    "#include ""l.deu\\afxprint.rc""        // Ressourcen für Drucken/Seitenansicht\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\CyberSolitaire.ico"
+IDR_CYBSOLTYPE          ICON                    "res\\CyberSolitaireDoc.ico"
+IDI_CYBERSOLITAIREDOC   ICON                    "res\\cybersol.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_BACK2               BITMAP                  "res\\bmp53.bmp"
+IDB_BACK3               BITMAP                  "res\\bmp54.bmp"
+IDB_BACK4               BITMAP                  "res\\bmp55.bmp"
+IDB_BACK5               BITMAP                  "res\\bmp56.bmp"
+IDB_BACK6               BITMAP                  "res\\bmp57.bmp"
+IDB_BACK7               BITMAP                  "res\\bmp58.bmp"
+IDB_BACK8               BITMAP                  "res\\bmp59.bmp"
+IDB_BACK9               BITMAP                  "res\\bmp60.bmp"
+IDB_BACK10              BITMAP                  "res\\bmp61.bmp"
+IDB_BACK11              BITMAP                  "res\\bmp62.bmp"
+IDB_BACK12              BITMAP                  "res\\bmp63.bmp"
+IDB_BACK13              BITMAP                  "res\\bmp64.bmp"
+IDB_BACK14              BITMAP                  "res\\bmp65.bmp"
+IDB_EMPTY3              BITMAP                  "res\\bmp67.bmp"
+IDB_BITMAP678           BITMAP                  "res\\bmp678.bmp"
+IDB_BITMAP679           BITMAP                  "res\\bmp679.bmp"
+IDB_EMPTY2              BITMAP                  "res\\bmp68.bmp"
+IDB_BITMAP680           BITMAP                  "res\\bmp680.bmp"
+IDB_BITMAP681           BITMAP                  "res\\bmp681.bmp"
+IDB_BITMAP682           BITMAP                  "res\\bmp682.bmp"
+IDB_BITMAP683           BITMAP                  "res\\bmp683.bmp"
+IDB_BITMAP684           BITMAP                  "res\\bmp684.bmp"
+IDB_SELECTEDMASK        BITMAP                  "res\\bitmap66.bmp"
+IDB_EMPTY7              BITMAP                  "res\\Waste1.bmp"
+IDB_BITMAP70            BITMAP                  "res\\Bitmap1.bmp"
+IDB_BITMAP71            BITMAP                  "res\\Bitmap2.bmp"
+IDB_BITMAP72            BITMAP                  "res\\Bitmap3.bmp"
+IDB_BITMAP73            BITMAP                  "res\\Bitmap4.bmp"
+IDB_BITMAP74            BITMAP                  "res\\Bitmap5.bmp"
+IDB_BITMAP75            BITMAP                  "res\\Bitmap6.bmp"
+IDB_BITMAP76            BITMAP                  "res\\Bitmap7.bmp"
+IDB_BITMAP77            BITMAP                  "res\\Bitmap8.bmp"
+IDB_BITMAP78            BITMAP                  "res\\Bitmap9.bmp"
+IDB_BITMAP79            BITMAP                  "res\\Bitmap10.bmp"
+IDB_BITMAP80            BITMAP                  "res\\Bitmap11.bmp"
+IDB_BITMAP81            BITMAP                  "res\\Bitmap12.bmp"
+IDB_BITMAP82            BITMAP                  "res\\Bitmap13.bmp"
+IDB_BITMAP83            BITMAP                  "res\\Bitmap14.bmp"
+IDB_BITMAP84            BITMAP                  "res\\Bitmap15.bmp"
+IDB_BITMAP85            BITMAP                  "res\\Bitmap16.bmp"
+IDB_BITMAP86            BITMAP                  "res\\Bitmap17.bmp"
+IDB_BITMAP87            BITMAP                  "res\\Bitmap18.bmp"
+IDB_BITMAP88            BITMAP                  "res\\Bitmap19.bmp"
+IDB_BITMAP89            BITMAP                  "res\\Bitmap20.bmp"
+IDB_BITMAP90            BITMAP                  "res\\Bitmap21.bmp"
+IDB_BITMAP91            BITMAP                  "res\\Bitmap22.bmp"
+IDB_BITMAP92            BITMAP                  "res\\Bitmap23.bmp"
+IDB_BITMAP93            BITMAP                  "res\\Bitmap24.bmp"
+IDB_BITMAP94            BITMAP                  "res\\Bitmap25.bmp"
+IDB_BITMAP95            BITMAP                  "res\\Bitmap26.bmp"
+IDB_BITMAP96            BITMAP                  "res\\Bitmap27.bmp"
+IDB_BITMAP97            BITMAP                  "res\\Bitmap28.bmp"
+IDB_BITMAP98            BITMAP                  "res\\Bitmap29.bmp"
+IDB_BITMAP99            BITMAP                  "res\\Bitmap30.bmp"
+IDB_BITMAP100           BITMAP                  "res\\Bitmap31.bmp"
+IDB_BITMAP101           BITMAP                  "res\\Bitmap32.bmp"
+IDB_BITMAP102           BITMAP                  "res\\Bitmap33.bmp"
+IDB_BITMAP103           BITMAP                  "res\\Bitmap34.bmp"
+IDB_BITMAP104           BITMAP                  "res\\Bitmap35.bmp"
+IDB_BITMAP105           BITMAP                  "res\\Bitmap36.bmp"
+IDB_BITMAP106           BITMAP                  "res\\Bitmap37.bmp"
+IDB_BITMAP107           BITMAP                  "res\\Bitmap38.bmp"
+IDB_BITMAP108           BITMAP                  "res\\Bitmap39.bmp"
+IDB_BITMAP109           BITMAP                  "res\\Bitmap40.bmp"
+IDB_BITMAP110           BITMAP                  "res\\Bitmap41.bmp"
+IDB_BITMAP111           BITMAP                  "res\\Bitmap42.bmp"
+IDB_BITMAP112           BITMAP                  "res\\Bitmap43.bmp"
+IDB_BITMAP113           BITMAP                  "res\\Bitmap44.bmp"
+IDB_BITMAP114           BITMAP                  "res\\Bitmap45.bmp"
+IDB_BITMAP115           BITMAP                  "res\\Bitmap46.bmp"
+IDB_BITMAP116           BITMAP                  "res\\Bitmap47.bmp"
+IDB_BITMAP117           BITMAP                  "res\\Bitmap48.bmp"
+IDB_BITMAP118           BITMAP                  "res\\Bitmap49.bmp"
+IDB_BITMAP119           BITMAP                  "res\\Bitmap50.bmp"
+IDB_BITMAP120           BITMAP                  "res\\Bitmap51.bmp"
+IDB_BITMAP121           BITMAP                  "res\\Bitmap52.bmp"
+IDB_BITMAP122           BITMAP                  "res\\bmp00001.bmp"
+IDB_BACK1               BITMAP                  "res\\Back1.bmp"
+IDB_EMPTY5              BITMAP                  "res\\Stock1.bmp"
+IDB_EMPTY1              BITMAP                  "res\\Empty1.bmp"
+IDB_EMPTY4              BITMAP                  "res\\Foundation1.bmp"
+IDB_EMPTY6              BITMAP                  "res\\bmp00002.bmp"
+IDR_SHOWTOOLBAR         BITMAP                  "res\\showtool.bmp"
+IDB_BACKGROUND1         BITMAP                  "res\\Background1.BMP"
+IDB_BACK_LITE_GREEN     BITMAP                  "res\\bmp00003.bmp"
+IDB_EMPTY_CARD          BITMAP                  "res\\empty_ca.bmp"
+IDB_EMPTY8              BITMAP                  "res\\empty8.bmp"
+IDB_BACKGROUND2         BITMAP                  "res\\Background2.bmp"
+IDB_BACKGROUND3         BITMAP                  "res\\Background3.bmp"
+IDB_BACKGROUND4         BITMAP                  "res\\background4.bmp"
+IDB_BACKGROUND5         BITMAP                  "res\\background5.bmp"
+IDB_BACKGROUND6         BITMAP                  "res\\background6.bmp"
+IDB_LEVEL2              BITMAP                  "res\\bmp00005.bmp"
+IDB_LEVEL3              BITMAP                  "res\\level3.bmp"
+IDB_LEVEL4              BITMAP                  "res\\level4.bmp"
+IDB_LEVEL5              BITMAP                  "res\\level5.bmp"
+IDB_LEVEL6              BITMAP                  "res\\level6.bmp"
+IDB_LEVEL7              BITMAP                  "res\\level7.bmp"
+IDB_LEVEL8              BITMAP                  "res\\level8.bmp"
+IDB_LEVEL9              BITMAP                  "res\\level9.bmp"
+IDB_LEVEL_CLEAR         BITMAP                  "res\\level10.bmp"
+IDB_FIELD_UP            BITMAP                  "res\\bmp00004.bmp"
+IDB_FIELD_DOWN          BITMAP                  "res\\field_up.bmp"
+IDB_FIELD_NEUTRAL       BITMAP                  "res\\field_do.bmp"
+IDB_FIELD_CIRCLE        BITMAP                  "res\\field_ne.bmp"
+IDB_FIELD_CROSS         BITMAP                  "res\\field_cr.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_BUTTON_REDO
+    BUTTON      ID_BUTTON_UNDO
+    SEPARATOR
+    BUTTON      ID_AUTOPLAY
+END
+
+IDR_SHOWTOOLBAR TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_SHOW_GAMETREE
+    BUTTON      ID_ERROR_REPORT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Spiel"
+    BEGIN
+        MENUITEM "TicTacToe spielen",           ID_SPIEL_TICTACTOESPIELEN
+        MENUITEM "TicTacToe Laden",             ID_SPIEL_TICTACTOELADEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Laden...\tStrg+O",           ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Drucker&einrichtung...",      ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "CyberSolitaire &beenden",     ID_APP_EXIT
+    END
+    POPUP "Einstellungen"
+    BEGIN
+        MENUITEM "Karten und Hintergrund",      ID_EINSTELLUNGEN_KARTENUNDHINTERGRUND
+
+        MENUITEM SEPARATOR
+        MENUITEM "Debug Einstellungen",         ID_EINSTELLUNGEN_DEBUGEINSTELLUNGEN
+
+        MENUITEM "Uebernehme TTT Werte",        ID_EINSTELLUNGEN_UEBERNEHMETTTWERTE
+
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "S&tatusleiste",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über CyberSolitaire...", ID_APP_ABOUT
+    END
+END
+
+IDR_CYBSOLTYPE MENU 
+BEGIN
+    POPUP "&Spiel"
+    BEGIN
+        MENUITEM "&Neu (mit neuen Karten)",     ID_SPIEL_NEU
+        MENUITEM "N&och mal (mit gleichen Karten)", ID_SPIEL_NOCHMAL
+        MENUITEM "&Abbrechen",                  ID_SPIEL_ABBRECHEN
+        MENUITEM "&Beenden",                    ID_GAME_EXIT
+        MENUITEM "S&peichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "Sei&tenansicht",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "Drucker&einrichtung...",      ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "C&yberSolitaire beenden",     ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Rückgängig\tStrg+Z",         ID_EDIT_UNDO
+        MENUITEM "&Wiederherstellen\tStrg+A",   ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "&Auto-Ablage\tF5",            ID_AUTOPLAY
+    END
+    POPUP "Einstellungen"
+    BEGIN
+        MENUITEM "Karten und Hintergrund",      286
+        MENUITEM SEPARATOR
+        MENUITEM "Debug Einstellungen",         297
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "S&tatusleiste",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über CyberSolitaire...", ID_APP_ABOUT
+    END
+END
+
+IDR_PILECONTEXT MENU 
+BEGIN
+    POPUP "Pile Context"
+    BEGIN
+        MENUITEM "Karte umdrehen (Debug)",      ID_PILECONTEXT_KARTEUMDREHEN
+        MENUITEM "Karte ansehen (Schummelmodus)", ID_SHOW_CARD_CHEAT
+        MENUITEM SEPARATOR
+        MENUITEM "&Kartenstapel ansehen",       ID_SHOW_PILE
+        MENUITEM "Kartenstapel ansehen (Schummelmodus)", 
+                                                ID_SHOW_PILE_CHEATMODE
+    END
+END
+
+IDR_DEBUG MENU 
+BEGIN
+    POPUP "&Debug"
+    BEGIN
+        MENUITEM "Level 0",                     ID_DEBUG_0
+        MENUITEM "Level 1",                     ID_DEBUG_1
+        MENUITEM "Level 2",                     ID_DEBUG_2
+        MENUITEM "Level 3",                     ID_DEBUG_3
+        MENUITEM "Level 4",                     ID_DEBUG_4
+    END
+    MENUITEM "&Clear!",                     ID_DEBUG_CLEAR
+END
+
+IDR_GAME_CONTEXT MENU 
+BEGIN
+    POPUP "Game_Context"
+    BEGIN
+        MENUITEM "Spielregeln (kurz)",          ID_DESCRIPTION_SHORT
+        MENUITEM "Spielregeln",                 ID_DESCRIPTION
+        MENUITEM SEPARATOR
+        MENUITEM "Statistik",                   ID_GAMECONTEXT_STATISTIK
+        MENUITEM SEPARATOR
+        MENUITEM "Game Editor",                 ID_OPEN_GAMEEDITOR
+        MENUITEM SEPARATOR
+        MENUITEM "Spiel löschen",               ID_GAMECONTEXT_DELETE_GAME
+    END
+END
+
+IDR_SOLEDITTYPE MENU 
+BEGIN
+    POPUP "Editor"
+    BEGIN
+        MENUITEM "&Beenden",                    ID_FILE_CLOSE
+    END
+    POPUP "Einfügen"
+    BEGIN
+        MENUITEM "Stock",                       ID_INSERT_STOCK
+        MENUITEM "Tableau",                     ID_INSERT_TABLEAU
+        MENUITEM "Foundation",                  ID_INSERT_FOUNDATION
+        MENUITEM "Waste",                       ID_INSERT_WASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Sortieren nach Redeal-Order", ID_Menu300
+        MENUITEM SEPARATOR
+        MENUITEM "Speichern",                   ID_DATEI_SPEICHERN
+    END
+    MENUITEM "TTT Level Punkte",            ID_TTTLEVELPUNKTE
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über CyberSolitaire...", 57664
+    END
+END
+
+IDR_SOLEDIT_PILECONTEXT MENU 
+BEGIN
+    POPUP "SolEditPileContext"
+    BEGIN
+        MENUITEM "Löschen",                     ID_SOLEDITPILECONTEXT_DELETE
+        MENUITEM "Kopieren",                    ID_SOLEDITPILECONTEXT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "Kartenstapel Eigenschaften",  ID_SOLEDITPILECONTEXT_PROPERTIES
+
+        MENUITEM SEPARATOR
+        MENUITEM "MaxRect maximal",             ID_SOLEDITPILECONTEXT_MAXRECTMAXIMAL
+
+        MENUITEM "MaxRect inkrementieren",      ID_SOLEDITPILECONTEXT_MAXRECTINKREMENTIEREN
+
+        MENUITEM "MaxRect dekrementieren",      ID_SOLEDITPILECONTEXT_MAXRECTDEKREMENTIEREN
+
+        MENUITEM "MaxRect löschen",             ID_SOLEDITPILECONTEXT_MAXRECTLOESCHEN
+
+    END
+END
+
+IDR_SOLEDIT_GAMECONTEXT MENU 
+BEGIN
+    POPUP "SolEditGameContext"
+    BEGIN
+        MENUITEM "Spiel Eigenschaften",         ID_SOLEDITGAMECONTEXT_PROPERTIES
+
+    END
+END
+
+IDR_TTT_TYPE MENU 
+BEGIN
+    POPUP "Spiel"
+    BEGIN
+        MENUITEM "TTT Speichern",               ID_SPIEL_TTTSPEICHERN
+        MENUITEM "TTT Speichern unter",         ID_SPIEL_TTTSPEICHERNUNTER
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_FILE_CLOSE
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über CyberSolitaire...", 57664
+    END
+END
+
+IDR_SELECTFRAME MENU 
+BEGIN
+    POPUP "Sel1"
+    BEGIN
+        MENUITEM "Test",                        ID_SEL1_TEST
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über CyberSolitaire...", 57664
+    END
+END
+
+IDR_STATISTICTYPE MENU 
+BEGIN
+    POPUP "&Statistik"
+    BEGIN
+        MENUITEM "&Löschen (ausgewählter Spieler)", 
+                                                ID_STATISTIK_LOESCHEN_ACT_PLAYER
+
+        MENUITEM SEPARATOR
+        MENUITEM "L&öschen (alle Spieler)",     ID_STATISTIK_LOESCHEN_ALL_PLAYER
+
+    END
+    POPUP "&Darstellung"
+    BEGIN
+        MENUITEM "&Punkte",                     ID_DARSTELLUNG_PUNKTE
+        MENUITEM "&Linien",                     ID_DARSTELLUNG_LINIEN
+        MENUITEM "&Balken",                     ID_DARSTELLUNG_BALKEN
+    END
+END
+
+IDR_TTT_CYBSOL_GAME MENU 
+BEGIN
+    POPUP "&Spiel"
+    BEGIN
+        MENUITEM "TTT S&peichern",              ID_SPIEL_SPEICHERN, INACTIVE
+        MENUITEM "TTT Speichern &unter...",     ID_SPIEL_SPEICHERNUNTER
+        , INACTIVE
+        MENUITEM SEPARATOR
+        MENUITEM "&zurück zum TTT Fenster",     ID_SPIEL_BACK_TO_TTT_WINDOW
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_CYBSOLTYPE ACCELERATORS 
+BEGIN
+    "A",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F5,          ID_AUTOPLAY,            VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 236, 132
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info über CyberSolitaire"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "CyberSolitaire Dev ",IDC_VERSION,40,10,120,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,93,111,50,14,WS_GROUP
+END
+
+IDR_MAINFRAME DIALOG  0, 0, 330, 16
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ZU ERLEDIGEN: Layout der Dialogleiste ",IDC_STATIC,12,4,
+                    300,8
+END
+
+IDD_SHOW_PILE DIALOG  0, 0, 108, 78
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Kartenstapel ansehen"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_GAME_PROPERTIES DIALOGEX 0, 0, 266, 194
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Eigenschaften des Spiels"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_GAME_NAME,78,7,181,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_GAME_GROUP,78,23,181,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_NUMBER_OF_DECKS,78,37,181,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_SCORING,78,53,181,60,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,78,173,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,141,173,50,14
+    LTEXT           "Name",IDC_STATIC,7,7,66,14
+    LTEXT           "Gruppe",IDC_STATIC,7,23,66,14
+    LTEXT           "Anzahl Kartenspiele",IDC_STATIC,7,39,66,14
+    LTEXT           "Punktezählung",IDC_STATIC,7,55,66,14
+    LTEXT           "Gewinnpunkte",IDC_STATIC,7,76,64,13
+    EDITTEXT        IDC_MAX_POINTS,78,76,55,14,ES_AUTOHSCROLL
+END
+
+IDD_PILE_PROPERTIES DIALOGEX 0, 0, 639, 401
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Eigenschaften des Kartenstapel"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,266,380,45,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,327,380,45,14
+    CONTROL         200,IDC_BMP_PILE_EMPTY,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | SS_REALSIZEIMAGE,455,253,50,65
+    CONTROL         "Spin1",IDC_SPIN_EMPTY_PILE,"msctls_updown32",UDS_WRAP | 
+                    UDS_ARROWKEYS | UDS_HORZ,455,319,50,13
+    CTEXT           "leerer Stapel",IDC_STATIC,455,239,50,13,SS_CENTERIMAGE
+    RTEXT           "y:",IDC_STATIC,234,31,8,8
+    LTEXT           "x",IDC_X_POSITION,202,31,27,11,SS_SUNKEN | WS_BORDER
+    LTEXT           "y",IDC_Y_POSITION,253,31,31,11,SS_SUNKEN | WS_BORDER
+    RTEXT           "x:",IDC_STATIC,186,31,8,8
+    LTEXT           "Art der Basiskarte",IDC_STATIC_KIND_OF_BASIC,323,105,66,
+                    12
+    COMBOBOX        IDC_PILING_METHOD,148,207,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Art der Stapelung (Ablage)",IDC_STATIC,19,207,128,12
+    COMBOBOX        IDC_SELECT_METHOD,148,174,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Art der Selektion",IDC_STATIC,19,174,128,12
+    COMBOBOX        IDC_PUT_IF_EMPTY,148,223,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "kann belegt werden, wenn leer",IDC_STATIC,19,223,128,12
+    COMBOBOX        IDC_FACE_AT_START,148,141,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Erscheinung bei Start",IDC_STATIC,19,140,128,12
+    LTEXT           "Anzahl Karten bei Start",IDC_STATIC,19,70,110,12
+    LTEXT           "Anzahl Ablage pro Anwender-Zug",IDC_STATIC,19,106,110,
+                    12
+    LTEXT           "maximale Anzahl",IDC_STATIC,19,122,105,12
+    EDITTEXT        IDC_NUMBER_AT_START,148,71,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NUMBER_PER_MOVE,148,106,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_CARDS,148,122,36,12,ES_AUTOHSCROLL
+    GROUPBOX        "Talon (Stock)",IDC_STOCK_SPECIFIC,313,16,318,47
+    LTEXT           "Anzahl pro Geben",IDC_STATIC_NUMBER_PER_DEAL,19,287,68,
+                    12
+    EDITTEXT        IDC_NUMBER_PER_DEAL,148,287,36,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_DEAL_TO,148,270,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Geben auf",IDC_STATIC_DEAL_TO,19,270,128,12
+    GROUPBOX        "Ablage (Foundation)",IDC_FOUNDATION_SPECIFIC,313,78,318,
+                    137
+    CONTROL         "zurückspielbar",IDC_CHECK_REPLAYABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,322,91,131,11
+    CONTROL         134,IDC_BMP_BASICCARD,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | SS_REALSIZEIMAGE,322,133,50,65
+    CONTROL         "Spin1",IDC_SPIN_BASICCARD,"msctls_updown32",UDS_WRAP | 
+                    UDS_ARROWKEYS | UDS_HORZ,322,198,50,13
+    CTEXT           "Basiskarte",IDC_STATIC_BASICCARD,322,118,50,13,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_OVERLAPP_METHOD,148,157,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Art der Überlappung",IDC_STATIC,19,157,128,12
+    CONTROL         "nur Kartenwert",IDC_CHECK_BASICCARD_ONLY_VAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,381,133,73,11
+    CONTROL         "auf alle Kartenstapel dieses Typs anwenden",
+                    IDC_CHECK_USE_FOR_ALL_PILES,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,15,31,125,23
+    LTEXT           "davon verdeckt",IDC_STATIC,19,89,56,12
+    EDITTEXT        IDC_NUMBER_HIDDEN_AT_START,148,89,36,12,ES_AUTOHSCROLL
+    LTEXT           "Reihenfolge beim automatischen Geben",IDC_STATIC,19,242,
+                    114,23
+    EDITTEXT        IDC_EDIT_DEALORDER,148,242,36,12,ES_AUTOHSCROLL
+    LTEXT           "Anzahl Neu Geben",IDC_STATIC_NUMBER_OF_REDEAL,320,28,69,
+                    12
+    EDITTEXT        IDC_EDIT_NUMBER_OF_REDEAL,400,28,36,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_REDEAL_METHOD,400,46,149,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Art des Neu Gebens",IDC_STATIC_REDEAL_METHOD,320,45,71,
+                    12
+    LTEXT           "Reihenfolge für Neu Geben",IDC_STATIC,19,303,114,12
+    EDITTEXT        IDC_EDIT_REDEALORDER,148,303,36,12,ES_AUTOHSCROLL
+    LTEXT           "Position",IDC_STATIC,148,31,32,11
+    LTEXT           "maximale Größe",IDC_STATIC,148,50,34,19
+    LTEXT           "cx:",IDC_STATIC,189,55,18,10
+    LTEXT           "cy:",IDC_STATIC,233,55,22,13
+    LTEXT           "x",IDC_CX_MAXSIZE,202,55,27,11,SS_SUNKEN | WS_BORDER
+    LTEXT           "y",IDC_CY_MAXSIZE,256,55,31,11,SS_SUNKEN | WS_BORDER
+    LTEXT           "spielbar auf",IDC_STATIC,19,191,128,12
+    COMBOBOX        IDC_PERMITTED_PLAY,148,191,160,60,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "alle Piles oder Tableau/Waste",IDC_STATIC,15,23,298,347
+    CONTROL         "Spezialbehandlung",IDC_CHECK_SPECIAL_HANDLING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,341,119,15
+    EDITTEXT        IDC_EDIT_SPECIAL_HANDLING,148,342,165,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_BASICCARD_METHOD,401,102,147,59,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Überlappung aktualisieren",IDC_UPDATE_OVERLAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,324,111,13
+    CONTROL         "nur Farbe",IDC_CHECK_BASICCARD_ONLY_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,381,152,73,11
+END
+
+IDD_SELECT_CARDS DIALOG  0, 0, 436, 223
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Selektiere Karten"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,157,202,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,223,202,50,14
+    CONTROL         134,IDC_CARD001,"Static",SS_BITMAP | SS_NOTIFY | 
+                    SS_REALSIZEIMAGE,17,20,50,65
+END
+
+IDD_CARDS_AND_BACKGROUND DIALOGEX 0, 0, 422, 412
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Karten und Hintergrund"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,365,7,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,365,24,50,14
+    CONTROL         246,IDC_BMP_CARDSBACKGROUND,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | SS_REALSIZEIMAGE,27,20,50,65
+    CONTROL         "",IDC_CARDS_BACKGROUND,"msctls_updown32",UDS_WRAP | 
+                    UDS_ARROWKEYS | UDS_HORZ,27,86,50,13
+    CTEXT           "Rückseite",IDC_STATIC,23,7,50,13,SS_CENTERIMAGE
+    CONTROL         270,IDC_BMP_GAME_BACKGROUND,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | SS_REALSIZEIMAGE,27,114,367,259
+    CTEXT           "Spiel-Hintergrund",IDC_STATIC,137,94,148,13,
+                    SS_CENTERIMAGE
+    CONTROL         "",IDC_GAME_BACKGROUND,"msctls_updown32",UDS_WRAP | 
+                    UDS_ARROWKEYS | UDS_HORZ,27,374,366,13
+END
+
+IDD_ERROR_REPORT DIALOG  0, 0, 325, 207
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fehler-Report"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_ERROR_DESCRIPTION,7,32,311,106,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN
+    DEFPUSHBUTTON   "OK",IDOK,104,186,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,170,186,50,14
+    LTEXT           "Fehlerbeschreibung",IDC_STATIC,7,15,161,9
+END
+
+IDD_DEBUG_PROPERTIES DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Debug Einstellungen"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,69,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,101,69,50,14
+    CONTROL         "Cursor Clip",IDC_CLIPCURSOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,14,172,12
+    CONTROL         "Spiel Layouts ausgeben",IDC_REPORTGAMELAYOUTS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,27,172,12
+END
+
+IDD_INSERT_NEW_PLAYER DIALOG  0, 0, 186, 82
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Neuen Spieler einfügen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_NEW_PLAYER,7,29,172,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,40,61,45,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,101,61,45,14
+    CTEXT           "neuer Spielername",IDC_STATIC,7,7,172,14
+END
+
+IDD_SELECT_PLAYER DIALOG  0, 0, 236, 182
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Auswahl eines Spielers"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "",IDC_OK_DIALOG,64,160,108,15
+    CONTROL         "List1",IDC_PLAYER_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    WS_BORDER | WS_TABSTOP,7,69,222,80
+    PUSHBUTTON      "Hinzufügen",IDC_INSERT_NEW_PLAYER,9,160,46,15
+    PUSHBUTTON      "Löschen",IDC_DELETE_PLAYER,181,160,46,15
+    CTEXT           "Spielerliste",IDC_STATIC,7,54,222,13
+    CTEXT           "Static Text",IDC_GREETING_TEXT,7,7,222,32
+END
+
+IDD_SHOW_STATISTIC DIALOGEX 0, 0, 639, 402
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+CAPTION "Statistik Ansicht"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List2",IDC_PLAYER_LISTBOX,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    WS_BORDER | WS_TABSTOP,60,264,351,100
+    CONTROL         "",IDC_DISP_WINDOW,"Static",SS_OWNERDRAW | SS_SUNKEN | 
+                    WS_GROUP,60,25,348,221,WS_EX_CLIENTEDGE
+    SCROLLBAR       IDC_SCROLLBAR_RESULTS,59,246,348,10,SBS_RIGHTALIGN
+END
+
+IDD_TTT_CHOOSE_GAME DIALOGEX 0, 0, 285, 202
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Spiel auswählen"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,85,180,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,151,180,50,14
+    CONTROL         "Optionsfeld1",IDC_RADIO_GAME1,"Button",
+                    BS_AUTORADIOBUTTON,30,55,165,15
+    CONTROL         "Optionsfeld1",IDC_RADIO_GAME2,"Button",
+                    BS_AUTORADIOBUTTON,30,81,165,15
+    CONTROL         "Optionsfeld1",IDC_RADIO_GAME3,"Button",
+                    BS_AUTORADIOBUTTON,30,108,165,15
+    LTEXT           "Statisch",IDC_NEEDED_SCORE1,219,55,36,15
+    LTEXT           "Statisch",IDC_NEEDED_SCORE2,219,81,36,15
+    LTEXT           "Statisch",IDC_NEEDED_SCORE3,219,108,36,15
+    CTEXT           "zu überbietende Punkte",IDC_STATIC,203,32,60,18
+    CTEXT           "Auswahl - Spiel",IDC_STATIC,29,32,60,12
+    LTEXT           "Level:",IDC_STATIC,121,128,20,8
+    LTEXT           "Level",IDC_LEVEL,145,128,20,8
+    PUSHBUTTON      "Zeige Regeln",IDC_DESCRIPTION,51,152,84,16
+    PUSHBUTTON      "Zeige Regeln (kurz)",IDC_DESCRIPTION_SHORT,151,152,84,
+                    16
+    CTEXT           "Wählen Sie ein Spiel aus",IDC_STATIC,96,7,93,12,0,
+                    WS_EX_STATICEDGE
+END
+
+IDD_EDIT_TTT_LEVEL DIALOGEX 0, 0, 188, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Eingabe der TTT Level Punkte"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_LEVEL1,100,32,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL2,100,45,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL3,100,58,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL4,100,71,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL5,100,84,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL6,100,97,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL7,100,110,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL8,100,123,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LEVEL9,100,136,31,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,36,154,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,102,154,50,14
+    LTEXT           "Level",IDC_STATIC,55,17,18,8
+    LTEXT           "1",IDC_STATIC,60,32,8,8
+    LTEXT           "2",IDC_STATIC,60,45,8,8
+    LTEXT           "3",IDC_STATIC,60,58,8,8
+    LTEXT           "4",IDC_STATIC,60,71,8,8
+    LTEXT           "5",IDC_STATIC,60,84,8,8
+    LTEXT           "6",IDC_STATIC,60,97,8,8
+    LTEXT           "7",IDC_STATIC,60,110,8,8
+    LTEXT           "8",IDC_STATIC,60,123,8,8
+    LTEXT           "9",IDC_STATIC,60,136,8,8
+    LTEXT           "Punkte",IDC_STATIC,103,17,23,8
+END
+
+IDD_TTT_GAME_FINISHED DIALOGEX 0, 0, 203, 143
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Tic Tac Toe: Spiel beenden"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Ja",IDOK,44,120,50,14
+    PUSHBUTTON      "Nein",IDCANCEL,110,120,50,14
+    LTEXT           "Spiel:",IDC_STATIC,21,16,30,8
+    LTEXT           "erreichte Punkte:",IDC_STATIC,21,38,68,8
+    LTEXT           "erforderliche Punkte:",IDC_STATIC,21,60,68,8
+    CTEXT           "Ergebnis",IDC_GAME_RESULT,48,82,107,8
+    LTEXT           "zurück zum Tic-Tac-Toe Fenster?",IDC_STATIC,48,104,107,
+                    8
+    LTEXT           "Game",IDC_GAME_NAME,61,16,122,12,0,WS_EX_CLIENTEDGE
+    RTEXT           "actual",IDC_ACTUAL_SCORE,101,38,50,12,0,
+                    WS_EX_CLIENTEDGE
+    RTEXT           "needed",IDC_NEEDED_SCORE,101,60,50,12,0,
+                    WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "CompanyName", "Muecke-Soft"
+            VALUE "FileDescription", "CyberSolitaire "
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "CyberSolitaire"
+            VALUE "LegalCopyright", "Copyright (C) 2002-2004"
+            VALUE "OriginalFilename", "CyberSolitaire.EXE"
+            VALUE "ProductName", "Anwendung CyberSolitaire"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_SHOW_PILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 101
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_GAME_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        VERTGUIDE, 78
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_PILE_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 15
+        RIGHTMARGIN, 631
+        VERTGUIDE, 15
+        VERTGUIDE, 148
+        VERTGUIDE, 313
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 394
+    END
+
+    IDD_SELECT_CARDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 429
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_CARDS_AND_BACKGROUND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 415
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 405
+    END
+
+    IDD_ERROR_REPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 318
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_DEBUG_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_INSERT_NEW_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_SELECT_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_SHOW_STATISTIC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 632
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 395
+    END
+
+    IDD_TTT_CHOOSE_GAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 278
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_EDIT_TTT_LEVEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_TTT_GAME_FINISHED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "CyberSolitaire"
+    IDR_CYBSOLTYPE          "\nCybSol\nCybSol\nDateityp CyberSolitaire (*.cys)\n.cys\nCyberSolitaire.Document\nCybSol Document"
+    IDR_SELECTFRAME         "\nSEL\nSEL\nSEL Files (*.SEL)\n.SEL\nSEL Document\nSEL Document"
+    IDR_SOLEDITTYPE         "\nGame\nGame\nGame Files (*.GAM)\n.GAM\nGAME Document\nGAME Document"
+    IDR_TTT_TYPE            "\nTicTacToe\nTicTacToe\nTicTacToe Files (*.TTT)\n.TTT\nTicTacToe Document\nTicTacToe Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "CyberSolitaire Dev "
+    AFX_IDS_IDLEMESSAGE     "Bereit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "ER"
+    ID_INDICATOR_CAPS       "UF"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "RF"
+    ID_INDICATOR_OVR        "ÜB"
+    ID_INDICATOR_REC        "MA"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Erstellt ein neues Dokument.\nNeu"
+    ID_FILE_OPEN            "Lädt ein gespeichertes Spiel\nLaden"
+    ID_FILE_CLOSE           "Beendet das aktive Spiel\nSpiel beenden"
+    ID_FILE_SAVE            "Speichert das aktive Spiel.\nSpeichern"
+    ID_FILE_SAVE_AS         "Speichert das aktive Spiel unter neuem Namen.\nSpeichern unter"
+    ID_FILE_PAGE_SETUP      "Ändert die Druckoptionen.\nSeite einrichten"
+    ID_FILE_PRINT_SETUP     "Ändert den Drucker und die Druckoptionen.\nDruckereinrichtung"
+    ID_FILE_PRINT           "Druckt das aktive Dokument.\nDrucken"
+    ID_FILE_PRINT_PREVIEW   "Zeigt ganze Seiten an.\nSeitenansicht"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Zeigt Programm-Informationen, Versionsnummer und Copyright an.\nInfo"
+    ID_APP_EXIT             "Beendet das Programm\nBeenden"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE2       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE3       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE4       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE5       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE6       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE7       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE8       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE9       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE10      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE11      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE12      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE13      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE14      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE15      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE16      "Öffnet dieses Dokument."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Wechselt zum nächsten Fensterausschnitt.\nNächster Ausschnitt"
+    ID_PREV_PANE            "Springt zum vorherigen Fensterausschnitt zurück.\nVorheriger Ausschnitt"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Öffnet ein weiteres Fenster für das aktive Dokument.\nNeues Fenster"
+    ID_WINDOW_ARRANGE       "Ordnet die Symbole im unteren Bereich des Fensters an.\nSymbole anordnen"
+    ID_WINDOW_CASCADE       "Ordnet die Fenster überlappend an.\nÜberlappende Fenster"
+    ID_WINDOW_TILE_HORZ     "Ordnet die Fenster nebeneinander an.\nFenster nebeneinander"
+    ID_WINDOW_TILE_VERT     "Ordnet die Fenster nebeneinander an.\nFenster nebeneinander"
+    ID_WINDOW_SPLIT         "Teilt das aktive Fenster in Ausschnitte.\nTeilen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Löscht die Markierung.\nLöschen"
+    ID_EDIT_CLEAR_ALL       "Löscht alles.\nAlles löschen"
+    ID_EDIT_COPY            "Kopiert die Markierung und überträgt sie in die Zwischenablage.\nKopieren"
+    ID_EDIT_CUT             "Entfernt die Markierung und überträgt sie in die Zwischenablage.\nAusschneiden"
+    ID_EDIT_FIND            "Sucht den angegebenen Text.\nSuchen"
+    ID_EDIT_PASTE           "Fügt den Inhalt der Zwischenablage ein.\nEinfügen"
+    ID_EDIT_REPEAT          "Wiederholt die letzte Aktion.\nWiederholen"
+    ID_EDIT_REPLACE         "Ersetzt einen bestimmten Text durch einen anderen.\nErsetzen"
+    ID_EDIT_SELECT_ALL      "Markiert das gesamte Dokument.\nAlles markieren"
+    ID_EDIT_UNDO            "Macht die letzte Aktion rückgängig.\nRückgängig"
+    ID_EDIT_REDO            "Wiederholt die vorher rückgängig gemachte Aktion.\nWiederherstellen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Blendet die Symbolleiste ein oder aus.\nSymbolleiste ein-/ausschalten"
+    ID_VIEW_STATUS_BAR      "Blendet die Statusleiste ein oder aus.\nStatusleiste ein-/ausschalten"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Ändert die Fenstergröße."
+    AFX_IDS_SCMOVE          "Ändert die Position des Fensters."
+    AFX_IDS_SCMINIMIZE      "Verkleinert das Fenster zu einem Symbol."
+    AFX_IDS_SCMAXIMIZE      "Vergrößert das Fenster zu voller Größe."
+    AFX_IDS_SCNEXTWINDOW    "Wechselt zum nächsten Dokumentfenster."
+    AFX_IDS_SCPREVWINDOW    "Wechselt zum vorherigen Dokumentfenster."
+    AFX_IDS_SCCLOSE         "Schließt das aktive Fenster und fordert zur Dokumentspeicherung auf."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Stellt das Fenster in seiner normalen Größe wieder her."
+    AFX_IDS_SCTASKLIST      "Aktiviert die Task-Liste."
+    AFX_IDS_MDICHILD        "Aktiviert dieses Fenster."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Beendet die Seitenansicht.\nSeitenansicht beenden"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_GAME_SELECTION      "Spielauswahl"
+    IDS_TEXT_NOT_FOUND      "Text in Resource nicht gefunden"
+    ID_INDICATOR_GAME_NAME  "                                                 "
+    ID_INDICATOR_FREE1      "                 "
+    ID_INDICATOR_FREE2      "                "
+    ID_INDICATOR_SCORE      ".........................................."
+    IDS_SHORTDESCRIPTOR     " - Kurzfassung"
+    IDS_ONLY_ONE_STOCK_ALLOWED "Es ist nur ein Stock erlaubt"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON_REDO          "Redo\nRedo"
+    ID_BUTTON_UNDO          "Undo\nUndo"
+    ID_SHOW_PILE            "diesen Kartenstapel ansehen"
+    ID_DEBUG_0              "No debug information"
+    ID_DEBUG_1              "Error information"
+    ID_DEBUG_2              "General process steps"
+    ID_DEBUG_3              "More detailed process steps"
+    ID_DEBUG_4              "Data dumps"
+    ID_DEBUG_CLEAR          "Reset the list"
+    ID_SHOW_GAMETREE        "Spielauswahl zeigen/verbergen\nSpielauswahl zeigen/verbergen"
+    ID_SHOW_PILE_CHEATMODE  "diesen Kartenstapel im Schummelmodus ansehen"
+    ID_DESCRIPTION_SHORT    "zeigt die Spielregeln inKurzform"
+    ID_DESCRIPTION          "zeigt die Spielregeln"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DATEI_GAMEEDITOR     "Game Editor öffnen"
+    ID_INSERT_WASTE         "Fügt einen Waste Kartenstapel ein"
+    ID_INSERT_FOUNDATION    "Fügt einen Foundation Kartenstapel ein"
+    ID_INSERT_TABLEAU       "Fügt einen Tableau Kartenstapel ein"
+    ID_INSERT_STOCK         "Fügt einen Stock Kartenstapel ein"
+    ID_SOLEDITPILECONTEXT_DELETE "Kartenstapel löschen"
+    ID_SOLEDITPILECONTEXT_PROPERTIES 
+                            "Bearbeiten der Eigenschaften des Kartenstapels"
+    ID_SOLEDITGAMECONTEXT_PROPERTIES "Bearbeiten der Eigenschaften des Spiels"
+    ID_OPEN_GAMEEDITOR      "Game Editor öffnen"
+    ID_SOLEDITPILECONTEXT_COPY "Kartenstapel kopieren"
+    ID_GAME_COPY            "Kopiert dieses Spiel"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_GROUP_NOTAVAILABLE  "nicht verfügbar/relevant"
+    IDS_SPIDERGROUP         "Spider"
+    IDS_KLONDIKEGROUP       "Klondike"
+    IDS_END_OF_GROUPS       "End of Groups"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SCORE_NOTAVAILABLE  "nicht verfügbar/relevant"
+    IDS_SCORE_SEQ_IN_SUIT_AND_FOUNDATION "in Farbfolge und Ablage"
+    IDS_SCORE_SEQ_NO_COLOR_AND_FOUNDATION "in Folge und Ablage"
+    IDS_SCORE_CARD_ON_FOUNDATION "auf Ablage"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SCORE_SEQ_IN_SUIT   "in Farbfolge"
+    IDS_END_OF_SCORING      "End of Scoring"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FAS_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_FAS_ALL_FACE_UP     "alle Karten sichtbar"
+    IDS_FAS_ALL_FACE_DOWN   "keine Karte sichtbar"
+    IDS_FAS_LAST_FACE_UP    "letzte Karte sichtbar"
+    IDS_FAS_ODD_FACE_UP     "alle ungeraden sichtbar"
+    IDS_FAS_EVEN_FACE_UP    "alle geraden sichtbar"
+    IDS_FAS_END             "End of FaceAtStart"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OLM_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_OLM_NOT_OVERLAPPED  "nicht überlappend"
+    IDS_OLM_DOWN_OVERLAPPED "nach unten überlappend"
+    IDS_OLM_RIGHT_OVERLAPPED "nach rechts überlappend"
+    IDS_OLM_NOT_OVERLAPPED_HALF_DOWN "nicht überlappend, nur obere Hälfte"
+    IDS_OLM_END             "End of OverlappedMethod"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PIL_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_PIL_DOWN_IN_SUIT    "abwärts Farbfolge"
+    IDS_PIL_DOWN_ALTERNATE  "abwärts Farbwechsel"
+    IDS_PIL_DOWN_NO_COLOR   "abwärts ohne Farbe"
+    IDS_PIL_UP_IN_SUIT      "aufwärts Farbfolge"
+    IDS_PIL_UP_ALTERNATE    "aufwärts Farbwechsel"
+    IDS_PIL_UP_NO_COLOR     "aufwärts ohne Farbe"
+    IDS_PIL_WITH_GAPS       "mit Lücken"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PIL_ONLY_FROM_STOCK "beliebig vom Stock"
+    IDS_PIL_NOTHING         "keine Ablage möglich"
+    IDS_PIL_DOWN_IN_SUIT_ROLLING "abwärts Farbfolge mit Überlauf (As->König)"
+    IDS_PIL_UP_IN_SUIT_ROLLING "aufwärts Farbfolge mit Überlauf (König->As)"
+    IDS_PIL_DOWN_ALTERNATE_ROLLING 
+                            "abwärts Farbwechsel mit Überlauf (As->König)"
+    IDS_PIL_UP_ALTERNATE_ROLLING 
+                            "aufwärts Farbwechsel mit Überlauf (As->König)"
+    IDS_PIL_PAIRS_EQUAL_VALUE "Paare mit gleichem Wert"
+    IDS_PIL_VALUE13_OR_KING "Paare mit Wert 13 oder König"
+    IDS_PIL_UP_DOWN_NOCOLOR_ROLLING "auf/abwärts ohne Farbfolge mit Überlauf"
+    IDS_PIL_ONE_FROM_TABLEAU_OR_WASTE "nur 1 von Tableau oder Waste"
+    IDS_PIL_ONLY_FROM_TABLEAU "beliebig von Tableaus"
+    IDS_PIL_UP_SAME_SUIT    "aufwärts gleiche Farbe wie Basiskarte"
+    IDS_PIL_DOWN_SAME_SUIT  "abwärts gleiche Farbe wie Basiskarte"
+    IDS_PIL_UP_DIFF_2_IN_SUIT "aufwärts im Abstand von 2 in Farbfolge"
+    IDS_PIL_END             "End of Piling"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEL_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_SEL_IN_SUIT         "beliebige Sequenz Farbfolge"
+    IDS_SEL_ALTERNATE       "beliebige Sequenz Farbwechsel"
+    IDS_SEL_SEQ_NO_COLOR    "beliebige Sequenz ohne Farbe"
+    IDS_SEL_LAST_OR_ALL_IN_SEQ "gesamte Sequenz oder letzte "
+    IDS_SEL_LAST_OR_SEQ_IN_SUIT "gesamte Sequenz Farbfolge oder letzte"
+    IDS_SEL_LAST_OR_SEQ_ALTERNATER "gesamte Sequenz Farbwechsel oder letze"
+    IDS_SEL_ALL             "alle Karten"
+    IDS_SEL_ONLY_LAST       "nur letzte"
+    IDS_SEL_EXACT_ONE       "genau eine Karte"
+    IDS_SEL_ALL_FACE_UP     "ab einer sichtbaren Karte ab"
+    IDS_SEL_PAIRS_EQUAL_VALUE "Paare gleichen Wertes"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEL_PAIRS_VALUE_13  "Paare mit Wert 13"
+    IDS_SEL_END             "End of SelectingMethod"
+    IDS_TITLE_PLAYER_NUMBER_OF_GAMES "# Spiele"
+    IDS_TITLE_PLAYER_AVERAGE "Durchschnitt"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PIE_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_PIE_NO_CARD         "nicht mehr belegbar"
+    IDS_PIE_BASIC_CARD      "Basiskarte"
+    IDS_PIE_BASIC_CARD_MINUS_1 "Basiskarte - 1"
+    IDS_PIE_ACE             "As"
+    IDS_PIE_KING            "König"
+    IDS_PIE_FROM_STOCK_OR_ANY "automatisch oder beliebig wenn leer"
+    IDS_PIE_ANY_CARD        "beliebige Karte"
+    IDS_PIE_ONLY_FROM_STOCK "beliebig aber nur vom Stock"
+    IDS_PIE_ONLY_FROM_AUTO_DEAL "nur automatisches Belegen erlaubt"
+    IDS_PIE_ONLY_FROM_TABLEAU "beliebig aber nur von Tableaus"
+    IDS_PIE_END             "End of PutIfEmpty"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DEAL_NOTAVAILABLE   "nicht verfügbar/relevant"
+    IDS_DEAL_TABLEAUS       "auf Spielstapel"
+    IDS_DEAL_WASTE          "auf Hilfsstapel"
+    IDS_DEAL_END            "End of Dealing"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_GAME_NAME        "ohne Namen"
+    IDS_NUMBEROFDECKS_MUST_BE_GREATER_0 "Anzahl der Kartenspiele muß > 0 sein"
+    IDS_GAME_EXIST          "Spiel existiert schon"
+    IDS_GAME_NOT_FOUND      "Spiel nicht gefunden"
+    IDS_COPY_ONLY_EXISTING_GAME 
+                            "nur existierende Spiele können kopiert werden"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GAMECONTEXT_DELETE_GAME "Löscht das ausgewählte Spiel"
+    ID_SPIEL_NEU            "beginnt ein neues Spiel mit neuen Karten"
+    ID_SPIEL_NOCHMAL        "beginnt das Spiel noch mal neu mit gleichen Karten"
+    ID_SHOW_CARD_CHEAT      "diese Karte im Schummelmodus ansehen"
+    ID_SOLEDITPILECONTEXT_MAXRECTMAXIMAL 
+                            "Berechnet das maximal mögliche MaxRect eines Stapels"
+    ID_SOLEDITPILECONTEXT_MAXRECTINKREMENTIEREN "vergrößert das MaxRect"
+    ID_SOLEDITPILECONTEXT_MAXRECTDEKREMENTIEREN "verkleinert das MaxRect"
+    ID_MRC_ALLOWDOCKING     "Allow docking"
+    ID_MRC_HIDE             "Hide"
+    ID_MRC_MDIFLOAT         "Float on desktop"
+    ID_MRC_CUSTOMIZE        "Customize..."
+    ID_SPIEL_TICTACTOESPIELEN "Tic Tac Toe spielen"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BAS_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_BAS_FIRSTPLAYED     "1. abgelegte wird Basiskarte"
+    IDS_BAS_FIXED           "Basiskarte fest nicht liegend"
+    IDS_BAS_FIXEDLIE        "Basiskarte fest liegt"
+    IDS_BAS_FROMSTOCK       "Basiskarte vom Stock"
+    IDS_BAS_END             "End of BasicCardMethod"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MRC_STARTDOCKING    "Press Ctrl to prevent docking\n"
+    IDS_WRONG_VERSION       "Die Version des gespeicherten Spieles\nkann nur mit einer früheren Programmversion gelesen werden."
+    IDS_PROGRAM_FAILED      "Error--> PROGRAM FAILURE on %s %d %s\n "
+    IDS_SECTION_DEBUG       "DEBUG"
+    IDS_SECTION_PROPERTIES  "PROPERTIES"
+    IDS_SECTION_BARS        "BARS"
+    IDS_SECTION_WINDOWS     "WINDOWS"
+    IDS_WINS_GAME           "Herzlichen Glückwunsch!\nDu hast das Spiel gewonnen!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_REDEAL_NOTAVAILABLE "nicht verfügbar/relevant"
+    IDS_REDEAL_FOUNDATION   "Foundations einsammeln"
+    IDS_REDEAL_FOUNDATION_MIX "Foundation einsammeln und mischen"
+    IDS_REDEAL_WASTE        "Waste einsammeln"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_REDEAL_WASTE_MIX    "Waste einsammeln und mischen"
+    IDS_REDEAL_END          "End of RedealMethod"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_PILECONTEXT_KARTEUMDREHEN "Die Karte umdrehen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ERROR_REPORT         "Fehler-Report"
+    ID_AUTOPLAY             "Legt automatisch Karten ab\nAuto-Ablage"
+    ID_SPIEL_ABBRECHEN      "Bricht das Spiel ab (keine Aufnahme in die Statistik)\nSpiel abbrechen"
+    ID_GAMECONTEXT_COPY_GAME "Kopiert das ausgewählte Spiel"
+    ID_GAMECONTEXT_STATISTIK "Zeigt die Statistik für dieses Spiel an"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PPP_NOTAVAILABLE    "nicht verfügbar/relevant"
+    IDS_PPP_TABLEAU         "auf Spielstapel (Tableau)"
+    IDS_PPP_WASTE           "auf Stoß/Reserve (Waste)"
+    IDS_PPP_FOUNDATION      "auf Ablage (Foundation)"
+    IDS_PPP_TABLEAU_OR_FOUNDATION 
+                            "auf Spiel- oder Ablagestapel (Tableau o. Foundation)"
+    IDS_PPP_WASTE_TABLEAU_FOUNDATION "auf Waste/Tableau/Foundation"
+    IDS_PPP_END             "End of PermittedPlay"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEW_PILE           "(%d Karten) Stapel ansehen"
+    IDS_ASK_GAME_END        "Wollen Sie CyberSolitaire wirklich beenden ?"
+    IDS_EXIT_RUNNING_GAME   "Bevor Sie ein neues Spiel laden können\nmüssen Sie das laufende Spiel beenden!"
+    IDS_EDITOR_IS_RUNNING   "Editor läuft bereits"
+    IDS_TTT_IS_RUNNING      "Tic Tac Toe läuft bereits"
+    IDS_GAME_IS_RUNNING     "ein Spiel läuft bereits"
+    IDS_ONLY_ONE_INSTANCE   "Cybersolitaire kann nur einmal gestartet werden"
+    IDS_GREETING_TEXT       "Herzlich willkommen zu CyberSolitaire\nWählen Sie bitte Ihren Namen aus der Liste oder fügen Sie ihn hinzu"
+    IDS_CHOOSE_PLAYER       "Wählen Sie bitte einen Spieler aus der Liste!"
+    IDS_DO_YOU_WANT_DELETE_PLAYER 
+                            "Wollen Sie wirklich den Spieler\n%s\nlöschen?"
+    IDS_TITLE_PLAYER_NAME   "Spieler - Name"
+    IDS_TITLE_PLAYER_RANK   "Stufe"
+    IDS_STRING_IS_EMPTY     "Sie haben vergessen einen Namen einzugeben !"
+    IDS_EMPTY_GREETING_TEXT " "
+    IDS_OK_TEXT             "Ok"
+    IDS_OK_PLAY             "Los geht's"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DO_YOU_WANT_CANCEL_GAME 
+                            "Möchen Sie das Spiel wirklich abbrechen\n(das Spiel wird nicht in die Statistik aufgenommen!)"
+    ID_INDICATOR_PLAYER     "                                               "
+    IDS_SECTION_CURRENTS    "CURRENTS"
+    IDS_DO_YOU_WANT_REALLY_DELETE "Möchten Sie wirklich dieses Spiel löschen?"
+    IDS_CHOOSE_GAME         "Wählen Sie bitte ein Spiel aus!"
+    IDS_TITLE_PLAYER_AVERAGE_PERCENT "Durchschnitt(%)"
+    IDS_TITLE_PLAYER_AVERAGE_STANDARD "Durchschnitt(Std.)"
+    ID_INDICATOR_TTT_LEVEL  "Level:    "
+    ID_INDICATOR_TTT_PLAYED_GAMES "gespielte Spiele:     "
+    ID_INDICATOR_TTT_GAME1  "Auswahlspiel                       1"
+    ID_INDICATOR_TTT_GAME2  "Auswahlspiel                       2"
+    ID_INDICATOR_TTT_GAME3  "Auswahlspiel                       3"
+    IDS_NOT_TTT_SUITABLE    "Dieses Spiel ist nicht TTT geeignet (keine Levelpunkte festgelegt)"
+    IDS_GAME_WIN            "Das Ziel wurde erreicht"
+    IDS_GAME_LOOSE          "Das Ziel wurde leider verfehlt"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROGRAM_VERSION     "Version 1.0.22"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DARSTELLUNG_PUNKTE   "Ergebnisse als Punkte dargestellt"
+    ID_DARSTELLUNG_LINIEN   "Ergebnisse als Linien dargestellt"
+    ID_DARSTELLUNG_BALKEN   "Ergebnisse als Balken dargestellt"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\CyberSolitaire.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.deu\afxres.rc"          // Standardkomponenten
+#include "l.deu\afxprint.rc"        // Ressourcen für Drucken/Seitenansicht
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

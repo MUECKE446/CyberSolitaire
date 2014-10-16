@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DC74399B-AE8B-42F4-98B2-6E8B14F4C46D}</ProjectGuid>
+    <RootNamespace>CyberSolitaire</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>CyberSolitaire</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0407</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>vfw32.lib;winmm.lib;htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\Debug/CyberSolitaire.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>NotSet</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>ECHO ON
+IF NOT EXIST .\Debug\GAMES.DAT copy GAMES.DAT .\Debug
+IF NOT EXIST .\Debug\CYBERSOLITAIRE.DAT copy CYBERSOLITAIRE.DAT .\Debug
+IF NOT EXIST .\Debug\STATISTICS.DAT copy STATISTICS.DAT .\Debug
+COPY /Y .\sounds\*.wav .\Debug
+ECHO OFF
+
+
+</Command>
+      <Message>Kopieren zum Auführen notwendiger Dateien</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0407</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>vfw32.lib;winmm.lib;htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>ECHO ON
+IF NOT EXIST .\Release\GAMES.DAT copy GAMES.DAT .\Release
+IF NOT EXIST .\Release\CYBERSOLITAIRE.DAT copy CYBERSOLITAIRE.DAT .\Release
+IF NOT EXIST .\Release\STATISTICS.DAT copy STATISTICS.DAT .\Release
+COPY /Y .\sounds\*.wav .\Release
+ECHO OFF
+
+
+</Command>
+      <Message>Kopieren zum Auführen notwendiger Dateien</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BackgroundDialog.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Card.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="CardToolTip.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="crack.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="CyberSolitaire.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">StdAfxCLR.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)CLR.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">StdAfxCLR.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)CLR.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="CyberSolitaireDoc.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="CyberSolitaireFrame.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="CyberSolitaireView.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="DebugProperties.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Dib.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Do.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="DockViewBar.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Dragdock.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="ErrorReportDialog.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Framewnd.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="GameTree.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="InputLevelPointsDialog.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="mdifloat.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Piles.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="PlayerDialogs.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="propertiesdialogs.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SelectCardsDialog.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SelectDoc.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SelectView.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Sharetmp.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="ShowPileDialog.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Sizecont.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Sizedock.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SolEditDoc.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SolEditFrame.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SolEditView.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="SolLayout.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="Statistic.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="StatisticDoc.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="StatisticFrame.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="StatisticView.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="StdAfxCLR.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">StdAfxCLR.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)CLR.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">StdAfxCLR.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)CLR.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="Sztoolba.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="TTTDialogs.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="TTTDoc.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="TTTField.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="TTTFrame.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="TTTGameFinishedDialog.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="TTTView.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CyberSolitaire.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BackgroundDialog.h" />
+    <ClInclude Include="Card.h" />
+    <ClInclude Include="CardToolTip.h" />
+    <ClInclude Include="crack.h" />
+    <ClInclude Include="CyberSolitaire.h" />
+    <ClInclude Include="CyberSolitaireDoc.h" />
+    <ClInclude Include="CyberSolitaireFrame.h" />
+    <ClInclude Include="CyberSolitaireView.h" />
+    <ClInclude Include="DebugProperties.h" />
+    <ClInclude Include="Dib.h" />
+    <ClInclude Include="Do.h" />
+    <ClInclude Include="DockViewBar.h" />
+    <ClInclude Include="ErrorReportDialog.h" />
+    <ClInclude Include="GameTree.h" />
+    <ClInclude Include="htmlhelp.h" />
+    <ClInclude Include="InputLevelPointsDialog.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="mrcext.h" />
+    <ClInclude Include="Mrcpriv.h" />
+    <ClInclude Include="Piles.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerDialogs.h" />
+    <ClInclude Include="propertiesdialogs.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SelectCardsDialog.h" />
+    <ClInclude Include="SelectDoc.h" />
+    <ClInclude Include="SelectView.h" />
+    <ClInclude Include="Sharetmp.h" />
+    <ClInclude Include="ShowPileDialog.h" />
+    <ClInclude Include="SolEditDoc.h" />
+    <ClInclude Include="SolEditFrame.h" />
+    <ClInclude Include="SolEditView.h" />
+    <ClInclude Include="SolLayout.h" />
+    <ClInclude Include="Statistic.h" />
+    <ClInclude Include="StatisticDoc.h" />
+    <ClInclude Include="StatisticFrame.h" />
+    <ClInclude Include="StatisticView.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="stdafxCLR.h" />
+    <ClInclude Include="TTTDialogs.h" />
+    <ClInclude Include="TTTDoc.h" />
+    <ClInclude Include="TTTField.h" />
+    <ClInclude Include="TTTFrame.h" />
+    <ClInclude Include="TTTGameFinishedDialog.h" />
+    <ClInclude Include="TTTView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CYBERSOLITAIRE.DAT" />
+    <None Include="GAMES.DAT" />
+    <None Include="res\Back1.bmp" />
+    <None Include="res\Background1.BMP" />
+    <None Include="res\Background2.bmp" />
+    <None Include="res\Background3.bmp" />
+    <None Include="res\background4.bmp" />
+    <None Include="res\background5.bmp" />
+    <None Include="res\background6.bmp" />
+    <None Include="res\Bitmap1.bmp" />
+    <None Include="res\Bitmap10.bmp" />
+    <None Include="res\Bitmap11.bmp" />
+    <None Include="res\Bitmap12.bmp" />
+    <None Include="res\Bitmap13.bmp" />
+    <None Include="res\Bitmap14.bmp" />
+    <None Include="res\Bitmap15.bmp" />
+    <None Include="res\Bitmap16.bmp" />
+    <None Include="res\Bitmap17.bmp" />
+    <None Include="res\Bitmap18.bmp" />
+    <None Include="res\Bitmap19.bmp" />
+    <None Include="res\Bitmap2.bmp" />
+    <None Include="res\Bitmap20.bmp" />
+    <None Include="res\Bitmap21.bmp" />
+    <None Include="res\Bitmap22.bmp" />
+    <None Include="res\Bitmap23.bmp" />
+    <None Include="res\Bitmap24.bmp" />
+    <None Include="res\Bitmap25.bmp" />
+    <None Include="res\Bitmap26.bmp" />
+    <None Include="res\Bitmap27.bmp" />
+    <None Include="res\Bitmap28.bmp" />
+    <None Include="res\Bitmap29.bmp" />
+    <None Include="res\Bitmap3.bmp" />
+    <None Include="res\Bitmap30.bmp" />
+    <None Include="res\Bitmap31.bmp" />
+    <None Include="res\Bitmap32.bmp" />
+    <None Include="res\Bitmap33.bmp" />
+    <None Include="res\Bitmap34.bmp" />
+    <None Include="res\Bitmap35.bmp" />
+    <None Include="res\Bitmap36.bmp" />
+    <None Include="res\Bitmap37.bmp" />
+    <None Include="res\Bitmap38.bmp" />
+    <None Include="res\Bitmap39.bmp" />
+    <None Include="res\Bitmap4.bmp" />
+    <None Include="res\Bitmap40.bmp" />
+    <None Include="res\Bitmap41.bmp" />
+    <None Include="res\Bitmap42.bmp" />
+    <None Include="res\Bitmap43.bmp" />
+    <None Include="res\Bitmap44.bmp" />
+    <None Include="res\Bitmap45.bmp" />
+    <None Include="res\Bitmap46.bmp" />
+    <None Include="res\Bitmap47.bmp" />
+    <None Include="res\Bitmap48.bmp" />
+    <None Include="res\Bitmap49.bmp" />
+    <None Include="res\Bitmap5.bmp" />
+    <None Include="res\Bitmap50.bmp" />
+    <None Include="res\Bitmap51.bmp" />
+    <None Include="res\Bitmap52.bmp" />
+    <None Include="res\Bitmap6.bmp" />
+    <None Include="res\bitmap66.bmp" />
+    <None Include="res\Bitmap7.bmp" />
+    <None Include="res\Bitmap8.bmp" />
+    <None Include="res\bitmap87.bmp" />
+    <None Include="res\bitmap88.bmp" />
+    <None Include="res\bitmap89.bmp" />
+    <None Include="res\Bitmap9.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\bmp00003.bmp" />
+    <None Include="res\bmp00004.bmp" />
+    <None Include="res\bmp00005.bmp" />
+    <None Include="res\bmp1.bmp" />
+    <None Include="res\bmp10.bmp" />
+    <None Include="res\bmp11.bmp" />
+    <None Include="res\bmp12.bmp" />
+    <None Include="res\bmp13.bmp" />
+    <None Include="res\bmp14.bmp" />
+    <None Include="res\bmp15.bmp" />
+    <None Include="res\bmp16.bmp" />
+    <None Include="res\bmp17.bmp" />
+    <None Include="res\bmp18.bmp" />
+    <None Include="res\bmp19.bmp" />
+    <None Include="res\bmp2.bmp" />
+    <None Include="res\bmp20.bmp" />
+    <None Include="res\bmp21.bmp" />
+    <None Include="res\bmp22.bmp" />
+    <None Include="res\bmp23.bmp" />
+    <None Include="res\bmp24.bmp" />
+    <None Include="res\bmp25.bmp" />
+    <None Include="res\bmp26.bmp" />
+    <None Include="res\bmp27.bmp" />
+    <None Include="res\bmp28.bmp" />
+    <None Include="res\bmp29.bmp" />
+    <None Include="res\bmp3.bmp" />
+    <None Include="res\bmp30.bmp" />
+    <None Include="res\bmp31.bmp" />
+    <None Include="res\bmp32.bmp" />
+    <None Include="res\bmp33.bmp" />
+    <None Include="res\bmp34.bmp" />
+    <None Include="res\bmp35.bmp" />
+    <None Include="res\bmp36.bmp" />
+    <None Include="res\bmp37.bmp" />
+    <None Include="res\bmp38.bmp" />
+    <None Include="res\bmp39.bmp" />
+    <None Include="res\bmp4.bmp" />
+    <None Include="res\bmp40.bmp" />
+    <None Include="res\bmp41.bmp" />
+    <None Include="res\bmp42.bmp" />
+    <None Include="res\bmp43.bmp" />
+    <None Include="res\bmp44.bmp" />
+    <None Include="res\bmp45.bmp" />
+    <None Include="res\bmp46.bmp" />
+    <None Include="res\bmp47.bmp" />
+    <None Include="res\bmp48.bmp" />
+    <None Include="res\bmp49.bmp" />
+    <None Include="res\bmp5.bmp" />
+    <None Include="res\bmp50.bmp" />
+    <None Include="res\bmp51.bmp" />
+    <None Include="res\bmp52.bmp" />
+    <None Include="res\bmp53.bmp" />
+    <None Include="res\bmp54.bmp" />
+    <None Include="res\bmp55.bmp" />
+    <None Include="res\bmp56.bmp" />
+    <None Include="res\bmp57.bmp" />
+    <None Include="res\bmp58.bmp" />
+    <None Include="res\bmp59.bmp" />
+    <None Include="res\bmp6.bmp" />
+    <None Include="res\bmp60.bmp" />
+    <None Include="res\bmp61.bmp" />
+    <None Include="res\bmp62.bmp" />
+    <None Include="res\bmp63.bmp" />
+    <None Include="res\bmp64.bmp" />
+    <None Include="res\bmp65.bmp" />
+    <None Include="res\bmp67.bmp" />
+    <None Include="res\bmp678.bmp" />
+    <None Include="res\bmp679.bmp" />
+    <None Include="res\bmp68.bmp" />
+    <None Include="res\bmp680.bmp" />
+    <None Include="res\bmp681.bmp" />
+    <None Include="res\bmp682.bmp" />
+    <None Include="res\bmp683.bmp" />
+    <None Include="res\bmp684.bmp" />
+    <None Include="res\bmp7.bmp" />
+    <None Include="res\bmp8.bmp" />
+    <None Include="res\bmp9.bmp" />
+    <None Include="res\cybersol.ico" />
+    <None Include="res\CyberSolitaire.ico" />
+    <None Include="res\CyberSolitaire.rc2" />
+    <None Include="res\CyberSolitaireDoc.ico" />
+    <None Include="res\Empty1.bmp" />
+    <None Include="res\empty8.bmp" />
+    <None Include="res\empty_ca.bmp" />
+    <None Include="res\field_cr.bmp" />
+    <None Include="res\field_do.bmp" />
+    <None Include="res\field_ne.bmp" />
+    <None Include="res\field_up.bmp" />
+    <None Include="res\Foundation1.bmp" />
+    <None Include="res\level10.bmp" />
+    <None Include="res\level3.bmp" />
+    <None Include="res\level4.bmp" />
+    <None Include="res\level5.bmp" />
+    <None Include="res\level6.bmp" />
+    <None Include="res\level7.bmp" />
+    <None Include="res\level8.bmp" />
+    <None Include="res\level9.bmp" />
+    <None Include="res\showtool.bmp" />
+    <None Include="res\Stock1.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\Waste1.bmp" />
+    <None Include="sounds\bearings.wav" />
+    <None Include="sounds\bing.wav" />
+    <None Include="sounds\boing.wav" />
+    <None Include="sounds\Clapping.wav" />
+    <None Include="sounds\click.wav" />
+    <None Include="sounds\gallop.wav" />
+    <None Include="sounds\gun.wav" />
+    <None Include="sounds\INCORREC.WAV" />
+    <None Include="sounds\ja.wav" />
+    <None Include="sounds\ja1.wav" />
+    <None Include="sounds\Minus.wav" />
+    <None Include="sounds\mix.wav" />
+    <None Include="sounds\Plus.wav" />
+    <None Include="sounds\put.wav" />
+    <None Include="sounds\Select.wav" />
+    <None Include="sounds\shuffle.wav" />
+    <None Include="sounds\snip.wav" />
+    <None Include="sounds\weird.wav" />
+    <None Include="STATISTICS.DAT" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="CyberSolitaire.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
