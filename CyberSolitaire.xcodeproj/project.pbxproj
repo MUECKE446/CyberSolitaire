@@ -76,6 +76,7 @@
 		4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */; };
 		4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */; };
 		4CD612291AADB8350081F5A7 /* CyberSolitaireGames.XML in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */; };
+		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,7 @@
 		4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CyberSol_Background1.png; sourceTree = "<group>"; };
 		4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CyberSolitaireGames.XML; sourceTree = "<group>"; };
+		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 				4C396DAD1FE32B520087126F /* SelectGameViewController.swift */,
 				4CABDD191AAF053200960D35 /* GameViewController.swift */,
 				4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */,
+				4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				4C0B5EE91AB1D13400ED27EF /* Event.swift in Sources */,
 				4C0B5EF61AB1F09100ED27EF /* Helper.swift in Sources */,
 				4C0B5EF01AB1D13400ED27EF /* ObservableReference.swift in Sources */,
+				4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */,
 				4CA9B5791AC2C3E3003C7388 /* Vector3.swift in Sources */,
 				4C396DAE1FE32B520087126F /* SelectGameViewController.swift in Sources */,
 				4C0B5EEF1AB1D13400ED27EF /* ObservableProxy.swift in Sources */,
