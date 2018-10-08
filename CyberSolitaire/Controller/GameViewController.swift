@@ -44,8 +44,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
 
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var redoButton: UIButton!
-    @IBOutlet weak var TestButton: UIButton!
-    
+    @IBOutlet weak var chooseAnotherGameButton: UIButton!
     @IBOutlet weak var ScoreValueLabel: UILabel!
     @IBOutlet weak var playableAreaView: UIView!
     
@@ -79,6 +78,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         notificationCenter.addObserver(self, selector: #selector(GameViewController.selectPilesInView(_:)), name: NSNotification.Name(rawValue: selectPilesNotification), object: nil)
         
         
+        chooseAnotherGameButton.backgroundColor = UIColor.white
+        chooseAnotherGameButton.layer.cornerRadius = 5
+        chooseAnotherGameButton.layer.borderWidth = 1
+        chooseAnotherGameButton.layer.borderColor = UIColor.black.cgColor
         
         // die erste Scene einrichten
         // die Scene füllt den gesamten View aus

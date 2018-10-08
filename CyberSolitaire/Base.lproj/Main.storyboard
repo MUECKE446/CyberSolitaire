@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4S1-Yf-6Ye">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="ipad12_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,11 +14,11 @@
             <objects>
                 <tableViewController id="4S1-Yf-6Ye" userLabel="GameSelect View Controller" customClass="SelectGameTableViewController" customModule="CyberSolitaire" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="18" id="2cD-Uh-oqC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wähle ein Spiel aus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uX0-Fd-Bb1">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1366" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -26,21 +26,21 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameSelectCell" textLabel="Pes-8n-1ES" detailTextLabel="2NG-di-VU5" style="IBUITableViewCellStyleSubtitle" id="ik9-JO-Oej" userLabel="GameSelectCell">
-                                <rect key="frame" x="0.0" y="99.5" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="99.5" width="1366" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ik9-JO-Oej" id="C8E-1L-nJ3">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="51.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pes-8n-1ES">
-                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="9" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2NG-di-VU5">
-                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="20" y="29.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -73,11 +73,11 @@
                         <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrr-5Y-2Og" userLabel="Undo">
-                                <rect key="frame" x="840" y="18" width="50" height="33"/>
+                                <rect key="frame" x="1182" y="18" width="50" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="DS6-nr-kRH"/>
                                 </constraints>
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlX-yb-yUE" userLabel="Redo">
-                                <rect key="frame" x="909" y="18" width="50" height="33"/>
+                                <rect key="frame" x="1251" y="18" width="50" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="icn-9D-bHR"/>
                                 </constraints>
@@ -112,7 +112,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-1v-JOY" userLabel="playableRectView">
-                                <rect key="frame" x="0.0" y="56" width="1024" height="712"/>
+                                <rect key="frame" x="0.0" y="56" width="1366" height="968"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-cF-mia" userLabel="Score">
@@ -125,7 +125,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjU-37-2sy" userLabel="Settings">
-                                <rect key="frame" x="985" y="23" width="28" height="29"/>
+                                <rect key="frame" x="1327" y="23" width="28" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="gPn-ti-p0x"/>
                                 </constraints>
@@ -135,7 +135,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-oE-mLD">
-                                <rect key="frame" x="388.5" y="21" width="247" height="33"/>
+                                <rect key="frame" x="559.5" y="21" width="247" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247" id="I34-TE-iad"/>
                                 </constraints>
@@ -143,6 +143,9 @@
                                 <state key="normal" title="choose another game">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="4S1-Yf-6Ye" kind="show" id="sdp-5O-tj2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -173,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="ScoreValueLabel" destination="Rb7-J2-tjS" id="srw-33-zkq"/>
+                        <outlet property="chooseAnotherGameButton" destination="sMW-oE-mLD" id="dcR-dd-cjl"/>
                         <outlet property="playableAreaView" destination="XOa-1v-JOY" id="smv-Nd-j7E"/>
                         <outlet property="redoButton" destination="zlX-yb-yUE" id="MMA-Lg-6Fa"/>
                         <outlet property="undoButton" destination="Jrr-5Y-2Og" id="kIU-Uu-cC0"/>
