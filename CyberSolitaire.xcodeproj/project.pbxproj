@@ -36,6 +36,9 @@
 		4C0B5EF61AB1F09100ED27EF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5EF51AB1F09100ED27EF /* Helper.swift */; };
 		4C0B5EF81AB3871300ED27EF /* TouchesProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5EF71AB3871300ED27EF /* TouchesProtocolDelegate.swift */; };
 		4C0F20051C2AFA0100D2D704 /* ActionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F20041C2AFA0100D2D704 /* ActionLogger.swift */; };
+		4C26CE56216BA99200FC41E7 /* icon-redo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE53216BA99100FC41E7 /* icon-redo-1.png */; };
+		4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE54216BA99200FC41E7 /* icon-settings-1.png */; };
+		4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE55216BA99200FC41E7 /* icon-undo-1.png */; };
 		4C396DAE1FE32B520087126F /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C396DAD1FE32B520087126F /* SelectGameViewController.swift */; };
 		4C5EDB921AD7D73600B0DC20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EDB911AD7D73600B0DC20 /* main.m */; };
 		4C696A222167FB5D00E5A583 /* SelectGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */; };
@@ -106,6 +109,9 @@
 		4C0B5EF51AB1F09100ED27EF /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4C0B5EF71AB3871300ED27EF /* TouchesProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TouchesProtocolDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4C0F20041C2AFA0100D2D704 /* ActionLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionLogger.swift; sourceTree = "<group>"; };
+		4C26CE53216BA99100FC41E7 /* icon-redo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-1.png"; sourceTree = "<group>"; };
+		4C26CE54216BA99200FC41E7 /* icon-settings-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings-1.png"; sourceTree = "<group>"; };
+		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
 		4C396DAD1FE32B520087126F /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		4C5EDB911AD7D73600B0DC20 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameTableViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +354,9 @@
 		4CD612171AACAA500081F5A7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4C26CE53216BA99100FC41E7 /* icon-redo-1.png */,
+				4C26CE54216BA99200FC41E7 /* icon-settings-1.png */,
+				4C26CE55216BA99200FC41E7 /* icon-undo-1.png */,
 				4C87D43E1AED472F00DB68BF /* icon-settings.png */,
 				4CC06B711AB99D1C001C2D14 /* icon-redo.png */,
 				4CC06B721AB99D1C001C2D14 /* icon-undo.png */,
@@ -436,6 +445,7 @@
 				4C0B5ED01AB092F400ED27EF /* ja.caf in Resources */,
 				4C0B5ED61AB092F400ED27EF /* shuffle.caf in Resources */,
 				4C0B5ED81AB092F400ED27EF /* weird.caf in Resources */,
+				4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */,
 				4C0B5ECB1AB092F400ED27EF /* clapping.caf in Resources */,
 				4C0B5ECD1AB092F400ED27EF /* gallop.caf in Resources */,
 				4CD611F71AACA6BF0081F5A7 /* Images.xcassets in Resources */,
@@ -446,8 +456,10 @@
 				4C0B5EC81AB092F400ED27EF /* bearings.caf in Resources */,
 				4C0B5ED51AB092F400ED27EF /* put.caf in Resources */,
 				4C0B5ED21AB092F400ED27EF /* minus.caf in Resources */,
+				4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */,
 				4C0B5ECC1AB092F400ED27EF /* click.caf in Resources */,
 				4CC06B741AB99D1C001C2D14 /* icon-undo.png in Resources */,
+				4C26CE56216BA99200FC41E7 /* icon-redo-1.png in Resources */,
 				4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */,
 				4C0B5ED31AB092F400ED27EF /* mix.caf in Resources */,
 				4C8F15CF1AD3E03E00443A41 /* BackgroundWildWest.png in Resources */,
