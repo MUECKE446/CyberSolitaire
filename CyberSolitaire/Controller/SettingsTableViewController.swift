@@ -10,6 +10,10 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    @IBAction func settingsAreDone(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -82,7 +82,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Fertig"/>
                             <connections>
-                                <segue destination="BV1-FR-VrT" kind="show" id="r4c-Mi-mvc"/>
+                                <action selector="settingsAreDone:" destination="7lf-2p-1Wr" eventType="touchUpInside" id="O0U-sr-t2w"/>
                             </connections>
                         </button>
                         <sections>
@@ -96,13 +96,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geräusche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-kv-cnG">
-                                                    <rect key="frame" x="28" y="4" width="263" height="36"/>
+                                                    <rect key="frame" x="28" y="3.5" width="263" height="36.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-nq-NXl">
-                                                    <rect key="frame" x="299" y="6" width="49" height="31"/>
+                                                    <rect key="frame" x="299" y="6.5" width="51" height="30.5"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -128,13 +128,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="letzte verdeckte Karte zeigen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ep-xV-X1d">
-                                                    <rect key="frame" x="28" y="4" width="263" height="36"/>
+                                                    <rect key="frame" x="28" y="3.5" width="263" height="36.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgB-Z2-wVV">
-                                                    <rect key="frame" x="299" y="6" width="49" height="31"/>
+                                                    <rect key="frame" x="299" y="6.5" width="51" height="30.5"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -156,13 +156,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo/Redo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkq-2Z-knp">
-                                                    <rect key="frame" x="28" y="4" width="263" height="36"/>
+                                                    <rect key="frame" x="28" y="3.5" width="263" height="36.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-OD-T4g">
-                                                    <rect key="frame" x="299" y="6" width="49" height="31"/>
+                                                    <rect key="frame" x="299" y="6.5" width="51" height="30.5"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -322,7 +322,4 @@
         <image name="icon-settings-1.png" width="28" height="29"/>
         <image name="icon-undo-1.png" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="7VL-EE-o2Z"/>
-    </inferredMetricsTieBreakers>
 </document>
