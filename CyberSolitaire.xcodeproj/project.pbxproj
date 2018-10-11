@@ -39,7 +39,6 @@
 		4C26CE56216BA99200FC41E7 /* icon-redo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE53216BA99100FC41E7 /* icon-redo-1.png */; };
 		4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE54216BA99200FC41E7 /* icon-settings-1.png */; };
 		4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE55216BA99200FC41E7 /* icon-undo-1.png */; };
-		4C396DAE1FE32B520087126F /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C396DAD1FE32B520087126F /* SelectGameViewController.swift */; };
 		4C5EDB921AD7D73600B0DC20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EDB911AD7D73600B0DC20 /* main.m */; };
 		4C696A222167FB5D00E5A583 /* SelectGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */; };
 		4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C87D43E1AED472F00DB68BF /* icon-settings.png */; };
@@ -114,7 +113,6 @@
 		4C26CE53216BA99100FC41E7 /* icon-redo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-1.png"; sourceTree = "<group>"; };
 		4C26CE54216BA99200FC41E7 /* icon-settings-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings-1.png"; sourceTree = "<group>"; };
 		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
-		4C396DAD1FE32B520087126F /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		4C5EDB911AD7D73600B0DC20 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameTableViewController.swift; sourceTree = "<group>"; };
 		4C87D43E1AED472F00DB68BF /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 		4CABDD181AAF053200960D35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4C396DAD1FE32B520087126F /* SelectGameViewController.swift */,
 				4CABDD191AAF053200960D35 /* GameViewController.swift */,
 				4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */,
 				4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */,
@@ -537,7 +534,6 @@
 				4C0B5EF01AB1D13400ED27EF /* ObservableReference.swift in Sources */,
 				4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */,
 				4CA9B5791AC2C3E3003C7388 /* Vector3.swift in Sources */,
-				4C396DAE1FE32B520087126F /* SelectGameViewController.swift in Sources */,
 				4C0B5EEF1AB1D13400ED27EF /* ObservableProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
