@@ -10,7 +10,9 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
-    @IBAction func settingsAreDone(_ sender: Any) {
+    
+ 
+    @IBAction func settingsDone(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     

@@ -77,6 +77,7 @@
 		4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */; };
 		4CD612291AADB8350081F5A7 /* CyberSolitaireGames.XML in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */; };
 		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
+		4CEFD895216E95E8009A729A /* GameSelectCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD894216E95E8009A729A /* GameSelectCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 		4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CyberSolitaireGames.XML; sourceTree = "<group>"; };
 		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		4CEFD894216E95E8009A729A /* GameSelectCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 				4CABDD191AAF053200960D35 /* GameViewController.swift */,
 				4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */,
 				4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */,
+				4CEFD894216E95E8009A729A /* GameSelectCellTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				4CA9B5781AC2C3E3003C7388 /* SKTTimingFunctions.swift in Sources */,
 				4CABDD111AAF050400960D35 /* PileLayout.swift in Sources */,
 				4CABDD161AAF051B00960D35 /* CardNode.swift in Sources */,
+				4CEFD895216E95E8009A729A /* GameSelectCellTableViewCell.swift in Sources */,
 				4CA9B56E1AC2C3E3003C7388 /* CGFloat+Extensions.swift in Sources */,
 				4CABDD1A1AAF053200960D35 /* GameViewController.swift in Sources */,
 				4CABDD0E1AAF050400960D35 /* Card.swift in Sources */,

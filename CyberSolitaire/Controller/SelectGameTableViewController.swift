@@ -97,19 +97,32 @@ class SelectGameTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let tableView = self.tableView
-        let pathOfTheCell = tableView?.indexPath(for: sender as! UITableViewCell)
-        let row = pathOfTheCell?.row
-        
-        switch gamesCanBeSelected[row!].id {
-        case 1:
-            gameName = "Black Widow weich"
-        case 2:
-            gameName = "Black Widow hart"
-        case 3:
-            gameName = "Spider"
-        default:
-            fatalError("kein Spiel für diese id definiert")
+        if segue.identifier == "PlayGame" {
+            
+            let tableView = self.tableView
+            let pathOfTheCell = tableView?.indexPath(for: sender as! UITableViewCell)
+            let row = pathOfTheCell?.row
+            
+            switch gamesCanBeSelected[row!].id {
+            case 1:
+                gameName = "Black Widow weich"
+            case 2:
+                gameName = "Black Widow hart"
+            case 3:
+                gameName = "Spider"
+            default:
+                fatalError("kein Spiel für diese id definiert")
+            }
+        }
+    }
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        if sender is UIButton {
+            performSegue(withIdentifier: "Settings", sender: sender)
+        }
+        else {
+            performSegue(withIdentifier: "PlayGame", sender: sender)
+
         }
     }
 
