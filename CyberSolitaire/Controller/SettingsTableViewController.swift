@@ -8,16 +8,37 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
-
-    
+class SettingsTableViewController: UITableViewController,UIPopoverControllerDelegate {
  
+    @IBOutlet weak var settingsTonesSwitch: UISwitch!
+    @IBOutlet weak var settingsPermitCheating: UISwitch!
+    @IBOutlet weak var settingsPermitUndoRedo: UISwitch!
+    
+    @IBAction func settingsTonesChanged(_ sender: Any) {
+        playTones = !playTones
+    }
+    
+    @IBAction func settingsPermitCheating(_ sender: Any) {
+        permitCheating = !permitCheating
+    }
+
+    @IBAction func settingsPermitUndoRedo(_ sender: Any) {
+        permitUndoRedo = !permitUndoRedo
+    }
+    
     @IBAction func settingsDone(_ sender: Any) {
+        writeSettingsList()
         dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        readSettingList()
+        settingsTonesSwitch.setOn(playTones, animated: false)
+        settingsPermitCheating.setOn(permitCheating, animated: false)
+        settingsPermitUndoRedo.setOn(permitUndoRedo, animated: false)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,6 +66,10 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
+//    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+//        return false
+//    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

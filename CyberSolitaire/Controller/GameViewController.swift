@@ -358,7 +358,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         default:
             log.error("sound not implemented")
         }
-        if soundURL != nil {
+        if soundURL != nil && playTones {
             // Achtung: der audioPlayer darf nicht in dieser Methode lokal ezeugt werden, sonst wird er deallociiert
             // bevor er den Sound abspielen kann !!!
             audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
@@ -543,9 +543,11 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     }
     
     func enableUndoRedo() {
-        undoButton.isEnabled = undoManager.canUndo
-        redoButton.isEnabled = undoManager.canRedo
-        //log.debug("UndoButton isEnabled = \(undoButton.isEnabled)")
+        if permitUndoRedo {
+            undoButton.isEnabled = undoManager.canUndo
+            redoButton.isEnabled = undoManager.canRedo
+            //log.debug("UndoButton isEnabled = \(undoButton.isEnabled)")
+        }
     }
     
     func disableUndoRedo() {
@@ -561,20 +563,24 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     }
     
     @IBAction func Undo(_ sender: UIButton) {
-        //log.messageOnly("Undo")
-        if let tmpGame = game {
-            tmpGame.resetzPositions()
-            self.undoManager.undo()
-            game!.evaluateScore()
+        if permitUndoRedo {
+            //log.messageOnly("Undo")
+            if let tmpGame = game {
+                tmpGame.resetzPositions()
+                self.undoManager.undo()
+                game!.evaluateScore()
+            }
         }
     }
     
     @IBAction func Redo(_ sender: UIButton) {
-        //log.messageOnly("Redo")
-        if let tmpGame = game {
-            tmpGame.resetzPositions()
-            self.undoManager.redo()
-            game!.evaluateScore()
+        if permitUndoRedo {
+            //log.messageOnly("Redo")
+            if let tmpGame = game {
+                tmpGame.resetzPositions()
+                self.undoManager.redo()
+                game!.evaluateScore()
+            }
         }
     }
     

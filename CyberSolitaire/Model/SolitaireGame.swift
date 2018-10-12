@@ -129,7 +129,7 @@ class SolitaireGame: NSObject {
     var undoManager: UndoManager
     
     //TODO: es muss überlegt werden, wie diese Eigenschaft gesteuert wird
-    var cheatAllowed = true
+    var cheatAllowed = permitCheating
     
     var gamePhase = GamePhase.layoutPhase
     var playMove: PlayMove? = nil

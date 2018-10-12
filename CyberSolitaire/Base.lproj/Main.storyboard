@@ -144,6 +144,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-nq-NXl">
                                                     <rect key="frame" x="299" y="6.5" width="51" height="30.5"/>
+                                                    <connections>
+                                                        <action selector="settingsTonesChanged:" destination="7lf-2p-1Wr" eventType="valueChanged" id="Zcf-GU-l2O"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -176,6 +179,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgB-Z2-wVV">
                                                     <rect key="frame" x="299" y="6.5" width="51" height="30.5"/>
+                                                    <connections>
+                                                        <action selector="settingsPermitCheating:" destination="7lf-2p-1Wr" eventType="valueChanged" id="izn-dl-AsX"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -204,6 +210,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-OD-T4g">
                                                     <rect key="frame" x="299" y="6.5" width="51" height="30.5"/>
+                                                    <connections>
+                                                        <action selector="settingsPermitUndoRedo:" destination="7lf-2p-1Wr" eventType="valueChanged" id="oZs-N4-6nH"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -225,6 +234,11 @@
                             <outlet property="delegate" destination="7lf-2p-1Wr" id="qFa-9z-aMN"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="settingsPermitCheating" destination="wgB-Z2-wVV" id="1hI-ZN-C1b"/>
+                        <outlet property="settingsPermitUndoRedo" destination="w0V-OD-T4g" id="F93-SS-hhS"/>
+                        <outlet property="settingsTonesSwitch" destination="iQI-nq-NXl" id="vo3-SD-1Gb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vTP-yJ-SLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

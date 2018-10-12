@@ -43,6 +43,8 @@
 		4C696A222167FB5D00E5A583 /* SelectGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */; };
 		4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C87D43E1AED472F00DB68BF /* icon-settings.png */; };
 		4C8F15CF1AD3E03E00443A41 /* BackgroundWildWest.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F15CE1AD3E03E00443A41 /* BackgroundWildWest.png */; };
+		4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA5C15D216FD460009DC9CC /* SettingsList.plist */; };
+		4CA5C1822170D991009DC9CC /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5C1812170D991009DC9CC /* SwiftyPlistManager.swift */; };
 		4CA9B55E1ABF448A003C7388 /* PlayMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9B55D1ABF448A003C7388 /* PlayMove.swift */; };
 		4CA9B5601AC19142003C7388 /* UserInteractionProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9B55F1AC19142003C7388 /* UserInteractionProtocolDelegate.swift */; };
 		4CA9B56E1AC2C3E3003C7388 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9B5621AC2C3E3003C7388 /* CGFloat+Extensions.swift */; };
@@ -117,6 +119,8 @@
 		4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameTableViewController.swift; sourceTree = "<group>"; };
 		4C87D43E1AED472F00DB68BF /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
 		4C8F15CE1AD3E03E00443A41 /* BackgroundWildWest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundWildWest.png; sourceTree = "<group>"; };
+		4CA5C15D216FD460009DC9CC /* SettingsList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SettingsList.plist; sourceTree = "<group>"; };
+		4CA5C1812170D991009DC9CC /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
 		4CA9B55D1ABF448A003C7388 /* PlayMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayMove.swift; path = CyberSolitaire/Model/PlayMove.swift; sourceTree = SOURCE_ROOT; };
 		4CA9B55F1AC19142003C7388 /* UserInteractionProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionProtocolDelegate.swift; sourceTree = "<group>"; };
 		4CA9B5621AC2C3E3003C7388 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				4CABDD131AAF051B00960D35 /* Views */,
 				4CABDD181AAF053200960D35 /* Controller */,
 				4CD611EB1AACA6BF0081F5A7 /* AppDelegate.swift */,
+				4CA5C1812170D991009DC9CC /* SwiftyPlistManager.swift */,
 				4C5EDB911AD7D73600B0DC20 /* main.m */,
 				4CD611F31AACA6BF0081F5A7 /* Main.storyboard */,
 				4CD611F61AACA6BF0081F5A7 /* Images.xcassets */,
@@ -373,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */,
+				4CA5C15D216FD460009DC9CC /* SettingsList.plist */,
 			);
 			path = "other Resources";
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 				4C0B5ECA1AB092F400ED27EF /* boing.caf in Resources */,
 				4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */,
 				4C0B5ED01AB092F400ED27EF /* ja.caf in Resources */,
+				4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */,
 				4C0B5ED61AB092F400ED27EF /* shuffle.caf in Resources */,
 				4C0B5ED81AB092F400ED27EF /* weird.caf in Resources */,
 				4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */,
@@ -500,6 +507,7 @@
 				4CABDD171AAF051B00960D35 /* GameScene.swift in Sources */,
 				4C0B5EEE1AB1D13400ED27EF /* ObservableChainingProxy.swift in Sources */,
 				4CABDD0F1AAF050400960D35 /* GameLayout.swift in Sources */,
+				4CA5C1822170D991009DC9CC /* SwiftyPlistManager.swift in Sources */,
 				4C0B5EF81AB3871300ED27EF /* TouchesProtocolDelegate.swift in Sources */,
 				4C696A222167FB5D00E5A583 /* SelectGameTableViewController.swift in Sources */,
 				4CA9B5751AC2C3E3003C7388 /* SKNode+Extensions.swift in Sources */,

@@ -7,10 +7,31 @@
 //
 
 import UIKit
+//import "SwiftyPlistManager"
+
 
 let log = ActionLogger.defaultLogger()
 var gameName = ""
 let CyberSolitaireVersion = "1.1.1"
+
+// settings variables, die alle Spiele betreffen
+var playTones = true
+var permitUndoRedo = true
+var permitCheating = true
+
+// Konstanten für SwiftyPlistManger
+let settingsListName = "SettingsList"
+
+let playTonesKey = "playTones"
+let permitUndoRedoKey = "permitUndoRedo"
+let permitCheatingKey = "permitCheating"
+
+func logSwiftyPlistManager(_ error: SwiftyPlistManagerError?) {
+    guard let err = error else {
+        return
+    }
+    print("-------------> SwiftyPlistManager error: '\(err)'")
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,10 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var activityLogURL: URL!
     var dateStr: String!
 
-
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         log.setup(logLevel: .allLevels, showLogLevel: true, showFileName: false, showLineNumber: false, writeToFile: nil)
+        SwiftyPlistManager.shared.start(plistNames: [settingsListName], logging: true)
+
+        readSettingList()
         return true
     }
     
@@ -86,9 +112,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logFile = activityLogIdent + dateStr + "_" + String(describing: versionNumber) + ".TXT"
 
     }
-    
+}
 
+func readSettingList() {
+    playTones = SwiftyPlistManager.shared.fetchValue(for: playTonesKey, fromPlistWithName: settingsListName) as! Bool
+    permitCheating = SwiftyPlistManager.shared.fetchValue(for: permitCheatingKey, fromPlistWithName: settingsListName) as! Bool
+    permitUndoRedo = SwiftyPlistManager.shared.fetchValue(for: permitUndoRedoKey, fromPlistWithName: settingsListName) as! Bool
+}
 
-
+func writeSettingsList() {
+    SwiftyPlistManager.shared.save(playTones, forKey: playTonesKey, toPlistWithName: settingsListName) { (err) in
+        if err != nil {
+            logSwiftyPlistManager(err)
+        }
+    }
+    SwiftyPlistManager.shared.save(permitCheating, forKey: permitCheatingKey, toPlistWithName: settingsListName) { (err) in
+        if err != nil {
+            logSwiftyPlistManager(err)
+        }
+    }
+    SwiftyPlistManager.shared.save(permitUndoRedo, forKey: permitUndoRedoKey, toPlistWithName: settingsListName) { (err) in
+        if err != nil {
+            logSwiftyPlistManager(err)
+        }
+    }
 }
 
