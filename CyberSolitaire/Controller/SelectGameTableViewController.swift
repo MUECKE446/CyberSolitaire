@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectGameTableViewController: UITableViewController {
+class SelectGameTableViewController: UITableViewController,UIPopoverPresentationControllerDelegate {
 
     struct Game
     {
@@ -18,7 +18,7 @@ class SelectGameTableViewController: UITableViewController {
     }
     
 
-    var gamesCanBeSelected = [
+    let gamesCanBeSelected = [
         Game(id: 1, title: "Black widow (entschärft)", description: "Ziel: Alle 8 Farbsequenzen mit allen 13 Karten, vom König bis zum As, als Einheit ablegen\nSpiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden\nZu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden."),
         Game(id: 2, title: "Black widow", description: "Ziel: Alle 8 Farbsequenzen mit allen 13 Karten, vom König bis zum As, als Einheit ablegen\nSpiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz gleicher Farbe kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden\nZu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden."),
         Game(id: 3, title: "Spider", description: "Ziel: Alle 8 Farbsequenzen mit allen 13 Karten, vom König bis zum As, als Einheit ablegen\nSpiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden\nZu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.")
@@ -27,6 +27,7 @@ class SelectGameTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -114,16 +115,30 @@ class SelectGameTableViewController: UITableViewController {
                 fatalError("kein Spiel für diese id definiert")
             }
         }
+        
+        if segue.identifier == "Settings" {
+            let destinationVC = segue.destination as! SettingsTableViewController
+            
+            if let settingsPopoverPresentationController = destinationVC.popoverPresentationController {
+                settingsPopoverPresentationController.delegate = self as UIPopoverPresentationControllerDelegate?
+            }
+            
+        }
     }
     
     override func performSegue(withIdentifier identifier: String, sender: Any?) {
         if sender is UIButton {
+            
             performSegue(withIdentifier: "Settings", sender: sender)
         }
         else {
             performSegue(withIdentifier: "PlayGame", sender: sender)
 
         }
+    }
+
+    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return false
     }
 
 }

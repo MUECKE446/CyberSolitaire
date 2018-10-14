@@ -721,7 +721,8 @@ class Pile: NSObject {
                 // es ist die letzte Karte des Stapels
                 return true
             }
-            // prüfe, ob es sich um eine gasamte Sequenz handelt
+            // prüfe, ob es sich um eine gesamte Sequenz handelt
+            // MARK: hier ist noch ein Fehler drin
             return isDownInWholeSequence(card)
         case .anySeqNoColor:
             return isDownInSequenceStartingAt(card)
@@ -875,6 +876,7 @@ class Pile: NSObject {
         return true
     }
     
+    // MARK: hier ist noch ein Fehler drin
     func isDownInWholeSequence(_ card: Card) -> Bool {
         // überprüft, ob es sich um eine komplette Sequenz handelt
         // stelle fest, ob es noch eine Karte über card im Stapel gibt

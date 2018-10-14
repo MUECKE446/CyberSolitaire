@@ -100,12 +100,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="7v2-ty-Dha">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="7v2-ty-Dha">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einstellungen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hea-RA-AjW">
-                                    <rect key="frame" x="81" y="21" width="213" height="32.5"/>
+                                    <rect key="frame" x="81" y="-16.5" width="213" height="33"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="leading" secondItem="7v2-ty-Dha" secondAttribute="leading" constant="81" id="uSr-xH-xgg"/>
                             </constraints>
                         </view>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IAl-OJ-FyV">
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IAl-OJ-FyV">
                             <rect key="frame" x="0.0" y="335.5" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Fertig"/>
