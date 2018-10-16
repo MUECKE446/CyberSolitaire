@@ -72,7 +72,7 @@ enum TypeOfScoring: Int {
     
     func description() -> String {
         switch self {
-        case .scoringTypeNA: return "ScoringTypeNA"
+        case .scoringTypeNA: return "notAvaiable"
         case .scoringSequenceInSuitAndFoundation: return "ScoringSequenceInSuitAndFoundation"
         case .scoringSequenceNoColorAndFoundation: return "ScoringSequenceNoColorAndFoundation"
         case .scoringCardOnFoundation: return "ScoringCardOnFoundation"
@@ -111,6 +111,9 @@ enum GamePhase : Int {
         self.action = action
     }
 }
+
+let gameListName = "CyberSolitaireGames"
+
 
 class SolitaireGame: NSObject {
 
@@ -161,6 +164,7 @@ class SolitaireGame: NSObject {
         log.error("keinen resourcePath gefunden")
         return nil
     }
+    
     class func saveGameLayouts(_ gameLayouts: NSDictionary?) {
         // speichert sämtliche implementierte Spiele in das entsprechende File
         let layoutFile = "/users/christian-muth/documents/CyberSolitaire/CyberSolitaireGames_new.XML"
@@ -186,9 +190,27 @@ class SolitaireGame: NSObject {
         return nil
     }
     
-    // MARK: instance methods
+    // neu: jetzt mit SwiftyPListManager
+    class func loadGameLayoutsFromPlist() -> [Dictionary<String,Any>]? {
+        if let gameLayoutsPList = SwiftyPlistManager.shared.fetchValue(for: "games", fromPlistWithName: cyberSolitaireListName) as? [Dictionary<String,Any>] {
+            return gameLayoutsPList
+        }
+        log.error("Fehler beim Lesen der GameLayouts")
+        return nil
+    }
     
-    // MARK: initializers
+    
+    class func getGameLayoutPListFor(_ gameName: String) -> GameLayout? {
+        // lade alle gameLayouts
+        if let gameLayoutsPList = loadGameLayoutsFromPlist() {
+            let tmpGameLayout = GameLayout.gameLayoutPList(gameLayoutsPList, gameName)
+            return tmpGameLayout
+        }
+        log.error("GameLayout für \(gameName) nicht gefunden")
+        return nil
+    }
+    
+// MARK: initializers
     
     init(gameName: String, playingAreaRect: CGRect, undoManager: UndoManager, userInteractionProtocolDelegate: UserInteractionProtocolDelegate) {
         self.gameName = gameName
@@ -204,7 +226,8 @@ class SolitaireGame: NSObject {
         
         self.userInteractionProtocolDelegate = userInteractionProtocolDelegate
         
-        let gameLayout = SolitaireGame.getGameLayoutFor(gameName)
+        //let gameLayout = SolitaireGame.getGameLayoutFor(gameName)
+        let gameLayout = SolitaireGame.getGameLayoutPListFor(gameName)
         // erzeuge die leeren Kartenstapel aus dem Layout
         for i in 0 ..< gameLayout!.numberOfPiles {
             let pileLayout = gameLayout!.pileLayouts[i] as PileLayout

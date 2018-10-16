@@ -39,6 +39,7 @@
 		4C26CE56216BA99200FC41E7 /* icon-redo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE53216BA99100FC41E7 /* icon-redo-1.png */; };
 		4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE54216BA99200FC41E7 /* icon-settings-1.png */; };
 		4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE55216BA99200FC41E7 /* icon-undo-1.png */; };
+		4C5950A521752E38007F0DEE /* CyberSolitaireGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */; };
 		4C5EDB921AD7D73600B0DC20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EDB911AD7D73600B0DC20 /* main.m */; };
 		4C696A222167FB5D00E5A583 /* SelectGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */; };
 		4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C87D43E1AED472F00DB68BF /* icon-settings.png */; };
@@ -115,6 +116,7 @@
 		4C26CE53216BA99100FC41E7 /* icon-redo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-1.png"; sourceTree = "<group>"; };
 		4C26CE54216BA99200FC41E7 /* icon-settings-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings-1.png"; sourceTree = "<group>"; };
 		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
+		4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CyberSolitaireGames.plist; sourceTree = "<group>"; };
 		4C5EDB911AD7D73600B0DC20 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameTableViewController.swift; sourceTree = "<group>"; };
 		4C87D43E1AED472F00DB68BF /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */,
+				4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */,
 				4CA5C15D216FD460009DC9CC /* SettingsList.plist */,
 			);
 			path = "other Resources";
@@ -450,6 +453,7 @@
 				4C0B5EC91AB092F400ED27EF /* bing.caf in Resources */,
 				4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */,
 				4C0B5ECA1AB092F400ED27EF /* boing.caf in Resources */,
+				4C5950A521752E38007F0DEE /* CyberSolitaireGames.plist in Resources */,
 				4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */,
 				4C0B5ED01AB092F400ED27EF /* ja.caf in Resources */,
 				4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */,

@@ -21,6 +21,8 @@ var permitCheating = true
 
 // Konstanten für SwiftyPlistManger
 let settingsListName = "SettingsList"
+let cyberSolitaireListName = "CyberSolitaireGames"
+
 
 let playTonesKey = "playTones"
 let permitUndoRedoKey = "permitUndoRedo"

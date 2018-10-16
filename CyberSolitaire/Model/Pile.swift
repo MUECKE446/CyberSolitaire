@@ -74,7 +74,7 @@ enum TypeOfPile: Int {
 }
 
 // welche Sequenzen dürfen vom Spieler selektiert und bewegt werden
-// Sequencen sind immer abwärts vom höheren Kartenwert zu niedrigeren
+// Sequencen sind immer: abwärts vom höheren Kartenwert zu niedrigeren
 enum TypeOfUserSelectAndMove: Int {
     case
     typeOfUserSelectAndMoveNA = 0,

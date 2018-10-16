@@ -44,6 +44,50 @@ class GameLayout {
         return tmpGameLayout
     }
     
+    class func gameLayoutPList(_ gameLayoutsPList : [Dictionary<String,Any>], _ gameName : String) -> GameLayout {
+        let tmpGameLayout = GameLayout()
+        for gameLayoutPList in gameLayoutsPList {
+            if gameLayoutPList["gameName"] as! String == gameName {
+               tmpGameLayout.gameLayoutVersion = gameLayoutPList["gameLayoutVersion"] as! Int
+                 assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
+                tmpGameLayout.gameName = gameLayoutPList["gameName"] as! String
+                tmpGameLayout.gameGroup = gameLayoutPList["gameGroup"] as! String
+                tmpGameLayout.numberOfDecks = gameLayoutPList["numberOfDecks"] as! Int
+                tmpGameLayout.typeOfScoring = convertToTypeOfScoring(gameLayoutPList, key: "scoringType")
+                tmpGameLayout.difficulty = gameLayoutPList["difficulty"] as! Int
+                tmpGameLayout.maxPoints = gameLayoutPList["maxPoints"] as! Int
+                tmpGameLayout.numberOfPiles = gameLayoutPList["numberOfPiles"] as! Int
+                let pilesLayoutPList = gameLayoutPList["piles"] as! [Dictionary<String,Any>]
+                for pileLayoutPList in pilesLayoutPList {
+                    // PileLayouts hinzupacken
+                    let pileLayout = PileLayout.pileLayoutFromPList(pileLayoutPList: pileLayoutPList)
+                    tmpGameLayout.pileLayouts.append(pileLayout)
+                }
+                return tmpGameLayout
+            }
+        }
+        fatalError("dieses Game gibt es nicht! darf nicht vorkommen")
+    }
+    
+    class func convertToTypeOfScoring(_ gameLayoutPList:Dictionary<String,Any>, key:String) -> TypeOfScoring {
+        let str = gameLayoutPList[key] as! String
+        switch str {
+        case "notAvaiable":
+            return .scoringTypeNA
+        case "ScoringSequenceInSuitAndFoundation":
+            return .scoringSequenceInSuitAndFoundation
+        case "ScoringSequenceNoColorAndFoundation":
+            return .scoringSequenceNoColorAndFoundation
+        case "ScoringCardOnFoundation":
+            return .scoringCardOnFoundation
+        case "ScoringSequenceInSuitAndKingUp":
+            return .scoringSequenceInSuitAndKingUp
+        default:
+            fatalError("falscher TypeOfScoring")
+        }
+    }
+    
+ 
     // MARK: Instance - Methoden
     
     
