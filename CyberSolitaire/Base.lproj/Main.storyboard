@@ -311,7 +311,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="choose another game">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.34511716370000001" green="0.64709819049999995" blue="0.89999997620000005" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="4S1-Yf-6Ye" kind="show" id="sdp-5O-tj2"/>

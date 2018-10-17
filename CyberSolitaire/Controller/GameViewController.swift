@@ -77,11 +77,11 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         notificationCenter.addObserver(self, selector: #selector(GameViewController.selectCardsInView(_:)), name: NSNotification.Name(rawValue: selectCardsNotification), object: nil)
         notificationCenter.addObserver(self, selector: #selector(GameViewController.selectPilesInView(_:)), name: NSNotification.Name(rawValue: selectPilesNotification), object: nil)
         
-        
-        chooseAnotherGameButton.backgroundColor = UIColor.white
-        chooseAnotherGameButton.layer.cornerRadius = 5
-        chooseAnotherGameButton.layer.borderWidth = 1
-        chooseAnotherGameButton.layer.borderColor = UIColor.black.cgColor
+        // ich fand es besser so
+//        chooseAnotherGameButton.backgroundColor = UIColor.white
+//        chooseAnotherGameButton.layer.cornerRadius = 5
+//        chooseAnotherGameButton.layer.borderWidth = 1
+//        chooseAnotherGameButton.layer.borderColor = UIColor.black.cgColor
         
         // die erste Scene einrichten
         // die Scene füllt den gesamten View aus

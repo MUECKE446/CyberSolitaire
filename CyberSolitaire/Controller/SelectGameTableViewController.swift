@@ -109,16 +109,7 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
             let pathOfTheCell = tableView?.indexPath(for: sender as! UITableViewCell)
             let row = pathOfTheCell?.row
             
-            switch gamesCanBeSelected[row!].id {
-            case 1:
-                gameName = "Black Widow weich"
-            case 2:
-                gameName = "Black Widow hart"
-            case 3:
-                gameName = "Spider"
-            default:
-                fatalError("kein Spiel für diese id definiert")
-            }
+            gameName = gamesCanBeSelected[row!].title
         }
         
         if segue.identifier == "Settings" {
