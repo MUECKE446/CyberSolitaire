@@ -40,6 +40,10 @@
 		4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE54216BA99200FC41E7 /* icon-settings-1.png */; };
 		4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE55216BA99200FC41E7 /* icon-undo-1.png */; };
 		4C5950A521752E38007F0DEE /* CyberSolitaireGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */; };
+		4C5950A721760A3E007F0DEE /* game(Black Widow hart).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */; };
+		4C5950A921760A69007F0DEE /* game(Black Widow weich).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */; };
+		4C5950AB21760A7F007F0DEE /* game(Spider).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950AA21760A7F007F0DEE /* game(Spider).plist */; };
+		4C5950AD21761031007F0DEE /* GamesPListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5950AC21761031007F0DEE /* GamesPListHelpers.swift */; };
 		4C5EDB921AD7D73600B0DC20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EDB911AD7D73600B0DC20 /* main.m */; };
 		4C696A222167FB5D00E5A583 /* SelectGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */; };
 		4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C87D43E1AED472F00DB68BF /* icon-settings.png */; };
@@ -116,7 +120,12 @@
 		4C26CE53216BA99100FC41E7 /* icon-redo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-1.png"; sourceTree = "<group>"; };
 		4C26CE54216BA99200FC41E7 /* icon-settings-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings-1.png"; sourceTree = "<group>"; };
 		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
+		4C3F5EBC217636D200B8E663 /* Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
 		4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CyberSolitaireGames.plist; sourceTree = "<group>"; };
+		4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow hart).plist"; sourceTree = "<group>"; };
+		4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow weich).plist"; sourceTree = "<group>"; };
+		4C5950AA21760A7F007F0DEE /* game(Spider).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Spider).plist"; sourceTree = "<group>"; };
+		4C5950AC21761031007F0DEE /* GamesPListHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPListHelpers.swift; sourceTree = "<group>"; };
 		4C5EDB911AD7D73600B0DC20 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C696A212167FB5D00E5A583 /* SelectGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameTableViewController.swift; sourceTree = "<group>"; };
 		4C87D43E1AED472F00DB68BF /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
@@ -219,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0B5EF51AB1F09100ED27EF /* Helper.swift */,
+				4C5950AC21761031007F0DEE /* GamesPListHelpers.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -379,8 +389,12 @@
 		4CD612271AADB8350081F5A7 /* other Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C3F5EBC217636D200B8E663 /* Test.plist */,
 				4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */,
 				4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */,
+				4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */,
+				4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */,
+				4C5950AA21760A7F007F0DEE /* game(Spider).plist */,
 				4CA5C15D216FD460009DC9CC /* SettingsList.plist */,
 			);
 			path = "other Resources";
@@ -454,13 +468,16 @@
 				4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */,
 				4C0B5ECA1AB092F400ED27EF /* boing.caf in Resources */,
 				4C5950A521752E38007F0DEE /* CyberSolitaireGames.plist in Resources */,
+				4C5950A721760A3E007F0DEE /* game(Black Widow hart).plist in Resources */,
 				4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */,
 				4C0B5ED01AB092F400ED27EF /* ja.caf in Resources */,
 				4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */,
 				4C0B5ED61AB092F400ED27EF /* shuffle.caf in Resources */,
+				4C5950A921760A69007F0DEE /* game(Black Widow weich).plist in Resources */,
 				4C0B5ED81AB092F400ED27EF /* weird.caf in Resources */,
 				4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */,
 				4C0B5ECB1AB092F400ED27EF /* clapping.caf in Resources */,
+				4C5950AB21760A7F007F0DEE /* game(Spider).plist in Resources */,
 				4C0B5ECD1AB092F400ED27EF /* gallop.caf in Resources */,
 				4CD611F71AACA6BF0081F5A7 /* Images.xcassets in Resources */,
 				4C0B5ED71AB092F400ED27EF /* select.caf in Resources */,
@@ -527,6 +544,7 @@
 				4C0B5EEB1AB1D13400ED27EF /* EventSubscription.swift in Sources */,
 				4C0B5EF11AB1D13400ED27EF /* OwningEventReference.swift in Sources */,
 				4CA9B5701AC2C3E3003C7388 /* CGVector+Extensions.swift in Sources */,
+				4C5950AD21761031007F0DEE /* GamesPListHelpers.swift in Sources */,
 				4C0B5EF21AB1D13400ED27EF /* Protocols.swift in Sources */,
 				4CA9B56F1AC2C3E3003C7388 /* CGPoint+Extensions.swift in Sources */,
 				4CABDD101AAF050400960D35 /* Pile.swift in Sources */,

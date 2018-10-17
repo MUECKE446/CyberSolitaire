@@ -22,7 +22,8 @@ var permitCheating = true
 // Konstanten für SwiftyPlistManger
 let settingsListName = "SettingsList"
 let cyberSolitaireListName = "CyberSolitaireGames"
-
+let allGamePListNames = getAllGamePListNames()
+var allPListNames : [String] = []
 
 let playTonesKey = "playTones"
 let permitUndoRedoKey = "permitUndoRedo"
@@ -45,13 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var activityLogURL: URL!
     var dateStr: String!
 
-    
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         log.setup(logLevel: .allLevels, showLogLevel: true, showFileName: false, showLineNumber: false, writeToFile: nil)
-        SwiftyPlistManager.shared.start(plistNames: [settingsListName], logging: true)
+        
+        // MARK: Start des SwiftyPlistManager
+        allPListNames.append(settingsListName)
+        // muss wieder raus
+        allPListNames.append(cyberSolitaireListName)
+        allPListNames.append(contentsOf: allPListNames)
+        SwiftyPlistManager.shared.start(plistNames: allPListNames, logging: true)
 
         readSettingList()
         return true

@@ -226,8 +226,14 @@ class SolitaireGame: NSObject {
         
         self.userInteractionProtocolDelegate = userInteractionProtocolDelegate
         
+        
+        // für Test
+        let gl = getAllGameNames()
+        
+        
         //let gameLayout = SolitaireGame.getGameLayoutFor(gameName)
-        let gameLayout = SolitaireGame.getGameLayoutPListFor(gameName)
+        //let gameLayout = SolitaireGame.getGameLayoutPListFor(gameName)
+        let gameLayout = GameLayout.getGameLayout(gameName)
         // erzeuge die leeren Kartenstapel aus dem Layout
         for i in 0 ..< gameLayout!.numberOfPiles {
             let pileLayout = gameLayout!.pileLayouts[i] as PileLayout

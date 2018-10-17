@@ -44,8 +44,58 @@ class GameLayout {
         return tmpGameLayout
     }
     
-    class func gameLayoutPList(_ gameLayoutsPList : [Dictionary<String,Any>], _ gameName : String) -> GameLayout {
+    class func getGameLayout(_ gameName:String) -> GameLayout? {
         let tmpGameLayout = GameLayout()
+        let games = getAllGames()
+        for game in games {
+            if let foundGame = game[gameName] {
+                tmpGameLayout.gameLayoutVersion = foundGame["gameLayoutVersion"] as! Int
+                assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
+                tmpGameLayout.gameName = foundGame["gameName"] as! String
+                tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
+                tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
+                tmpGameLayout.typeOfScoring = convertToTypeOfScoring(foundGame, key: "scoringType")
+                tmpGameLayout.difficulty = foundGame["difficulty"] as! Int
+                tmpGameLayout.maxPoints = foundGame["maxPoints"] as! Int
+                tmpGameLayout.numberOfPiles = foundGame["numberOfPiles"] as! Int
+                let pilesLayoutPList = foundGame["piles"] as! [Dictionary<String,Any>]
+                for pileLayoutPList in pilesLayoutPList {
+                    // PileLayouts hinzupacken
+                    let pileLayout = PileLayout.pileLayoutFromPList(pileLayoutPList: pileLayoutPList)
+                    tmpGameLayout.pileLayouts.append(pileLayout)
+                }
+                return tmpGameLayout
+            }
+        }
+        fatalError("dieses Game gibt es nicht! darf nicht vorkommen")
+        //return nil
+    }
+    
+    class func gameLayoutPList(_ gameLayoutsPList : [Dictionary<String,Any>], _ gameName : String) -> GameLayout {
+//        let tmpGameLayout = GameLayout()
+//        let games = getAllGames()
+//        for game in games {
+//            if let foundGame = game[gameName] {
+//                tmpGameLayout.gameLayoutVersion = foundGame["gameLayoutVersion"] as! Int
+//                assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
+//                tmpGameLayout.gameName = foundGame["gameName"] as! String
+//                tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
+//                tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
+//                tmpGameLayout.typeOfScoring = convertToTypeOfScoring(foundGame, key: "scoringType")
+//                tmpGameLayout.difficulty = foundGame["difficulty"] as! Int
+//                tmpGameLayout.maxPoints = foundGame["maxPoints"] as! Int
+//                tmpGameLayout.numberOfPiles = foundGame["numberOfPiles"] as! Int
+//                let pilesLayoutPList = foundGame["piles"] as! [Dictionary<String,Any>]
+//                for pileLayoutPList in pilesLayoutPList {
+//                    // PileLayouts hinzupacken
+//                    let pileLayout = PileLayout.pileLayoutFromPList(pileLayoutPList: pileLayoutPList)
+//                    tmpGameLayout.pileLayouts.append(pileLayout)
+//                }
+//                return tmpGameLayout
+//            }
+//        }
+        let tmpGameLayout = GameLayout()
+
         for gameLayoutPList in gameLayoutsPList {
             if gameLayoutPList["gameName"] as! String == gameName {
                tmpGameLayout.gameLayoutVersion = gameLayoutPList["gameLayoutVersion"] as! Int
@@ -74,13 +124,13 @@ class GameLayout {
         switch str {
         case "notAvaiable":
             return .scoringTypeNA
-        case "ScoringSequenceInSuitAndFoundation":
+        case "scoringSequenceInSuitAndFoundation":
             return .scoringSequenceInSuitAndFoundation
-        case "ScoringSequenceNoColorAndFoundation":
+        case "scoringSequenceNoColorAndFoundation":
             return .scoringSequenceNoColorAndFoundation
-        case "ScoringCardOnFoundation":
+        case "scoringCardOnFoundation":
             return .scoringCardOnFoundation
-        case "ScoringSequenceInSuitAndKingUp":
+        case "scoringSequenceInSuitAndKingUp":
             return .scoringSequenceInSuitAndKingUp
         default:
             fatalError("falscher TypeOfScoring")
