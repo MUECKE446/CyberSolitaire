@@ -77,11 +77,3 @@ func getAllGames() -> [Dictionary<String,Dictionary<String,Any>>] {
     return games
 }
 
-
-
-/*
-if let gameLayoutsPList = SwiftyPlistManager.shared.fetchValue(for: "games", fromPlistWithName: cyberSolitaireListName) as? [Dictionary<String,Any>] {
-    return gameLayoutsPList
-}
-log.error("Fehler beim Lesen der GameLayouts")
-*/

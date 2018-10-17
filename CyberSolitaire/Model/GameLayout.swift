@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-let kGameLayoutVersion = 2
+let kGameLayoutVersion = 3
 
 class GameLayout {
     var gameLayoutVersion = kGameLayoutVersion
     var gameName = ""
+    var description = ""
     var gameGroup = ""
     var numberOfDecks = 0
     var typeOfScoring = TypeOfScoring(rawValue: 0)
@@ -24,26 +25,6 @@ class GameLayout {
     
     // MARK: Klassen - Methoden
     
-    class func gameLayoutWithPropertyList(_ inArr: [AnyObject]) -> GameLayout {
-        let tmpGameLayout = GameLayout()
-        tmpGameLayout.gameLayoutVersion = inArr[0] as! Int
-        assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
-        tmpGameLayout.gameName = inArr[1] as! String
-        tmpGameLayout.gameGroup = inArr[2] as! String
-        tmpGameLayout.numberOfDecks = inArr[3] as! Int
-        let tos = TypeOfScoring(rawValue: inArr[4] as! Int)
-        tmpGameLayout.typeOfScoring = tos
-        tmpGameLayout.difficulty = inArr[5] as! Int
-        tmpGameLayout.maxPoints = inArr[6] as! Int
-        tmpGameLayout.numberOfPiles = inArr[7] as! Int
-        for i in 0 ..< tmpGameLayout.numberOfPiles {
-            // PileLayouts hinzupacken
-            tmpGameLayout.pileLayouts.append(PileLayout.pileLayoutWithPropertyList(inArr[i+8] as! [AnyObject]))
-        }
-        
-        return tmpGameLayout
-    }
-    
     class func getGameLayout(_ gameName:String) -> GameLayout? {
         let tmpGameLayout = GameLayout()
         let games = getAllGames()
@@ -52,6 +33,7 @@ class GameLayout {
                 tmpGameLayout.gameLayoutVersion = foundGame["gameLayoutVersion"] as! Int
                 assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
                 tmpGameLayout.gameName = foundGame["gameName"] as! String
+                tmpGameLayout.description = foundGame["description"] as! String
                 tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
                 tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
                 tmpGameLayout.typeOfScoring = convertToTypeOfScoring(foundGame, key: "scoringType")
@@ -69,54 +51,6 @@ class GameLayout {
         }
         fatalError("dieses Game gibt es nicht! darf nicht vorkommen")
         //return nil
-    }
-    
-    class func gameLayoutPList(_ gameLayoutsPList : [Dictionary<String,Any>], _ gameName : String) -> GameLayout {
-//        let tmpGameLayout = GameLayout()
-//        let games = getAllGames()
-//        for game in games {
-//            if let foundGame = game[gameName] {
-//                tmpGameLayout.gameLayoutVersion = foundGame["gameLayoutVersion"] as! Int
-//                assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
-//                tmpGameLayout.gameName = foundGame["gameName"] as! String
-//                tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
-//                tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
-//                tmpGameLayout.typeOfScoring = convertToTypeOfScoring(foundGame, key: "scoringType")
-//                tmpGameLayout.difficulty = foundGame["difficulty"] as! Int
-//                tmpGameLayout.maxPoints = foundGame["maxPoints"] as! Int
-//                tmpGameLayout.numberOfPiles = foundGame["numberOfPiles"] as! Int
-//                let pilesLayoutPList = foundGame["piles"] as! [Dictionary<String,Any>]
-//                for pileLayoutPList in pilesLayoutPList {
-//                    // PileLayouts hinzupacken
-//                    let pileLayout = PileLayout.pileLayoutFromPList(pileLayoutPList: pileLayoutPList)
-//                    tmpGameLayout.pileLayouts.append(pileLayout)
-//                }
-//                return tmpGameLayout
-//            }
-//        }
-        let tmpGameLayout = GameLayout()
-
-        for gameLayoutPList in gameLayoutsPList {
-            if gameLayoutPList["gameName"] as! String == gameName {
-               tmpGameLayout.gameLayoutVersion = gameLayoutPList["gameLayoutVersion"] as! Int
-                 assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
-                tmpGameLayout.gameName = gameLayoutPList["gameName"] as! String
-                tmpGameLayout.gameGroup = gameLayoutPList["gameGroup"] as! String
-                tmpGameLayout.numberOfDecks = gameLayoutPList["numberOfDecks"] as! Int
-                tmpGameLayout.typeOfScoring = convertToTypeOfScoring(gameLayoutPList, key: "scoringType")
-                tmpGameLayout.difficulty = gameLayoutPList["difficulty"] as! Int
-                tmpGameLayout.maxPoints = gameLayoutPList["maxPoints"] as! Int
-                tmpGameLayout.numberOfPiles = gameLayoutPList["numberOfPiles"] as! Int
-                let pilesLayoutPList = gameLayoutPList["piles"] as! [Dictionary<String,Any>]
-                for pileLayoutPList in pilesLayoutPList {
-                    // PileLayouts hinzupacken
-                    let pileLayout = PileLayout.pileLayoutFromPList(pileLayoutPList: pileLayoutPList)
-                    tmpGameLayout.pileLayouts.append(pileLayout)
-                }
-                return tmpGameLayout
-            }
-        }
-        fatalError("dieses Game gibt es nicht! darf nicht vorkommen")
     }
     
     class func convertToTypeOfScoring(_ gameLayoutPList:Dictionary<String,Any>, key:String) -> TypeOfScoring {

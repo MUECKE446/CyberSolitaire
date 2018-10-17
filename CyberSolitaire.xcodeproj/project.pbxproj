@@ -39,7 +39,6 @@
 		4C26CE56216BA99200FC41E7 /* icon-redo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE53216BA99100FC41E7 /* icon-redo-1.png */; };
 		4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE54216BA99200FC41E7 /* icon-settings-1.png */; };
 		4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE55216BA99200FC41E7 /* icon-undo-1.png */; };
-		4C5950A521752E38007F0DEE /* CyberSolitaireGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */; };
 		4C5950A721760A3E007F0DEE /* game(Black Widow hart).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */; };
 		4C5950A921760A69007F0DEE /* game(Black Widow weich).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */; };
 		4C5950AB21760A7F007F0DEE /* game(Spider).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950AA21760A7F007F0DEE /* game(Spider).plist */; };
@@ -81,7 +80,6 @@
 		4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD611F81AACA6BF0081F5A7 /* LaunchScreen.xib */; };
 		4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */; };
 		4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */; };
-		4CD612291AADB8350081F5A7 /* CyberSolitaireGames.XML in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */; };
 		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
 		4CEFD895216E95E8009A729A /* GameSelectCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD894216E95E8009A729A /* GameSelectCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -120,8 +118,6 @@
 		4C26CE53216BA99100FC41E7 /* icon-redo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-1.png"; sourceTree = "<group>"; };
 		4C26CE54216BA99200FC41E7 /* icon-settings-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings-1.png"; sourceTree = "<group>"; };
 		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
-		4C3F5EBC217636D200B8E663 /* Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
-		4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CyberSolitaireGames.plist; sourceTree = "<group>"; };
 		4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow hart).plist"; sourceTree = "<group>"; };
 		4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow weich).plist"; sourceTree = "<group>"; };
 		4C5950AA21760A7F007F0DEE /* game(Spider).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Spider).plist"; sourceTree = "<group>"; };
@@ -167,7 +163,6 @@
 		4CD612051AACA6BF0081F5A7 /* CyberSolitaire_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberSolitaire_Tests.swift; sourceTree = "<group>"; };
 		4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CyberSol_Background1.png; sourceTree = "<group>"; };
 		4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
-		4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CyberSolitaireGames.XML; sourceTree = "<group>"; };
 		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4CEFD894216E95E8009A729A /* GameSelectCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -389,9 +384,6 @@
 		4CD612271AADB8350081F5A7 /* other Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4C3F5EBC217636D200B8E663 /* Test.plist */,
-				4CD612281AADB8350081F5A7 /* CyberSolitaireGames.XML */,
-				4C5950A421752E38007F0DEE /* CyberSolitaireGames.plist */,
 				4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */,
 				4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */,
 				4C5950AA21760A7F007F0DEE /* game(Spider).plist */,
@@ -467,7 +459,6 @@
 				4C0B5EC91AB092F400ED27EF /* bing.caf in Resources */,
 				4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */,
 				4C0B5ECA1AB092F400ED27EF /* boing.caf in Resources */,
-				4C5950A521752E38007F0DEE /* CyberSolitaireGames.plist in Resources */,
 				4C5950A721760A3E007F0DEE /* game(Black Widow hart).plist in Resources */,
 				4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */,
 				4C0B5ED01AB092F400ED27EF /* ja.caf in Resources */,
@@ -494,7 +485,6 @@
 				4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */,
 				4C0B5ED31AB092F400ED27EF /* mix.caf in Resources */,
 				4C8F15CF1AD3E03E00443A41 /* BackgroundWildWest.png in Resources */,
-				4CD612291AADB8350081F5A7 /* CyberSolitaireGames.XML in Resources */,
 				4CD611F51AACA6BF0081F5A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

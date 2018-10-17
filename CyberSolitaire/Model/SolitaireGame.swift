@@ -177,19 +177,6 @@ class SolitaireGame: NSObject {
         }
     }
     
-    class func getGameLayoutFor(_ gameName: String) -> GameLayout? {
-        // lade alle gameLayouts
-        if let gameLayouts = loadGameLayouts() {
-            let tmpGameLayout = GameLayout.gameLayoutWithPropertyList(gameLayouts.value(forKey: gameName) as! [AnyObject])
-            //TODO: für Test
-            //saveGameLayouts(gameLayouts)
-            
-            return tmpGameLayout
-        }
-        log.error("GameLayout für \(gameName) nicht gefunden")
-        return nil
-    }
-    
     // neu: jetzt mit SwiftyPListManager
     class func loadGameLayoutsFromPlist() -> [Dictionary<String,Any>]? {
         if let gameLayoutsPList = SwiftyPlistManager.shared.fetchValue(for: "games", fromPlistWithName: cyberSolitaireListName) as? [Dictionary<String,Any>] {
@@ -199,16 +186,6 @@ class SolitaireGame: NSObject {
         return nil
     }
     
-    
-    class func getGameLayoutPListFor(_ gameName: String) -> GameLayout? {
-        // lade alle gameLayouts
-        if let gameLayoutsPList = loadGameLayoutsFromPlist() {
-            let tmpGameLayout = GameLayout.gameLayoutPList(gameLayoutsPList, gameName)
-            return tmpGameLayout
-        }
-        log.error("GameLayout für \(gameName) nicht gefunden")
-        return nil
-    }
     
 // MARK: initializers
     
@@ -226,13 +203,6 @@ class SolitaireGame: NSObject {
         
         self.userInteractionProtocolDelegate = userInteractionProtocolDelegate
         
-        
-        // für Test
-        let gl = getAllGameNames()
-        
-        
-        //let gameLayout = SolitaireGame.getGameLayoutFor(gameName)
-        //let gameLayout = SolitaireGame.getGameLayoutPListFor(gameName)
         let gameLayout = GameLayout.getGameLayout(gameName)
         // erzeuge die leeren Kartenstapel aus dem Layout
         for i in 0 ..< gameLayout!.numberOfPiles {

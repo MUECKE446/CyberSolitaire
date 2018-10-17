@@ -12,7 +12,8 @@ import UIKit
 
 let log = ActionLogger.defaultLogger()
 var gameName = ""
-let CyberSolitaireVersion = "1.1.1"
+// !!! Achtung: bei jeder Änderung der Version muss diese händisch auch in LaunchScreen.xib gemacht werden !!!
+let CyberSolitaireVersion = "1.1.3"
 
 // settings variables, die alle Spiele betreffen
 var playTones = true
@@ -52,10 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: Start des SwiftyPlistManager
         allPListNames.append(settingsListName)
-        // muss wieder raus
-        allPListNames.append(cyberSolitaireListName)
         allPListNames.append(contentsOf: allPListNames)
-        SwiftyPlistManager.shared.start(plistNames: allPListNames, logging: true)
+        ///SwiftyPlistManager.shared.start(plistNames: allPListNames, logging: true)
+        SwiftyPlistManager.shared.start(plistNames: allPListNames, logging: false)
 
         readSettingList()
         return true

@@ -17,18 +17,23 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
         var description : String
     }
     
-
-    let gamesCanBeSelected = [
-        Game(id: 1, title: "Black widow (entschärft)", description: "Ziel: Alle 8 Farbsequenzen mit allen 13 Karten, vom König bis zum As, als Einheit ablegen\nSpiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden\nZu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden."),
-        Game(id: 2, title: "Black widow", description: "Ziel: Alle 8 Farbsequenzen mit allen 13 Karten, vom König bis zum As, als Einheit ablegen\nSpiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz gleicher Farbe oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden\nZu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden."),
-        Game(id: 3, title: "Spider", description: "Ziel: Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen\nSpiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden\nZu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.")
-    ]
-    
+    var gamesCanBeSelected : [Game] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        // fülle die Tabelle
+        let allGames = getAllGames()
+        for game in allGames {
+            var id = 0
+            for (name,value) in game {
+                id += 1
+                let description = value["description"] as! String
+                let game = Game(id: id, title: name, description: description)
+                gamesCanBeSelected.append(game)
+            }
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -92,7 +97,7 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
     }
     */
 
-    // MARK: - Navigation
+    // MARK: - Navigation, Segue
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
