@@ -105,7 +105,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einstellungen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hea-RA-AjW">
-                                    <rect key="frame" x="81" y="20" width="213" height="34"/>
+                                    <rect key="frame" x="81" y="21" width="213" height="32.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -116,7 +116,6 @@
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="centerX" secondItem="7v2-ty-Dha" secondAttribute="centerX" id="2wb-0h-2fx"/>
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="centerY" secondItem="7v2-ty-Dha" secondAttribute="centerY" id="NBp-PW-QRB"/>
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="leading" secondItem="7v2-ty-Dha" secondAttribute="leading" constant="81" id="Ojc-eQ-adA"/>
-                                <constraint firstAttribute="bottom" secondItem="hea-RA-AjW" secondAttribute="bottom" constant="20" symbolic="YES" id="udt-xR-Bzt"/>
                             </constraints>
                         </view>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IAl-OJ-FyV">
