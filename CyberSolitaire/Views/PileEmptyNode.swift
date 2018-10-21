@@ -11,7 +11,7 @@ import SpriteKit
 
 class PileEmptyNode: SKSpriteNode {
 
-    var delegate: TouchesProtocolDelegate? = nil
+    weak var delegate: TouchesProtocolDelegate? = nil
     
     let pileEmptyId: Int
     

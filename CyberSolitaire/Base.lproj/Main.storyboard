@@ -72,7 +72,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="PlayGame" id="XwV-KA-nWK"/>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="PlayGame" id="XwV-KA-nWK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,7 +105,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einstellungen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hea-RA-AjW">
-                                    <rect key="frame" x="81" y="20" width="213" height="34"/>
+                                    <rect key="frame" x="81" y="21" width="213" height="32.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -114,7 +114,6 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="centerX" secondItem="7v2-ty-Dha" secondAttribute="centerX" id="5g2-2v-GcH"/>
-                                <constraint firstAttribute="bottom" secondItem="hea-RA-AjW" secondAttribute="bottom" constant="20" symbolic="YES" id="CbQ-r2-VJw"/>
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="leading" secondItem="7v2-ty-Dha" secondAttribute="leading" constant="81" id="OWU-2A-UpF"/>
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="centerY" secondItem="7v2-ty-Dha" secondAttribute="centerY" id="bFR-Nf-neb"/>
                             </constraints>
@@ -315,7 +314,7 @@
                                     <color key="titleColor" red="0.34511716370000001" green="0.64709819049999995" blue="0.89999997620000005" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4S1-Yf-6Ye" kind="show" id="sdp-5O-tj2"/>
+                                    <action selector="ChooseAnotherGameButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="4gQ-0G-arf"/>
                                 </connections>
                             </button>
                         </subviews>

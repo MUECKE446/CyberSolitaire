@@ -364,6 +364,10 @@ class Pile: NSObject {
         super.init()
     }
     
+    deinit {
+        log.verbose("Pile deinit")
+    }
+    
     // MARK: Aktionen, die in den UndoManager eingespeist werden
     
     @objc func shuffle() {

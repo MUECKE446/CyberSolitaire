@@ -49,6 +49,15 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     @IBOutlet weak var playableAreaView: UIView!
     
     
+    @IBAction func ChooseAnotherGameButton(_ sender: Any) {
+        log.verbose("GameVC dismiss")
+        self.dismiss(animated: true) {
+            self.view = nil
+            self.scene = nil
+            self.game = nil
+        }
+   }
+    
     // überschreiben der (read-only) property undoManager
     // Hilfsvariable
     var myUndoManager: UndoManager!
@@ -100,21 +109,16 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         // Achtung: bei SpriteKit ist der Koordinatenursprung in der linken unteren Ecke
         scene = GameScene(size:sceneSize)
         scene?.sceneDelegate = self
-        
-//        let anc = scene?.anchorPoint
-//        scene?.anchorPoint = CGPoint(x: -5, y: 0)
-        
+
         // nachdem die zu bespielende Fläche festgelegt wurde, kann ein Spiel ausgewählt werden
         game = SolitaireGame(gameName: gameName, playingAreaRect: playableRect, undoManager: self.undoManager, userInteractionProtocolDelegate: self)
-//        game = SolitaireGame(gameName: "Spider", playingAreaRect: playableRect, undoManager: self.undoManager, userInteractionProtocolDelegate: self)
+
         // das Layout des Spiels ist jetzt fertig
         // die CardNodes und EmptyPileNodes wurden erzeugt und sind in den Arrays der scene abgelegt !!! deshalb scene vor game erzeugern !!!
         // nun kann die scene angezeigt werden
         
-//        let view1 = view
-//        let view2 = playableAreaView!
         let skView = self.view as! SKView
-//        let skView = playableAreaView! as! SKView
+
         // für den Test
 //        skView.showsFPS = true
 //        skView.showsNodeCount = true
@@ -122,14 +126,17 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         scene!.scaleMode = .aspectFill
         scene!.scaleMode = .fill
         //log.verbose("present Scene")
+        
+        // hiermit bekommt self.view eine strong reference auf den SKView
+        // deshalb in viewDidDisAppear: self.view = nil, damit GameScene deallocated werden kann
         skView.presentScene(scene)
         
         // MARK: add Observer handler
         
-        moveCard.afterChange += {
+        moveCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     let newPosition = self.convertPointFromModelToView(cardNew.position)
@@ -145,10 +152,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             }
         }
         
-        moveAndTurnCard.afterChange += {
+        moveAndTurnCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     let newPosition = self.convertPointFromModelToView(cardNew.position)
@@ -165,10 +172,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         }
         
         
-        turnAndMoveCard.afterChange += {
+        turnAndMoveCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     let newPosition = self.convertPointFromModelToView(cardNew.position)
@@ -184,10 +191,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             }
         }
         
-        turnCard.afterChange += {
+        turnCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     // verbiete User Interaktionen
@@ -199,10 +206,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             }
         }
         
-        repositionCard.afterChange += {
+        repositionCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     let newPosition = self.convertPointFromModelToView(cardNew.position)
@@ -216,12 +223,12 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         }
         
         
-        shakeCard.afterChange += {
+        shakeCard!.afterChange += {
             // als Gedankenstütze
             //let cardOld = $0 as Card
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     // verbiete User Interaktionen
@@ -237,10 +244,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         }
         
         
-        cheatCard.afterChange += {
+        cheatCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     // verbiete User Interaktionen
@@ -252,10 +259,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             }
         }
         
-        someChangedOnCard.afterChange += {
+        someChangedOnCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
-            for cardNode in self.scene!.cardNodes {
+            for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     //log.verbose("card \(cardNew.cardId) someChangedOn")
@@ -263,19 +270,21 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             }
         }
         
-        waitForDuration.afterChange += {
+        waitForDuration!.afterChange += {
             let newDuration = $1
             CardNode.setWaitForDuration(newDuration)
         }
-        
-        scoreValue += {
+ 
+        scoreValue! += {
             let newScore = $1
             let valueText = "\(newScore)"
-            self.ScoreValueLabel!.text = valueText
+            if let l = self.ScoreValueLabel {
+               l.text = valueText
+            }
         }
         
         // MARK: Ende Observer Handler
-        
+
         self.game!.dealoutStartFormation()
         game!.gamePhase = .runningPhase
         
@@ -283,23 +292,30 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         //logGameStart()
     }
 
+    deinit {
+        log.verbose("GameVC deinit")
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
-        //log.verbose("ich verschwinde")
+        log.verbose("ich verschwinde")
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: cardCreatedNotification), object: nil)
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: pileCreatedNotification), object: nil)
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: playSoundNotification), object: nil)
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: selectCardsNotification), object: nil)
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: selectPilesNotification), object: nil)
-        moveCard.afterChange.removeAll()
-        moveAndTurnCard.afterChange.removeAll()
-        turnAndMoveCard.afterChange.removeAll()
-        turnCard.afterChange.removeAll()
-        repositionCard.afterChange.removeAll()
-        shakeCard.afterChange.removeAll()
-        cheatCard.afterChange.removeAll()
-        someChangedOnCard.afterChange.removeAll()
-        waitForDuration.afterChange.removeAll()
+        moveCard = nil
+        moveAndTurnCard = nil
+        turnAndMoveCard = nil
+        turnCard = nil
+        repositionCard = nil
+        shakeCard = nil
+        cheatCard = nil
+        someChangedOnCard = nil
+        waitForDuration = nil
+        //self.view = nil
+        //scene = nil
+        //game = nil
     }
     
     // MARK: Notification Methoden
@@ -316,7 +332,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         cardNode.scaleFactor = scaleFactor
         cardNode.setScale(scaleFactor)
         cardNode.zPosition = CGFloat(card.zPosition)
-        scene!.cardNodes.append(cardNode)
+        scene!.cardNodes!.append(cardNode)
     }
     
     @objc func createNodeForEmptyPile(_ notification:Notification) {
@@ -329,7 +345,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         pileEmptyNode.setScale(scaleFactor)
         pileEmptyNode.zPosition = 0
         //log.info("pile: \(pile.pileId) indexEmptyPile: \(pile.indexEmptyPile) location: \(pileEmptyNode.position)")
-        scene!.pileEmptyNodes.append(pileEmptyNode)
+        scene!.pileEmptyNodes!.append(pileEmptyNode)
     }
     
     @objc func playSound(_ notification:Notification) {
@@ -391,7 +407,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     
     func selectCardInView(_ card: Card, showSelected: Bool) {
         // finde den entsprechenden CardNode
-        for cardNode in self.scene!.cardNodes {
+        for cardNode in self.scene!.cardNodes! {
             if cardNode.cardId == card.cardId {
                 cardNode.selectCard(showSelected) 
             }
@@ -422,7 +438,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
 
     func selectPileInView(_ pile: Pile, showSelected: Bool) {
         if pile.isPileEmpty() {
-            for pileEmptyNode in scene!.pileEmptyNodes {
+            for pileEmptyNode in scene!.pileEmptyNodes! {
                 if pileEmptyNode.pileId == pile.pileId {
                     //TODO: implementieren
 //                    pileEmptyNode.selectEmptyPile(showSelected) {
@@ -435,7 +451,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         else {
             for card in pile.cards {
                 // finde den entsprechenden CardNode
-                for cardNode in self.scene!.cardNodes {
+                for cardNode in self.scene!.cardNodes! {
                     if cardNode.cardId == card.cardId {
                         cardNode.selectCardForSelectingPile(showSelected)
                     }
@@ -558,9 +574,6 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     
     // MARK: Button Handler
     
-    @IBAction func ButtonTouched(_ sender: AnyObject) {
-        //log.info("Button touched userInteraction: \(view.isUserInteractionEnabled)")
-    }
     
     @IBAction func Undo(_ sender: UIButton) {
         if permitUndoRedo {
@@ -608,7 +621,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     func logGameStart() {
         //log.verbose("\(self.game!.gameName) started")
         //log.messageOnly("Stapel und Karten nach Auslegen")
-        for pile in game!.gamePiles {
+        for pile in game!.gamePiles! {
             //log.messageOnly("Stapel \(pile.pileType.description())(\(pile.pileId)):")
             for card in pile.cards {
                 if card.faceUp {

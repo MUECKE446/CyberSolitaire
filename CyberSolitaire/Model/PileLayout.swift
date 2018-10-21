@@ -92,7 +92,7 @@ class PileLayout {
         tmpPileLayout.posX = CGFloat(((pileLayoutPList["posX"] as! String) as NSString).floatValue)
         tmpPileLayout.posY = CGFloat(((pileLayoutPList["posY"] as! String) as NSString).floatValue)
 
-        tmpPileLayout.printForDebug()
+        //tmpPileLayout.printForDebug()
         return tmpPileLayout
     }
     

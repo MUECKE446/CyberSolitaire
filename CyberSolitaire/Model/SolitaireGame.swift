@@ -35,17 +35,17 @@ enum SKCardMoves {
 }
 
 // Observables
-var moveCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var moveAndTurnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var turnAndMoveCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var turnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var repositionCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var shakeCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var cheatCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var someChangedOnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-var waitForDuration = Observable(Double(0.0))
+var moveCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var moveAndTurnCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var turnAndMoveCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var turnCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var repositionCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var shakeCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var cheatCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var someChangedOnCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var waitForDuration : Observable? = Observable(Double(0.0))
 
-var scoreValue = Observable(Int(-1))
+var scoreValue : Observable? = Observable(Int(-1))
 
 let kCardRatio: CGFloat = 1.4; // Verhältnis Höhe/Breite einer Karte
 
@@ -99,9 +99,9 @@ enum GamePhase : Int {
 }
 
 @objc class CardMovesDescription : NSObject {
-    var card: Card? = nil
-    var fromPile: Pile? = nil
-    var toPile: Pile? = nil
+    weak var card: Card? = nil
+    weak var fromPile: Pile? = nil
+    weak var toPile: Pile? = nil
     var action: SKCardMoves? = nil
     
     init(card: Card, fromPile: Pile, toPile: Pile, action: SKCardMoves) {
@@ -110,6 +110,10 @@ enum GamePhase : Int {
         self.toPile = toPile
         self.action = action
     }
+    deinit {
+        log.verbose("CardMovesDescription deinit")
+    }
+    
 }
 
 let gameListName = "CyberSolitaireGames"
@@ -117,10 +121,10 @@ let gameListName = "CyberSolitaireGames"
 
 class SolitaireGame: NSObject {
 
-    var userInteractionProtocolDelegate: UserInteractionProtocolDelegate
+    weak var userInteractionProtocolDelegate: UserInteractionProtocolDelegate?
 
     var startPile: Pile? = nil          // der Kartenstapel, der beim Start erzeugt wird und von dem die Karten auf die einzelnen Kartenstapel beim Start verteilt werden
-    var gamePiles: [Pile] = []          // alle Kartenstapel des Spiels
+    var gamePiles: [Pile]? = []          // alle Kartenstapel des Spiels
     let gameName : String
     let gameGroup: String
     let typeOfScoring: TypeOfScoring
@@ -203,6 +207,17 @@ class SolitaireGame: NSObject {
         
         self.userInteractionProtocolDelegate = userInteractionProtocolDelegate
         
+        moveCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        moveAndTurnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        turnAndMoveCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        turnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        repositionCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        shakeCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        cheatCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        someChangedOnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        waitForDuration = Observable(Double(0.0))
+        scoreValue = Observable(Int(-1))
+        
         let gameLayout = GameLayout.getGameLayout(gameName)
         // erzeuge die leeren Kartenstapel aus dem Layout
         for i in 0 ..< gameLayout!.numberOfPiles {
@@ -227,7 +242,7 @@ class SolitaireGame: NSObject {
             pile.maxPileHeight = cardBasicHeight
             
             pile.undoManager = self.undoManager
-            gamePiles.append(pile)
+            gamePiles!.append(pile)
             // unterrichte den Controller, damit der einen View für die leeren Piles (PileEmptyNode) anlegen kann
             NotificationCenter.default.post(name: Notification.Name(rawValue: pileCreatedNotification), object: pile)
         }
@@ -250,17 +265,26 @@ class SolitaireGame: NSObject {
         self.playMove = PlayMove(game: self)
 
     }
+    
+    deinit {
+        undoManager.removeAllActions()
+        gamePiles?.removeAll()
+        startPile = nil
+        gamePiles = nil
+        log.verbose("SolitaireGame deinit")
+    }
+    
     // MARK: Aktionen während der LayoutPhase
 
     func computeMaxPileHeights() {
         // berechnet die maximalen Höhen über/untereinander liegender Piles
         // bei jedem Pile wird untersucht (falls es ein Pile mit veränderlicher Größe ist ->overlapped)
         // ob sich ein anderer Pile unter ihm befindet.
-        for pile in gamePiles {
+        for pile in gamePiles! {
             if pile.pileOverlapMode == TypeOfOverlap.downOverlapped {
                 // stelle fest, ob sich ein Pile unterhalb befindet; durchsuche alle anderen Piles
                 var pileShortestToPile: Pile? = nil
-                for anotherPile in gamePiles {
+                for anotherPile in gamePiles! {
                     // schliesse den gerade betrachteten Pile aus
                     if anotherPile.isEqual(pile) {
                         continue
@@ -353,14 +377,14 @@ class SolitaireGame: NSObject {
         // diesmal versuche ich eine Lösung mit einem Dictionary; das erspart mit hoffentlich das Sortieren
         
         // Wartezeit beim Moven zurücksetzen
-        waitForDuration <- 0.0
+        waitForDuration! <- 0.0
         
         resetzPositions()
         
-        var cardsWithAction = [CardMovesDescription]()
+        var cardsWithAction : [CardMovesDescription]? = [CardMovesDescription]()
         
         var pilesWithDealOrderAtStart: [Int:Pile] = [:]
-        for pile in self.gamePiles {
+        for pile in self.gamePiles! {
             if pile.dealOrderAtStart > 0 {
                 pilesWithDealOrderAtStart[pile.dealOrderAtStart] = pile
             }
@@ -387,7 +411,7 @@ class SolitaireGame: NSObject {
                         let cardBefore = pile?.getLastCard()!
                         // die Karte davor zum Schummeln markieren
                         cardBefore?.toggleMarkForCheat()
-                        cardsWithAction.append(CardMovesDescription(card: cardBefore!, fromPile: startPile!, toPile: pile!, action: .cheat))
+                        cardsWithAction!.append(CardMovesDescription(card: cardBefore!, fromPile: startPile!, toPile: pile!, action: .cheat))
                         let card = startPile!.getLastCard()!
                         // drehe die Karte
                         card.faceUp = !card.faceUp
@@ -395,7 +419,7 @@ class SolitaireGame: NSObject {
                         startPile!.removeLastCard()
                         card.zPosition = highestzPosition
                         highestzPosition += 1
-                        cardsWithAction.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile!, action: .moveAndTurn))
+                        cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile!, action: .moveAndTurn))
                         movements.append((SKCardMoves.moveAndTurn,card,0.0))
                     }
                     else {
@@ -405,7 +429,7 @@ class SolitaireGame: NSObject {
                         startPile!.removeLastCard()
                         card.zPosition = highestzPosition
                         highestzPosition += 1
-                        cardsWithAction.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile!, action: .move))
+                        cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile!, action: .move))
                         movements.append((SKCardMoves.move,card,0.0))
                     }
                 default:
@@ -420,7 +444,7 @@ class SolitaireGame: NSObject {
         }
 
         // Wartezeit beim Moven zurücksetzen
-        waitForDuration <- 0.0
+        waitForDuration! <- 0.0
         
         // alle verbleibenden Karten kommen auf den Stock
         let fromPile = startPile!
@@ -432,16 +456,18 @@ class SolitaireGame: NSObject {
             startPile!.removeLastCard()
             card.zPosition = highestzPosition
             highestzPosition += 1
-            cardsWithAction.append(CardMovesDescription(card: card, fromPile: fromPile, toPile: toPile, action: .move))
+            cardsWithAction!.append(CardMovesDescription(card: card, fromPile: fromPile, toPile: toPile, action: .move))
             movements.append((SKCardMoves.move,card,0.0))
         }
-        undoRedoCardActions(cardsWithAction)
+        undoRedoCardActions(cardsWithAction!)
         logGameStart()
         makeMovements()
         
-        scoreValue <- score
+        scoreValue! <- score
         evaluateScore()
         self.undoManager.endUndoGrouping()
+        cardsWithAction!.removeAll()
+        cardsWithAction = nil
     }
     
     @objc func undoRedoCardActions(_ cardsWithAction: [CardMovesDescription]) {
@@ -501,12 +527,12 @@ class SolitaireGame: NSObject {
     
     func startPlayMoveFor(_ pile: Pile, withCard: Card) {
         // hier sollten alle View Aktionen beendet sein
-        userInteractionProtocolDelegate.disableUndoRedo()
+        userInteractionProtocolDelegate!.disableUndoRedo()
         resetzPositions()
         // wurde vielleicht eine Schummelkarte gewählt
         if cheatAllowed {
             if withCard.markedForCheat {
-                cheatCard <- withCard
+                cheatCard! <- withCard
                 // der PlayMove hat begonnen und wurde gleich danach beendet
                 //log.messageOnly("geschummelt mit: \(withCard.name)")
                 playMoveFinished()
@@ -531,7 +557,7 @@ class SolitaireGame: NSObject {
                 else {
                     // mehrere Zielstapel sind möglich
                     // verdunkle alle nicht möglichen Stapel
-                    var notPossibleTargets: [Pile] = gamePiles
+                    var notPossibleTargets: [Pile] = gamePiles!
                     for pile in targets {
 //                        let index = find(notPossibleTargets,pile)
                         let index = notPossibleTargets.index(of: pile)
@@ -546,7 +572,7 @@ class SolitaireGame: NSObject {
             else {
                 // es gibt keine Möglichkeit zu Ablegen
                 // der Zug wird abgebrochen
-                shakeCard <- withCard
+                shakeCard! <- withCard
                 playMoveCanceled(withoutEnableUndoRedo: true)
             }
         case .stock:
@@ -598,7 +624,7 @@ class SolitaireGame: NSObject {
         unselectCards()
         playMove!.setInnerState(status: .idle, result: .canceled, selectedPile: nil, secondSelectedPile: nil, selectedCard: nil, secondSelectedCard: nil)
         if !withoutEnable {
-            userInteractionProtocolDelegate.enableUndoRedo()
+            userInteractionProtocolDelegate!.enableUndoRedo()
         }
     }
     
@@ -608,14 +634,14 @@ class SolitaireGame: NSObject {
             for card in startPile!.cards {
                 card.zPosition = highestzPosition
                 highestzPosition += 1
-                someChangedOnCard <- card
+                someChangedOnCard! <- card
             }
         }
-        for pile in gamePiles {
+        for pile in gamePiles! {
             for card in pile.cards {
                 card.zPosition = highestzPosition
                 highestzPosition += 1
-                someChangedOnCard <- card
+                someChangedOnCard! <- card
             }
         }
         //log.debug("high: \(highestzPosition)")
@@ -631,7 +657,7 @@ class SolitaireGame: NSObject {
             log.error("muss implementiert werden")
         case .tableauOrFoundationPermittedToPlay:
             // untersuche alle Stapel des Spiels
-            for aPile in gamePiles {
+            for aPile in gamePiles! {
                 if aPile == pile {
                     // ich kann nicht den zuvor gewählten Stapel betrachten
                     continue
@@ -841,28 +867,28 @@ class SolitaireGame: NSObject {
         for movement in movements {
            switch movement.0 {
                 case .move:
-                    waitForDuration <- movement.2
+                    waitForDuration! <- movement.2
                     movement.1.zPosition = highestzPosition
                     highestzPosition += 1
-                    moveCard <- movement.1
+                    moveCard! <- movement.1
                 case .moveAndTurn:
                     movement.1.zPosition = highestzPosition
                     highestzPosition += 1
-                    moveAndTurnCard <- movement.1
+                    moveAndTurnCard! <- movement.1
                 case .turnAndMove:
                     movement.1.zPosition = highestzPosition
                     highestzPosition += 1
-                    turnAndMoveCard <- movement.1
+                    turnAndMoveCard! <- movement.1
                 case .turn:
-                    turnCard <- movement.1
+                    turnCard! <- movement.1
                 case .reposition:
-                    repositionCard <- movement.1
+                    repositionCard! <- movement.1
                 case .shake:
-                    shakeCard <- movement.1
+                    shakeCard! <- movement.1
                 case .cheat:
-                    cheatCard <- movement.1
+                    cheatCard! <- movement.1
                     //            case .SomeChanged:
-                    //                someChangedOnCard <- movement.1
+                    //                someChangedOnCard! <- movement.1
                 default:
                     log.error("muss noch implementiert werden")
                 }
@@ -880,7 +906,7 @@ class SolitaireGame: NSObject {
         var toPiles: [Pile] = []
         switch fromPile.dealingFromStock {
         case .dealToTableaus:
-            for pile in gamePiles {
+            for pile in gamePiles! {
                 if pile.pileType == .tableau {
                     toPiles.append(pile)
                 }
@@ -972,13 +998,13 @@ class SolitaireGame: NSObject {
     
     func unselectCards() {
         // alle Karten des Spiels werden deselektiert
-        for pile in gamePiles {
+        for pile in gamePiles! {
             pile.unselectCards()
         }
     }
     func unselectPiles() {
         // es wird eine Benachrichtigung verschickt, damit die selektierten Piles optisch im View verändert werden können
-        NotificationCenter.default.post(name: Notification.Name(rawValue: selectPilesNotification), object: self, userInfo: (NSDictionary(object: gamePiles, forKey: "unselectPiles" as NSCopying) as! [AnyHashable: Any]))
+        NotificationCenter.default.post(name: Notification.Name(rawValue: selectPilesNotification), object: self, userInfo: (NSDictionary(object: gamePiles!, forKey: "unselectPiles" as NSCopying) as! [AnyHashable: Any]))
     }
     
     // MARK: Scoring
@@ -989,7 +1015,7 @@ class SolitaireGame: NSObject {
         switch typeOfScoring {
         case .scoringSequenceInSuitAndFoundation, .scoringSequenceInSuitAndKingUp:
             // alle Piles durchsuchen
-            for pile in gamePiles {
+            for pile in gamePiles! {
                 if (pile.pileType == .stock) || pile.isPileEmpty() {
                     // der Stock wird nicht untersucht, auch kein leerer Stapel
                     continue
@@ -1024,7 +1050,7 @@ class SolitaireGame: NSObject {
             }
         case .scoringSequenceNoColorAndFoundation:
             // alle Piles durchsuchen
-            for pile in gamePiles {
+            for pile in gamePiles! {
                 if (pile.pileType == .stock) || pile.isPileEmpty() {
                     // der Stock wird nicht untersucht, auch kein leerer Stapel
                     continue
@@ -1059,7 +1085,7 @@ class SolitaireGame: NSObject {
             }
         case .scoringCardOnFoundation:
             // alle Piles durchsuchen
-            for pile in gamePiles {
+            for pile in gamePiles! {
                 if (pile.pileType == .stock) || pile.isPileEmpty() {
                     // der Stock wird nicht untersucht, auch kein leerer Stapel
                     continue
@@ -1084,7 +1110,7 @@ class SolitaireGame: NSObject {
             // neuen Wert übernehmen
             score = newScore
             // informiere controller den Wert anzuzeigen
-            scoreValue <- score
+            scoreValue! <- score
         }
         isGameWon()
     }
@@ -1103,7 +1129,7 @@ class SolitaireGame: NSObject {
     // MARK: Such Aktionen
     
     func findStock() -> Pile? {
-        for pile in gamePiles {
+        for pile in gamePiles! {
             if pile.pileType == TypeOfPile.stock {
                 return pile
             }
@@ -1112,7 +1138,7 @@ class SolitaireGame: NSObject {
     }
 
     func findCardForId(_ cardId: Int) -> Card? {
-        for pile in gamePiles {
+        for pile in gamePiles! {
             for card in pile.cards {
                 if cardId == card.cardId {
                     return card
@@ -1123,7 +1149,7 @@ class SolitaireGame: NSObject {
     }
     
     func findPileForId(_ pileId: Int) -> Pile? {
-        for pile in gamePiles {
+        for pile in gamePiles! {
             if pile.pileId == pileId {
                 return pile
             }
@@ -1135,7 +1161,7 @@ class SolitaireGame: NSObject {
     func findPileForCard(_ inCard: Card) -> Pile? {
         // liefert den Stapel, in dem card liegt
         // irgendwo in den gamePiles muss die Karte liegen
-        for pile in gamePiles {
+        for pile in gamePiles! {
             for card in pile.cards {
                 if card.isEqual(inCard) {
                     return pile
@@ -1173,7 +1199,7 @@ class SolitaireGame: NSObject {
     func logGameStart() {
 //        log.verbose("\(self.gameName) started")
 //        log.messageOnly("Stapel und Karten nach Auslegen")
-//        for pile in gamePiles {
+//        for pile in gamePiles! {
 //            log.messageOnly("Stapel \(pile.pileType.description())(\(pile.pileId)):")
 //            for card in pile.cards {
 //                if card.faceUp {

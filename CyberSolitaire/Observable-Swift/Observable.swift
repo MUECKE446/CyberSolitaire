@@ -27,8 +27,8 @@ public struct Observable<T> : UnownableObservable {
     public /*internal(set)*/ var afterChange = EventReference<ValueChange<T>>()
     
     public var value : T {
-    willSet { beforeChange.notify(ValueChange(value, newValue)) }
-    didSet { afterChange.notify(ValueChange(oldValue, value)) }
+        willSet { beforeChange.notify(ValueChange(value, newValue)) }
+        didSet { afterChange.notify(ValueChange(oldValue, value)) }
     }
     
     public mutating func unshare(removeSubscriptions: Bool) {

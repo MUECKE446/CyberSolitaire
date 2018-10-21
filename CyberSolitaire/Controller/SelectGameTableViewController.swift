@@ -124,12 +124,10 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
     
     override func performSegue(withIdentifier identifier: String, sender: Any?) {
         if sender is UIButton {
-            
             performSegue(withIdentifier: "Settings", sender: sender)
         }
         else {
             performSegue(withIdentifier: "PlayGame", sender: sender)
-
         }
     }
 

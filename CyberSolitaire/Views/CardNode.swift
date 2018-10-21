@@ -37,8 +37,8 @@ class CardNode: SKSpriteNode {
     }
     
 
-    var touchesProtocolDelegate: TouchesProtocolDelegate? = nil
-    var userInteractionProtocolDelegate: UserInteractionProtocolDelegate? = nil
+    weak var touchesProtocolDelegate: TouchesProtocolDelegate? = nil
+    weak var userInteractionProtocolDelegate: UserInteractionProtocolDelegate? = nil
     
     var lastTouchType = TouchType.touchesBegan
     

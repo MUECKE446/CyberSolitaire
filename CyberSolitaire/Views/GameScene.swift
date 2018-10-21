@@ -17,10 +17,14 @@ var speedFactor = CGFloat(0.0)
 
 class GameScene: SKScene {
 
-    var sceneDelegate: TouchesProtocolDelegate? = nil
+    weak var sceneDelegate: TouchesProtocolDelegate? = nil
     
-    var cardNodes: [CardNode] = []
-    var pileEmptyNodes: [PileEmptyNode] = []
+    var cardNodes: [CardNode]? = []
+    var pileEmptyNodes: [PileEmptyNode]? = []
+    
+    deinit {
+        log.verbose("GameScene deinit")
+    }
     
     override func didMove(to view: SKView) {
         //let background = SKSpriteNode(imageNamed: "CyberSol_Background1")
@@ -34,13 +38,13 @@ class GameScene: SKScene {
         addChild(background)
         
         //log.verbose("add Nodes cards:\(cardNodes.count) piles:\(pileEmptyNodes.count)")
-        for node in cardNodes {
+        for node in cardNodes! {
             addChild(node)
         }
-        for node in pileEmptyNodes {
+        for node in pileEmptyNodes! {
             addChild(node)
         }
-        
+        //log.verbose("scene moved")
     }
     
 //    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
