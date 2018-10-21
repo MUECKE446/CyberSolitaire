@@ -377,6 +377,27 @@ class Pile: NSObject {
         //srandom(time(NULL));
         srandom(0);
         
+        
+        // wenn kein redo mehr existiert, gehört das Mischen auch nicht mehr in den undoManager
+        // sofern shuffle ganz normal im Programm ausgeführt wird, merke dir die cardId aller Karten vor dem Mischen in der Instanzvariablen cardIdBeforeShuffle
+        cardIdsBeforeShuffle.removeAll(keepingCapacity: false)
+        for card in cards {
+            cardIdsBeforeShuffle.append(card.cardId)
+        }
+        // jetzt werden die Karten x-mal zufällig getauscht
+        let mutableCards = NSMutableArray(array: cards)
+        for _ in 0 ..< 1000 {
+            let index1 = arc4random() % UInt32(cards.count)
+            let index2 = arc4random() % UInt32(cards.count)
+            if index1 != index2 {
+                mutableCards.exchangeObject(at: Int(index1), withObjectAt: Int(index2))
+            }
+        }
+        cards = mutableCards as AnyObject as! [Card]
+        // unterrichte den Controller, damit der den Sound abspielen kann
+        NotificationCenter.default.post(name: Notification.Name(rawValue: playSoundNotification), object: self, userInfo: (NSDictionary(object: "shuffle", forKey: "soundName" as NSCopying) as! [AnyHashable: Any]))
+
+/*  siehe oben
         // falls kein Undo oder Redo durchgeführt wird
         if !(undoManager.isUndoing || undoManager.isRedoing) {
             // sofern shuffle ganz normal im Programm ausgeführt wird, merke dir die cardId aller Karten vor dem Mischen in der Instanzvariablen cardIdBeforeShuffle
@@ -422,6 +443,7 @@ class Pile: NSObject {
             NotificationCenter.default.post(name: Notification.Name(rawValue: playSoundNotification), object: self, userInfo: (NSDictionary(object: "shuffle", forKey: "soundName" as NSCopying) as! [AnyHashable: Any]))
         }
         theProxy.shuffle()
+ */
     }
     
     // MARK: Selektierer Aktionen (senden Notifikations)

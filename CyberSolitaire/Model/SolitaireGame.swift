@@ -359,7 +359,8 @@ class SolitaireGame: NSObject {
     }
 
     func dealoutStartFormation() {
-        self.undoManager.beginUndoGrouping()
+        // das Austeilen der Karten soll nicht mehr rückgängig gemacht werden können, deshalb auskommentiert
+        //self.undoManager.beginUndoGrouping()
         // startPile gut durchmischen
         startPile!.shuffle()
         //log.verbose("gemischt")
@@ -459,13 +460,15 @@ class SolitaireGame: NSObject {
             cardsWithAction!.append(CardMovesDescription(card: card, fromPile: fromPile, toPile: toPile, action: .move))
             movements.append((SKCardMoves.move,card,0.0))
         }
-        undoRedoCardActions(cardsWithAction!)
+        // das Austeilen der Karten soll nicht mehr rückgängig gemacht werden können, deshalb auskommentiert
+        //undoRedoCardActions(cardsWithAction!)
         logGameStart()
         makeMovements()
         
         scoreValue! <- score
         evaluateScore()
-        self.undoManager.endUndoGrouping()
+        // das Austeilen der Karten soll nicht mehr rückgängig gemacht werden können, deshalb auskommentiert
+        //self.undoManager.endUndoGrouping()
         cardsWithAction!.removeAll()
         cardsWithAction = nil
     }
