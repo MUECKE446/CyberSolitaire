@@ -92,6 +92,10 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
 //        chooseAnotherGameButton.layer.borderWidth = 1
 //        chooseAnotherGameButton.layer.borderColor = UIColor.black.cgColor
         
+        // redo ist gar nicht nötig
+        redoButton.isHidden = true
+        
+        
         // die erste Scene einrichten
         // die Scene füllt den gesamten View aus
         let viewFrame = view.frame

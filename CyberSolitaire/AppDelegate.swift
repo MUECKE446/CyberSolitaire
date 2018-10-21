@@ -13,7 +13,7 @@ import UIKit
 let log = ActionLogger.defaultLogger()
 var gameName = ""
 // !!! Achtung: bei jeder Änderung der Version muss diese händisch auch in LaunchScreen.xib gemacht werden !!!
-let CyberSolitaireVersion = "1.1.3"
+let CyberSolitaireVersion = "1.1.4"
 
 // settings variables, die alle Spiele betreffen
 var playTones = true
