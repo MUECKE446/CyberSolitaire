@@ -72,6 +72,8 @@
 		4CABDD171AAF051B00960D35 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABDD151AAF051B00960D35 /* GameScene.swift */; };
 		4CABDD1A1AAF053200960D35 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABDD191AAF053200960D35 /* GameViewController.swift */; };
 		4CABDD1C1AAF091700960D35 /* PileEmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABDD1B1AAF091700960D35 /* PileEmptyNode.swift */; };
+		4CB12B42217CBD5A00277F0B /* icon-undo-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB12B40217CBD5A00277F0B /* icon-undo-48.png */; };
+		4CB12B45217CBDC200277F0B /* icon-redo-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB12B44217CBDC100277F0B /* icon-redo-48.png */; };
 		4CC06B731AB99D1C001C2D14 /* icon-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC06B711AB99D1C001C2D14 /* icon-redo.png */; };
 		4CC06B741AB99D1C001C2D14 /* icon-undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC06B721AB99D1C001C2D14 /* icon-undo.png */; };
 		4CD611EC1AACA6BF0081F5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD611EB1AACA6BF0081F5A7 /* AppDelegate.swift */; };
@@ -151,6 +153,8 @@
 		4CABDD151AAF051B00960D35 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4CABDD191AAF053200960D35 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4CABDD1B1AAF091700960D35 /* PileEmptyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PileEmptyNode.swift; sourceTree = "<group>"; };
+		4CB12B40217CBD5A00277F0B /* icon-undo-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-48.png"; sourceTree = "<group>"; };
+		4CB12B44217CBDC100277F0B /* icon-redo-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-48.png"; sourceTree = "<group>"; };
 		4CC06B711AB99D1C001C2D14 /* icon-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo.png"; sourceTree = "<group>"; };
 		4CC06B721AB99D1C001C2D14 /* icon-undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo.png"; sourceTree = "<group>"; };
 		4CD611E61AACA6BF0081F5A7 /* CyberSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyberSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,6 +373,8 @@
 		4CD612171AACAA500081F5A7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4CB12B44217CBDC100277F0B /* icon-redo-48.png */,
+				4CB12B40217CBD5A00277F0B /* icon-undo-48.png */,
 				4C26CE53216BA99100FC41E7 /* icon-redo-1.png */,
 				4C26CE54216BA99200FC41E7 /* icon-settings-1.png */,
 				4C26CE55216BA99200FC41E7 /* icon-undo-1.png */,
@@ -459,6 +465,7 @@
 				4C0B5EC91AB092F400ED27EF /* bing.caf in Resources */,
 				4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */,
 				4C0B5ECA1AB092F400ED27EF /* boing.caf in Resources */,
+				4CB12B42217CBD5A00277F0B /* icon-undo-48.png in Resources */,
 				4C5950A721760A3E007F0DEE /* game(Black Widow hart).plist in Resources */,
 				4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */,
 				4C0B5ED01AB092F400ED27EF /* ja.caf in Resources */,
@@ -469,6 +476,7 @@
 				4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */,
 				4C0B5ECB1AB092F400ED27EF /* clapping.caf in Resources */,
 				4C5950AB21760A7F007F0DEE /* game(Spider).plist in Resources */,
+				4CB12B45217CBDC200277F0B /* icon-redo-48.png in Resources */,
 				4C0B5ECD1AB092F400ED27EF /* gallop.caf in Resources */,
 				4CD611F71AACA6BF0081F5A7 /* Images.xcassets in Resources */,
 				4C0B5ED71AB092F400ED27EF /* select.caf in Resources */,
