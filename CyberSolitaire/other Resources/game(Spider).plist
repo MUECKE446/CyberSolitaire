@@ -8,6 +8,17 @@
 		<integer>3</integer>
 		<key>gameName</key>
 		<string>Spider</string>
+		<key>gameDescription</key>
+		<dict>
+			<key>disposal</key>
+			<string>Fünf Kartenreihen mit je 10 Karten verdeckt auslegen, wobei sich die Reihen überlappen. Eine weitere Karte auf jeden der ersten vier Stapel legen. Die untersten Karte jeden Stapels aufdecken.</string>
+			<key>target</key>
+			<string>Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen.</string>
+			<key>howToPlay</key>
+			<string>Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden. Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.</string>
+			<key>difficulty</key>
+			<string>leicht</string>
+		</dict>
 		<key>description</key>
 		<string>Ziel: Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen. Spiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden. Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.</string>
 		<key>gameGroup</key>
