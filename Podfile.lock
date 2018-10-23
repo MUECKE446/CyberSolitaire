@@ -1,0 +1,20 @@
+PODS:
+  - SwiftRichString (2.0.5)
+  - SwiftyPlistManager (1.0.2)
+
+DEPENDENCIES:
+  - SwiftRichString
+  - SwiftyPlistManager
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftRichString
+    - SwiftyPlistManager
+
+SPEC CHECKSUMS:
+  SwiftRichString: a3ebe72b13db2e1b917cdbb6b44d817254a7ff73
+  SwiftyPlistManager: 5895924cccb7fe28deccbe14890e8aed78ae78ae
+
+PODFILE CHECKSUM: ab9236e5c5f14cf5401f89900de4ce17d4ecf6af
+
+COCOAPODS: 1.6.0.beta.2

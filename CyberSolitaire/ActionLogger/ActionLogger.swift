@@ -1436,8 +1436,8 @@ open class ActionLogTextViewDestination : ActionLogDestinationProtocol, CustomDe
         // color enhancement
         if let cp = self.colorProfiles[logDetails.logLevel] {
             // set fore- and backgroundColor
-            textViewMessage.addAttribute(NSAttributedStringKey.foregroundColor, value: cp.foregroundColor, range: messageRange)
-            textViewMessage.addAttribute(NSAttributedStringKey.backgroundColor, value: cp.backgroundColor, range: messageRange)
+            textViewMessage.addAttribute(NSAttributedString.Key.foregroundColor, value: cp.foregroundColor, range: messageRange)
+            textViewMessage.addAttribute(NSAttributedString.Key.backgroundColor, value: cp.backgroundColor, range: messageRange)
         }
         
         // print it, only if the LogDestination should print this

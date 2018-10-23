@@ -49,7 +49,6 @@
 		4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C87D43E1AED472F00DB68BF /* icon-settings.png */; };
 		4C8F15CF1AD3E03E00443A41 /* BackgroundWildWest.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F15CE1AD3E03E00443A41 /* BackgroundWildWest.png */; };
 		4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA5C15D216FD460009DC9CC /* SettingsList.plist */; };
-		4CA5C1822170D991009DC9CC /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5C1812170D991009DC9CC /* SwiftyPlistManager.swift */; };
 		4CA9B55E1ABF448A003C7388 /* PlayMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9B55D1ABF448A003C7388 /* PlayMove.swift */; };
 		4CA9B5601AC19142003C7388 /* UserInteractionProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9B55F1AC19142003C7388 /* UserInteractionProtocolDelegate.swift */; };
 		4CA9B56E1AC2C3E3003C7388 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9B5621AC2C3E3003C7388 /* CGFloat+Extensions.swift */; };
@@ -84,9 +83,11 @@
 		4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */; };
 		4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */; };
 		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
+		C23CD9311E702DBF235042D0 /* Pods_CyberSolitaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C0BF398E392AF6D6D30F78 /* Pods-CyberSolitaire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyberSolitaire.release.xcconfig"; path = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.release.xcconfig"; sourceTree = "<group>"; };
 		4C0B5EB71AB092F400ED27EF /* bearings.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bearings.caf; sourceTree = "<group>"; };
 		4C0B5EB81AB092F400ED27EF /* bing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bing.caf; sourceTree = "<group>"; };
 		4C0B5EB91AB092F400ED27EF /* boing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = boing.caf; sourceTree = "<group>"; };
@@ -130,7 +131,6 @@
 		4C87D43E1AED472F00DB68BF /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
 		4C8F15CE1AD3E03E00443A41 /* BackgroundWildWest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundWildWest.png; sourceTree = "<group>"; };
 		4CA5C15D216FD460009DC9CC /* SettingsList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SettingsList.plist; sourceTree = "<group>"; };
-		4CA5C1812170D991009DC9CC /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
 		4CA9B55D1ABF448A003C7388 /* PlayMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayMove.swift; path = CyberSolitaire/Model/PlayMove.swift; sourceTree = SOURCE_ROOT; };
 		4CA9B55F1AC19142003C7388 /* UserInteractionProtocolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionProtocolDelegate.swift; sourceTree = "<group>"; };
 		4CA9B5621AC2C3E3003C7388 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -169,6 +169,8 @@
 		4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CyberSol_Background1.png; sourceTree = "<group>"; };
 		4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CyberSolitaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyberSolitaire.debug.xcconfig"; path = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C23CD9311E702DBF235042D0 /* Pods_CyberSolitaire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +297,7 @@
 				4CD612021AACA6BF0081F5A7 /* CyberSolitaire_Tests */,
 				4CD612161AACA8220081F5A7 /* Frameworks */,
 				4CD611E71AACA6BF0081F5A7 /* Products */,
+				7C36EE36E56ED716429505A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -320,7 +324,6 @@
 				4CABDD131AAF051B00960D35 /* Views */,
 				4CABDD181AAF053200960D35 /* Controller */,
 				4CD611EB1AACA6BF0081F5A7 /* AppDelegate.swift */,
-				4CA5C1812170D991009DC9CC /* SwiftyPlistManager.swift */,
 				4C5EDB911AD7D73600B0DC20 /* main.m */,
 				4CD611F31AACA6BF0081F5A7 /* Main.storyboard */,
 				4CD611F61AACA6BF0081F5A7 /* Images.xcassets */,
@@ -366,6 +369,7 @@
 		4CD612161AACA8220081F5A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -398,6 +402,15 @@
 			path = "other Resources";
 			sourceTree = "<group>";
 		};
+		7C36EE36E56ED716429505A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */,
+				18C0BF398E392AF6D6D30F78 /* Pods-CyberSolitaire.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,10 +418,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CD612091AACA6BF0081F5A7 /* Build configuration list for PBXNativeTarget "CyberSolitaire" */;
 			buildPhases = (
+				D0831CB64B98590388FD2DE4 /* [CP] Check Pods Manifest.lock */,
 				4CD611E21AACA6BF0081F5A7 /* Sources */,
 				4CD611E31AACA6BF0081F5A7 /* Frameworks */,
 				4CD611E41AACA6BF0081F5A7 /* Resources */,
 				4C5EDB901AD7D4F000B0DC20 /* ShellScript */,
+				91A8DC63893732F41B585B84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,7 +448,7 @@
 					4CD611E51AACA6BF0081F5A7 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = Y8C3Y98A86;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -513,6 +528,52 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"$CODESIGNING_FOLDER_PATH\" >/tmp/\"$USER.ident\" && echo \"$CODE_SIGN_IDENTITY\" >>/tmp/\"$USER.ident\" && exit;\n\n";
 		};
+		91A8DC63893732F41B585B84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftRichString/SwiftRichString.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyPlistManager/SwiftyPlistManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRichString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPlistManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0831CB64B98590388FD2DE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CyberSolitaire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -526,7 +587,6 @@
 				4CABDD171AAF051B00960D35 /* GameScene.swift in Sources */,
 				4C0B5EEE1AB1D13400ED27EF /* ObservableChainingProxy.swift in Sources */,
 				4CABDD0F1AAF050400960D35 /* GameLayout.swift in Sources */,
-				4CA5C1822170D991009DC9CC /* SwiftyPlistManager.swift in Sources */,
 				4C0B5EF81AB3871300ED27EF /* TouchesProtocolDelegate.swift in Sources */,
 				4CA9B5751AC2C3E3003C7388 /* SKNode+Extensions.swift in Sources */,
 				4CA9B55E1ABF448A003C7388 /* PlayMove.swift in Sources */,
@@ -693,38 +753,38 @@
 		};
 		4CD6120A1AACA6BF0081F5A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CyberSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.muecke-software.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		4CD6120B1AACA6BF0081F5A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18C0BF398E392AF6D6D30F78 /* Pods-CyberSolitaire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CyberSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.muecke-software.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
