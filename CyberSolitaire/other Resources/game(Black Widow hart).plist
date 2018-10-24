@@ -11,13 +11,21 @@
 		<key>gameDescription</key>
 		<dict>
 			<key>disposal</key>
-			<string>Fünf Kartenreihen mit je 10 Karten verdeckt auslegen, wobei sich die Reihen überlappen. Eine weitere Karte auf jeden der ersten vier Stapel legen. Die untersten Karte jeden Stapels aufdecken.</string>
+			<string>&lt;bold&gt;Start:&lt;/bold&gt;
+Fünf Kartenreihen mit je 10 Karten verdeckt auslegen, wobei sich die Reihen überlappen. Eine weitere Karte auf jeden der ersten vier Stapel legen.
+Die unterste Karte jeden Stapels aufdecken.
+Der Rest kommt verdeckt auf den Vorratsstapel.</string>
 			<key>target</key>
-			<string>Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen.</string>
+			<string>&lt;bold&gt;Ziel:&lt;/bold&gt;
+Alle 8 Sequenzen mit gleicher Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen.</string>
 			<key>howToPlay</key>
-			<string>Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden. Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.</string>
+			<string>&lt;bold&gt;Spiel:&lt;/bold&gt;
+Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. 
+Jede Kartensequenz mit gleicher Farbe oder Teile davon kann als Einheit bewegt werden. 
+Freie Plätze können mit einer beliebigen Karte belegt werden. 
+Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorratsstapel auf das Kartenbild gezogen werden.</string>
 			<key>difficulty</key>
-			<string>leicht</string>
+			<string>schwer</string>
 		</dict>
 		<key>description</key>
 		<string>Ziel: Alle 8 Farbsequenzen mit allen 13 Karten, vom König bis zum As, als Einheit ablegen. Spiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz gleicher Farbe oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden. Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.</string>
