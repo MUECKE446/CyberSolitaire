@@ -27,10 +27,6 @@ Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorrratsstapel auf das Kart
 			<key>difficulty</key>
 			<string>mittel</string>
 		</dict>
-		<key>description</key>
-		<string>&lt;bold&gt;Start:&lt;/bold&gt;Fünf Kartenreihen mit je 10 Karten verdeckt auslegen, wobei sich die Reihen überlappen. Eine weitere Karte auf jeden der ersten vier Stapel legen.
-Die unterste Karte jeden Stapels aufdecken.
-Der Rest kommt verdeckt auf den Vorratsstapel.</string>
 		<key>gameGroup</key>
 		<string>Spider</string>
 		<key>numberOfDecks</key>
@@ -41,8 +37,6 @@ Der Rest kommt verdeckt auf den Vorratsstapel.</string>
 		<integer>25</integer>
 		<key>maxPoints</key>
 		<integer>104</integer>
-		<key>numberOfPiles</key>
-		<integer>12</integer>
 		<key>piles</key>
 		<array>
 			<dict>

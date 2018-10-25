@@ -155,34 +155,6 @@ class SolitaireGame: NSObject {
     
     // MARK: Behandlung der gameLayouts (class methods)
     
-    class func loadGameLayouts() -> NSDictionary? {
-        if let resourcePath = Bundle.main.path(forResource: "CyberSolitaireGames", ofType: "XML") {
-            let success = FileManager.default.fileExists(atPath: resourcePath)
-            if !success {
-                log.error("File mit den GameLayouts existiert nicht!")
-                return nil
-            }
-            if let gameLayouts = NSDictionary(contentsOfFile: resourcePath) {
-                return gameLayouts
-            }
-            log.error("Fehler beim Lesen der GameLayouts")
-        }
-        log.error("keinen resourcePath gefunden")
-        return nil
-    }
-    
-    class func saveGameLayouts(_ gameLayouts: NSDictionary?) {
-        // speichert sämtliche implementierte Spiele in das entsprechende File
-        let layoutFile = "/users/christian-muth/documents/CyberSolitaire/CyberSolitaireGames_new.XML"
-        //layoutDirectory.stringByAppendingPathComponent("CyberSolitaireGames_new.XML")
-        if gameLayouts == nil {
-            log.error("GameLayouts existieren nicht")
-        }
-        else {
-            gameLayouts!.write(toFile: layoutFile, atomically: true)
-        }
-    }
-    
     // neu: jetzt mit SwiftyPListManager
     class func loadGameLayoutsFromPlist() -> [Dictionary<String,Any>]? {
         if let gameLayoutsPList = SwiftyPlistManager.shared.fetchValue(for: "games", fromPlistWithName: cyberSolitaireListName) as? [Dictionary<String,Any>] {
@@ -222,9 +194,11 @@ class SolitaireGame: NSObject {
         
         let gameLayout = GameLayout.getGameLayout(gameName)
         // erzeuge die leeren Kartenstapel aus dem Layout
-        for i in 0 ..< gameLayout!.numberOfPiles {
-            let pileLayout = gameLayout!.pileLayouts[i] as PileLayout
-            let pile = Pile(pileID: i, typeOfPile: pileLayout.pileType!, overlapMode: pileLayout.typeOfOverlap!, selectAndMoveMode: pileLayout.typeOfUserSelectAndMove!,
+        var id = 0
+        for pileLayout in gameLayout!.pileLayouts {
+        //for i in 0 ..< gameLayout!.numberOfPiles {
+        //    let pileLayout = gameLayout!.pileLayouts[i] as PileLayout
+            let pile = Pile(pileID: id, typeOfPile: pileLayout.pileType!, overlapMode: pileLayout.typeOfOverlap!, selectAndMoveMode: pileLayout.typeOfUserSelectAndMove!,
                 depositFromUser: pileLayout.typeOfDepositFromUser!,
                 depositIfEmpty: pileLayout.typeOfDepositIfEmpty!,
                 permittedToPlay: pileLayout.typeOfPermittedToPlay!,
@@ -247,6 +221,7 @@ class SolitaireGame: NSObject {
             gamePiles!.append(pile)
             // unterrichte den Controller, damit der einen View für die leeren Piles (PileEmptyNode) anlegen kann
             NotificationCenter.default.post(name: Notification.Name(rawValue: pileCreatedNotification), object: pile)
+            id += 1
         }
         
         self.gameGroup = gameLayout!.gameGroup

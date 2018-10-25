@@ -27,8 +27,6 @@ Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorratsstapel auf das Karte
 			<key>difficulty</key>
 			<string>leicht</string>
 		</dict>
-		<key>description</key>
-		<string>Ziel: Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen. Spiel: Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. Freie Plätze können mit einer beliebigen Karte belegt werden. Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Talon auf das Kartenbild gezogen werden.</string>
 		<key>gameGroup</key>
 		<string>Spider</string>
 		<key>numberOfDecks</key>
@@ -39,8 +37,6 @@ Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorratsstapel auf das Karte
 		<integer>25</integer>
 		<key>maxPoints</key>
 		<integer>104</integer>
-		<key>numberOfPiles</key>
-		<integer>12</integer>
 		<key>piles</key>
 		<array>
 			<dict>
