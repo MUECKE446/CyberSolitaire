@@ -32,7 +32,6 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
 
 
     @IBAction func descriptionButtonTapped(_ sender: UIButton) {
-        //let cell = sender.superview
         var parent = sender.superview
         while ((parent != nil) && !(parent!.isKind(of: GameSelectCell.self))) {
             parent = parent?.superview
