@@ -11,51 +11,53 @@ import SwiftRichString
 
 // styles
 let normal = Style {
-    //$0.font = SystemFonts.Helvetica_Light.font(size: 15)
     $0.font = SystemFonts.Helvetica.font(size: 15)
 }
 
 let bold = Style {
     $0.font = SystemFonts.Helvetica_Bold.font(size: 16)
-    $0.color = UIColor.red
+    $0.color = UIColor.black
 }
 
 let styleGroup = StyleGroup(base: normal, ["bold": bold])
 
 class SelectGameTableViewController: UITableViewController,UIPopoverPresentationControllerDelegate {
 
-//    struct Game
-//    {
-//        var id : Int
-//        var title : String
-//        var description : String
-//    }
-    
-    
     struct GameWithDescription {
         var gameName : String
         var gameDescription : Dictionary<String,String>
     }
     
-//    var gamesCanBeSelected : [Game] = []
     var gamesWithDescriptionCanBeSelected : [GameWithDescription] = []
 
+
+    @IBAction func descriptionButtonTapped(_ sender: UIButton) {
+        //let cell = sender.superview
+        var parent = sender.superview
+        while ((parent != nil) && !(parent!.isKind(of: GameSelectCell.self))) {
+            parent = parent?.superview
+        }
+        let cell = parent as! GameSelectCell
+        _ = self.tableView.indexPath(for: cell)
+
+
+        if sender.titleLabel?.text == "zeige Beschreibung" {
+            sender.setTitle("verberge Beschreibung", for: UIControl.State.normal)
+            cell.withDescription = true
+        }
+        else {
+            sender.setTitle("zeige Beschreibung", for: UIControl.State.normal)
+            cell.withDescription = false
+        }
+        self.tableView.reloadData()
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // fülle die Tabelle
         let allGames = getAllGames()
-//        for game in allGames {
-//            var id = 0
-//            for (name,value) in game {
-//                id += 1
-//                let description = value["description"] as! String
-//                let game = Game(id: id, title: name, description: description)
-//                gamesCanBeSelected.append(game)
-//            }
-//        }
-        
-        
         for game in allGames {
             for (name,value) in game {
                 let gameDescription = value["gameDescription"] as! Dictionary<String,String>
@@ -74,79 +76,80 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        return gamesCanBeSelected.count
         return gamesWithDescriptionCanBeSelected.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : GameSelectCell = tableView.dequeueReusableCell(withIdentifier: "GameSelectCell", for: indexPath) as! GameSelectCell
+        var cell : GameSelectCell = tableView.dequeueReusableCell(withIdentifier: "GameSelectCell", for: indexPath) as! GameSelectCell
+        cell.descriptionButton.backgroundColor = UIColor.white
+        cell.descriptionButton.layer.cornerRadius = 5
+        cell.descriptionButton.layer.borderWidth = 1
+        cell.descriptionButton.layer.borderColor = UIColor.black.cgColor
 
-        let gameName = gamesWithDescriptionCanBeSelected[indexPath.row].gameName
-        let disposal = gamesWithDescriptionCanBeSelected[indexPath.row].gameDescription["disposal"]
-        let target = gamesWithDescriptionCanBeSelected[indexPath.row].gameDescription["target"]
-        let howToPlay = gamesWithDescriptionCanBeSelected[indexPath.row].gameDescription["howToPlay"]
-        // Configure the cell...
-        switch gamesWithDescriptionCanBeSelected[indexPath.row].gameDescription["difficulty"] {
+        if  cell.withDescription {
+            fillTableViewCell(&cell, indexPath: indexPath, withDescription: true)
+        }
+        else {
+            fillTableViewCell(&cell, indexPath: indexPath, withDescription: false)
+        }
+        return cell
+    }
+    
+    func fillTableViewCell( _ cell : inout GameSelectCell, indexPath path : IndexPath, withDescription with: Bool) {
+        if with {
+            let gameName = gamesWithDescriptionCanBeSelected[path.row].gameName
+            let disposal = gamesWithDescriptionCanBeSelected[path.row].gameDescription["disposal"]
+            let target = gamesWithDescriptionCanBeSelected[path.row].gameDescription["target"]
+            let howToPlay = gamesWithDescriptionCanBeSelected[path.row].gameDescription["howToPlay"]
+            // Configure the cell...
+            switch gamesWithDescriptionCanBeSelected[path.row].gameDescription["difficulty"] {
             case "leicht":
                 cell.backgroundColor = UIColor.green
-            
+                
             case "mittel":
                 cell.backgroundColor = UIColor.orange
                 
             case "schwer":
                 cell.backgroundColor = UIColor.red
-            
+                
             default:
                 fatalError("darf nicht vorkommen")
+            }
+            cell.gameNameLabel?.text = gameName
+            cell.disposalLabel?.attributedText = disposal?.set(style: styleGroup)
+            cell.targetLabel?.attributedText = target?.set(style: styleGroup)
+            cell.howToPlayLabel?.attributedText = howToPlay?.set(style: styleGroup)
         }
-        cell.gameNameLabel?.text = gameName
-        cell.disposalLabel?.attributedText = disposal?.set(style: styleGroup)
-        cell.targetLabel?.attributedText = target?.set(style: styleGroup)
-        cell.howToPlayLabel?.attributedText = howToPlay?.set(style: styleGroup)
-        return cell
+        else {
+            let gameName = gamesWithDescriptionCanBeSelected[path.row].gameName
+            let disposal = ""
+            let target = ""
+            let howToPlay = ""
+            // Configure the cell...
+            switch gamesWithDescriptionCanBeSelected[path.row].gameDescription["difficulty"] {
+            case "leicht":
+                cell.backgroundColor = UIColor.green
+                
+            case "mittel":
+                cell.backgroundColor = UIColor.orange
+                
+            case "schwer":
+                cell.backgroundColor = UIColor.red
+                
+            default:
+                fatalError("darf nicht vorkommen")
+            }
+            cell.gameNameLabel?.text = gameName
+            cell.disposalLabel?.attributedText = disposal.set(style: styleGroup)
+            cell.targetLabel?.attributedText = target.set(style: styleGroup)
+            cell.howToPlayLabel?.attributedText = howToPlay.set(style: styleGroup)
+        }
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     // MARK: - Navigation, Segue
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

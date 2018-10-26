@@ -39,8 +39,6 @@ Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorratsstapel auf das Karte
 		<integer>25</integer>
 		<key>maxPoints</key>
 		<integer>104</integer>
-		<key>numberOfPiles</key>
-		<integer>12</integer>
 		<key>piles</key>
 		<array>
 			<dict>

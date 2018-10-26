@@ -14,7 +14,6 @@ let kGameLayoutVersion = 3
 class GameLayout {
     var gameLayoutVersion = kGameLayoutVersion
     var gameName = ""
-    var description = ""
     var gameGroup = ""
     var numberOfDecks = 0
     var typeOfScoring = TypeOfScoring(rawValue: 0)
@@ -33,13 +32,11 @@ class GameLayout {
                 tmpGameLayout.gameLayoutVersion = foundGame["gameLayoutVersion"] as! Int
                 assert(tmpGameLayout.gameLayoutVersion == kGameLayoutVersion, "falsche gameLayout Version aktuell:\(kGameLayoutVersion) file:\(tmpGameLayout.gameLayoutVersion)")
                 tmpGameLayout.gameName = foundGame["gameName"] as! String
-                tmpGameLayout.description = foundGame["description"] as! String
                 tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
                 tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
                 tmpGameLayout.typeOfScoring = convertToTypeOfScoring(foundGame, key: "scoringType")
                 tmpGameLayout.difficulty = foundGame["difficulty"] as! Int
                 tmpGameLayout.maxPoints = foundGame["maxPoints"] as! Int
-                tmpGameLayout.numberOfPiles = foundGame["numberOfPiles"] as! Int
                 let pilesLayoutPList = foundGame["piles"] as! [Dictionary<String,Any>]
                 for pileLayoutPList in pilesLayoutPList {
                     // PileLayouts hinzupacken
@@ -50,7 +47,6 @@ class GameLayout {
             }
         }
         fatalError("dieses Game gibt es nicht! darf nicht vorkommen")
-        //return nil
     }
     
     class func convertToTypeOfScoring(_ gameLayoutPList:Dictionary<String,Any>, key:String) -> TypeOfScoring {
