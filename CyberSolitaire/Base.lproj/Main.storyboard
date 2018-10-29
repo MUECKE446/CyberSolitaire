@@ -132,7 +132,10 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rk-pT-E0T">
-                                            <rect key="frame" x="20" y="30" width="964" height="222.5"/>
+                                            <rect key="frame" x="20" y="30" width="964" height="223.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="5V9-ej-old"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="disposal">
                                                     <attributes>
@@ -143,9 +146,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1q-yF-ipt">
-                                            <rect key="frame" x="20" y="254.5" width="964" height="21"/>
+                                            <rect key="frame" x="20" y="255.5" width="964" height="20.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="pfC-fW-oUt"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="pfC-fW-oUt"/>
                                             </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="target">
@@ -157,9 +160,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-dW-6kn">
-                                            <rect key="frame" x="20" y="276.5" width="964" height="21"/>
+                                            <rect key="frame" x="20" y="277" width="964" height="20.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="31r-ID-vXk"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="31r-ID-vXk"/>
                                             </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="howToPlay">
@@ -225,12 +228,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="center" misplaced="YES" id="7v2-ty-Dha">
+                        <view key="tableHeaderView" contentMode="center" id="7v2-ty-Dha">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einstellungen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hea-RA-AjW">
-                                    <rect key="frame" x="98" y="-16.5" width="179.5" height="33"/>
+                                    <rect key="frame" x="98" y="20.5" width="179.5" height="33"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -242,7 +245,7 @@
                                 <constraint firstItem="hea-RA-AjW" firstAttribute="centerY" secondItem="7v2-ty-Dha" secondAttribute="centerY" id="NBp-PW-QRB"/>
                             </constraints>
                         </view>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IAl-OJ-FyV">
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IAl-OJ-FyV">
                             <rect key="frame" x="0.0" y="335.5" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Fertig"/>
