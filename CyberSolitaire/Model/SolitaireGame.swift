@@ -62,6 +62,8 @@ let kxGap1RTW: CGFloat = 1.5;
 let kxGap2RTW: CGFloat = 0.2;
 let kyGap1RTH: CGFloat = 2.1;
 
+let kMaxLastTimeCumulated = TimeInterval(exactly: 20)!        // time in seconds
+
 var highestzPosition = CGFloat(1.0)
 
 enum TypeOfScoring: Int {
@@ -83,17 +85,19 @@ enum TypeOfScoring: Int {
     }
 }
 
-enum GamePhase : Int {
+enum GameState : Int {
     case
-    layoutPhase = 0,    // das Spiel befindet sich in der Layoutphase
-    runningPhase,        // das Spiel findet statt
-    endingPhase         // das Spiel wurde beendet (Spielstände, Statistik usw.)
+    layoutState = 0,        // das Spiel befindet sich in der Layoutphase
+    runningState,           // das Spiel findet statt
+    pausingState,           // das Spiel macht Pause
+    completedState          // das Spiel wurde beendet (Spielstände, Statistik usw.)
     
     func description() -> String {
         switch self {
-        case .layoutPhase:  return "LayoutPhase"
-        case .runningPhase: return "RunningPhase"
-        case .endingPhase: return "EndingPhase"
+        case .layoutState:  return "layoutState"
+        case .runningState: return "runningState"
+        case .pausingState: return "pausingState"
+        case .completedState: return "completedState"
         }
     }
     
@@ -122,6 +126,8 @@ let gameListName = "CyberSolitaireGames"
 
 
 class SolitaireGame: NSObject {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     weak var userInteractionProtocolDelegate: UserInteractionProtocolDelegate?
 
@@ -140,7 +146,7 @@ class SolitaireGame: NSObject {
     //TODO: es muss überlegt werden, wie diese Eigenschaft gesteuert wird
     var cheatAllowed = permitCheating
     
-    var gamePhase = GamePhase.layoutPhase
+    var gameState = GameState.layoutState
     var playMove: PlayMove? = nil
     
     var movements: [(SKCardMoves,Card,Double)] = []
@@ -151,18 +157,13 @@ class SolitaireGame: NSObject {
     let cardBasicHeight: CGFloat
     let cardSize: CGSize
     
-    //var undoDealStart = false
+    // MARK: Daten für die Statistik
     
-    // MARK: Behandlung der gameLayouts (class methods)
+    var gameStatistic: GameStatistic
     
-    // neu: jetzt mit SwiftyPListManager
-    class func loadGameLayoutsFromPlist() -> [Dictionary<String,Any>]? {
-        if let gameLayoutsPList = SwiftyPlistManager.shared.fetchValue(for: "games", fromPlistWithName: cyberSolitaireListName) as? [Dictionary<String,Any>] {
-            return gameLayoutsPList
-        }
-        log.error("Fehler beim Lesen der GameLayouts")
-        return nil
-    }
+    // Zeiten für das gesamte Spiel
+    var totalTimeGame = TimeInterval()
+    var lastTimeCumulated = Date()
     
     
 // MARK: initializers
@@ -170,6 +171,10 @@ class SolitaireGame: NSObject {
     init(gameName: String, playingAreaRect: CGRect, undoManager: UndoManager, userInteractionProtocolDelegate: UserInteractionProtocolDelegate) {
         self.gameName = gameName
         self.undoManager = undoManager
+        
+        // hole Statistik
+        self.gameStatistic = getGameStatisticFor(gameName)!
+        self.gameStatistic.totalPlayed += 1                 // wieder ein Spiel mehr
         
         // ermittle die Geometrie
         self.playingAreaRect = playingAreaRect
@@ -228,8 +233,11 @@ class SolitaireGame: NSObject {
         self.typeOfScoring = gameLayout!.typeOfScoring!
         self.difficulty = gameLayout!.difficulty
         self.maxPoints = gameLayout!.maxPoints
-            
+        
+
         super.init()      // nur wenn von NSObject abgeleitet wurde
+        
+        appDelegate.currentActiveGame = self
         
         // jetzt werden die maximalen Höhen der Piles berechnet
         // bei jedem Pile wird untersucht (falls es ein Pile mit veränderlicher Größe ist ->overlapped)
@@ -244,6 +252,8 @@ class SolitaireGame: NSObject {
     }
     
     deinit {
+ //       appDelegate.currentActiveGame = nil
+
         undoManager.removeAllActions()
         gamePiles?.removeAll()
         startPile = nil
@@ -504,8 +514,24 @@ class SolitaireGame: NSObject {
     }
 
     // MARK: Spielzug Aktionen
+    // bei jeder Spielzug Aktion (start, finish, cancel) wird die Gesamtspielzeit erhöht
+    // falls die Zeit bis zum nächsten Ereignis  größer als eine vorgegebene Zeit ist,
+    // wird die Spielzeit entsprechend nach unten korrigiert
+    
+    func cumulatePlayTime() {
+        let now = Date()
+        let timeSinceLastTimeCumulated = now.timeIntervalSince(lastTimeCumulated)
+        // falls die Zeit seit dem letzten update kleiner als die vorgegebene Zeit ist, wird totalGameTime erhöht
+        if timeSinceLastTimeCumulated <= kMaxLastTimeCumulated {
+            totalTimeGame += timeSinceLastTimeCumulated
+        }
+        log.verbose("totalGameTime ist: \(totalTimeGame)")
+        // dann beginnt das ganze Spiel von Neuem
+        lastTimeCumulated = now
+    }
     
     func startPlayMoveFor(_ pile: Pile, withCard: Card) {
+        cumulatePlayTime()
         // hier sollten alle View Aktionen beendet sein
         userInteractionProtocolDelegate!.disableUndoRedo()
         resetzPositions()
@@ -593,6 +619,8 @@ class SolitaireGame: NSObject {
     }
 
     func playMoveFinished() {
+        // berechne die bisherige Spielzeit
+        cumulatePlayTime()
         unselectPiles()
         unselectCards()
         evaluateScore()
@@ -600,6 +628,8 @@ class SolitaireGame: NSObject {
         
     }
     func playMoveCanceled(withoutEnableUndoRedo withoutEnable: Bool = false) {
+        // berechne die bisherige Spielzeit
+        cumulatePlayTime()
         unselectPiles()
         unselectCards()
         playMove!.setInnerState(status: .idle, result: .canceled, selectedPile: nil, secondSelectedPile: nil, selectedCard: nil, secondSelectedCard: nil)
@@ -990,7 +1020,6 @@ class SolitaireGame: NSObject {
     // MARK: Scoring
     
     func evaluateScore() {
-        //log.info("injection test")
         var newScore = 0
         switch typeOfScoring {
         case .scoringSequenceInSuitAndFoundation, .scoringSequenceInSuitAndKingUp:
@@ -1092,18 +1121,16 @@ class SolitaireGame: NSObject {
             // informiere controller den Wert anzuzeigen
             scoreValue! <- score
         }
-        isGameWon()
+        if isGameWon() {
+            // unterrichte den Controller, damit der den Sound abspielen kann
+            NotificationCenter.default.post(name: Notification.Name(rawValue: playSoundNotification), object: self, userInfo: (NSDictionary(object: "clapping", forKey: "soundName" as NSCopying) as! [AnyHashable: Any]))
+            gameState = .completedState
+            cumulatePlayTime()
+        }
     }
     
     @discardableResult func isGameWon() -> Bool {
-        let gameWon = score == maxPoints
-        if gameWon {
-            // unterrichte den Controller, damit der den Sound abspielen kann
-            NotificationCenter.default.post(name: Notification.Name(rawValue: playSoundNotification), object: self, userInfo: (NSDictionary(object: "clapping", forKey: "soundName" as NSCopying) as! [AnyHashable: Any]))
-
-        }
-        gamePhase = .endingPhase
-        return gameWon
+        return score == maxPoints
     }
     
     // MARK: Such Aktionen

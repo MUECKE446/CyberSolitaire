@@ -7,6 +7,21 @@
 //
 
 import UIKit
+import SwiftyPlistManager
+
+
+// Konstanten für SwiftyPlistManger
+let settingsListName = "SettingsList"
+
+let playTonesKey = "playTones"
+let permitUndoRedoKey = "permitUndoRedo"
+let permitCheatingKey = "permitCheating"
+
+// settings variables, die alle Spiele betreffen
+var playTones = true
+var permitUndoRedo = true
+var permitCheating = true
+
 
 class SettingsTableViewController: UITableViewController,UIPopoverControllerDelegate {
  
@@ -62,3 +77,30 @@ class SettingsTableViewController: UITableViewController,UIPopoverControllerDele
     }
 
 }
+
+
+func readSettingList() {
+    playTones = SwiftyPlistManager.shared.fetchValue(for: playTonesKey, fromPlistWithName: settingsListName) as! Bool
+    permitCheating = SwiftyPlistManager.shared.fetchValue(for: permitCheatingKey, fromPlistWithName: settingsListName) as! Bool
+    permitUndoRedo = SwiftyPlistManager.shared.fetchValue(for: permitUndoRedoKey, fromPlistWithName: settingsListName) as! Bool
+}
+
+func writeSettingsList() {
+    SwiftyPlistManager.shared.save(playTones, forKey: playTonesKey, toPlistWithName: settingsListName) { (err) in
+        if err != nil {
+            logSwiftyPlistManager(err)
+        }
+    }
+    SwiftyPlistManager.shared.save(permitCheating, forKey: permitCheatingKey, toPlistWithName: settingsListName) { (err) in
+        if err != nil {
+            logSwiftyPlistManager(err)
+        }
+    }
+    SwiftyPlistManager.shared.save(permitUndoRedo, forKey: permitUndoRedoKey, toPlistWithName: settingsListName) { (err) in
+        if err != nil {
+            logSwiftyPlistManager(err)
+        }
+    }
+}
+
+
