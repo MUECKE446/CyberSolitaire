@@ -47,6 +47,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     @IBOutlet weak var chooseAnotherGameButton: UIButton!
     @IBOutlet weak var ScoreValueLabel: UILabel!
     @IBOutlet weak var playableAreaView: UIView!
+    @IBOutlet weak var gameNameLabel: UILabel!
     
     
     @IBAction func ChooseAnotherGameButton(_ sender: Any) {
@@ -123,6 +124,9 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         
         let skView = self.view as! SKView
 
+        // zeige das aktuelle Spiel an
+        gameNameLabel.text = gameName
+        
         // für den Test
 //        skView.showsFPS = true
 //        skView.showsNodeCount = true
