@@ -294,7 +294,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         // MARK: Ende Observer Handler
 
         self.game!.dealoutStartFormation()
-        game!.gamePhase = .runningPhase
+        game!.gameState = .runningState
         
         log.verbose("ab jetzt kann gespielt werden. userInteraction = \(view.isUserInteractionEnabled) Zaehler = \(zaehler)")
         //logGameStart()
@@ -306,6 +306,19 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     
     override func viewWillDisappear(_ animated: Bool) {
         log.verbose("ich verschwinde")
+        // Statistik verarbeiten
+        if game!.isGameWon() {
+            game!.gameStatistic.won += 1
+        }
+        else {
+            game!.cumulatePlayTime()
+            game!.gameStatistic.lost += 1
+        }
+        game!.gameStatistic.totalTime = game!.totalTimeGame
+        game!.gameStatistic.totalPlayed += 1                 // wieder ein Spiel mehr
+
+        updateStatisticsListFor(game!.gameName, with: game!.gameStatistic)
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: cardCreatedNotification), object: nil)
         notificationCenter.removeObserver(self, name: NSNotification.Name(rawValue: pileCreatedNotification), object: nil)
@@ -321,9 +334,6 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         cheatCard = nil
         someChangedOnCard = nil
         waitForDuration = nil
-        //self.view = nil
-        //scene = nil
-        //game = nil
     }
     
     // MARK: Notification Methoden

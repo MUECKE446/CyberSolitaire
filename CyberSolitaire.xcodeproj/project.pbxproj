@@ -45,6 +45,8 @@
 		4C5950AB21760A7F007F0DEE /* game(Spider).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950AA21760A7F007F0DEE /* game(Spider).plist */; };
 		4C5950AD21761031007F0DEE /* GamesPListHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5950AC21761031007F0DEE /* GamesPListHelpers.swift */; };
 		4C5EDB921AD7D73600B0DC20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EDB911AD7D73600B0DC20 /* main.m */; };
+		4C83ADD7218880EB00848BAE /* statisticsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C83ADD6218880EB00848BAE /* statisticsList.plist */; };
+		4C83ADD9218881EE00848BAE /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C83ADD8218881EE00848BAE /* Statistics.swift */; };
 		4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C87D43E1AED472F00DB68BF /* icon-settings.png */; };
 		4C8F15CF1AD3E03E00443A41 /* BackgroundWildWest.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8F15CE1AD3E03E00443A41 /* BackgroundWildWest.png */; };
 		4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA5C15D216FD460009DC9CC /* SettingsList.plist */; };
@@ -82,7 +84,9 @@
 		4CD611FA1AACA6BF0081F5A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD611F81AACA6BF0081F5A7 /* LaunchScreen.xib */; };
 		4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */; };
 		4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */; };
+		4CDC2E3F218B8D97000C6101 /* StatisticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */; };
 		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
+		4CF511B9218DDC70009334D9 /* StatisticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */; };
 		C23CD9311E702DBF235042D0 /* Pods_CyberSolitaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +131,8 @@
 		4C5950AA21760A7F007F0DEE /* game(Spider).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Spider).plist"; sourceTree = "<group>"; };
 		4C5950AC21761031007F0DEE /* GamesPListHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPListHelpers.swift; sourceTree = "<group>"; };
 		4C5EDB911AD7D73600B0DC20 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C83ADD6218880EB00848BAE /* statisticsList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = statisticsList.plist; sourceTree = "<group>"; };
+		4C83ADD8218881EE00848BAE /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		4C87D43E1AED472F00DB68BF /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
 		4C8F15CE1AD3E03E00443A41 /* BackgroundWildWest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundWildWest.png; sourceTree = "<group>"; };
 		4CA5C15D216FD460009DC9CC /* SettingsList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SettingsList.plist; sourceTree = "<group>"; };
@@ -168,7 +174,9 @@
 		4CD612051AACA6BF0081F5A7 /* CyberSolitaire_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberSolitaire_Tests.swift; sourceTree = "<group>"; };
 		4CD612181AACAA500081F5A7 /* CyberSol_Background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CyberSol_Background1.png; sourceTree = "<group>"; };
 		4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewController.swift; sourceTree = "<group>"; };
 		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewCell.swift; sourceTree = "<group>"; };
 		4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CyberSolitaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyberSolitaire.debug.xcconfig"; path = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +271,7 @@
 				4CABDD091AAF050400960D35 /* Card.swift */,
 				4CABDD0B1AAF050400960D35 /* Pile.swift */,
 				4CABDD0D1AAF050400960D35 /* SolitaireGame.swift */,
+				4C83ADD8218881EE00848BAE /* Statistics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,10 +291,12 @@
 		4CABDD181AAF053200960D35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */,
 				4CABDD191AAF053200960D35 /* GameViewController.swift */,
 				4CA662C82183145B0005BC8C /* SelectGameTableViewController.swift */,
 				4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */,
 				4C2E5958217F586A0046667F /* GameSelectCell.swift */,
+				4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,6 +409,7 @@
 				4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */,
 				4C5950AA21760A7F007F0DEE /* game(Spider).plist */,
 				4CA5C15D216FD460009DC9CC /* SettingsList.plist */,
+				4C83ADD6218880EB00848BAE /* statisticsList.plist */,
 			);
 			path = "other Resources";
 			sourceTree = "<group>";
@@ -494,6 +506,7 @@
 				4CB12B45217CBDC200277F0B /* icon-redo-48.png in Resources */,
 				4C0B5ECD1AB092F400ED27EF /* gallop.caf in Resources */,
 				4CD611F71AACA6BF0081F5A7 /* Images.xcassets in Resources */,
+				4C83ADD7218880EB00848BAE /* statisticsList.plist in Resources */,
 				4C0B5ED71AB092F400ED27EF /* select.caf in Resources */,
 				4C87D43F1AED472F00DB68BF /* icon-settings.png in Resources */,
 				4C0B5ED41AB092F400ED27EF /* plus.caf in Resources */,
@@ -581,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDC2E3F218B8D97000C6101 /* StatisticTableViewController.swift in Sources */,
 				4CA9B5731AC2C3E3003C7388 /* SKAction+SpecialEffects.swift in Sources */,
 				4C0B5EED1AB1D13400ED27EF /* Observable.swift in Sources */,
 				4C0B5EF31AB1D13400ED27EF /* TupleObservable.swift in Sources */,
@@ -598,6 +612,7 @@
 				4C5EDB921AD7D73600B0DC20 /* main.m in Sources */,
 				4CA9B5711AC2C3E3003C7388 /* Int+Extensions.swift in Sources */,
 				4CA662C92183145B0005BC8C /* SelectGameTableViewController.swift in Sources */,
+				4CF511B9218DDC70009334D9 /* StatisticViewCell.swift in Sources */,
 				4CD611EC1AACA6BF0081F5A7 /* AppDelegate.swift in Sources */,
 				4C2E5959217F586A0046667F /* GameSelectCell.swift in Sources */,
 				4C0B5EEB1AB1D13400ED27EF /* EventSubscription.swift in Sources */,
@@ -613,6 +628,7 @@
 				4CA9B5771AC2C3E3003C7388 /* SKTEffects.swift in Sources */,
 				4CA9B5781AC2C3E3003C7388 /* SKTTimingFunctions.swift in Sources */,
 				4CABDD111AAF050400960D35 /* PileLayout.swift in Sources */,
+				4C83ADD9218881EE00848BAE /* Statistics.swift in Sources */,
 				4CABDD161AAF051B00960D35 /* CardNode.swift in Sources */,
 				4CA9B56E1AC2C3E3003C7388 /* CGFloat+Extensions.swift in Sources */,
 				4CABDD1A1AAF053200960D35 /* GameViewController.swift in Sources */,
