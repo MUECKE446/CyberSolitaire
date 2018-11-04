@@ -30,7 +30,9 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
     
     var gamesWithDescriptionCanBeSelected : [GameWithDescription] = []
 
-
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var statisticButton: UIButton!
+    
     @IBAction func descriptionButtonTapped(_ sender: UIButton) {
         var parent = sender.superview
         while ((parent != nil) && !(parent!.isKind(of: GameSelectCell.self))) {
@@ -54,6 +56,17 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingsButton.backgroundColor = UIColor.white
+        settingsButton.layer.cornerRadius = 5
+        settingsButton.layer.borderWidth = 1
+        settingsButton.layer.borderColor = UIColor.black.cgColor
+        
+        
+        statisticButton.backgroundColor = UIColor.white
+        statisticButton.layer.cornerRadius = 5
+        statisticButton.layer.borderWidth = 1
+        statisticButton.layer.borderColor = UIColor.black.cgColor
         
         // fülle die Tabelle
         let allGames = getAllGames()

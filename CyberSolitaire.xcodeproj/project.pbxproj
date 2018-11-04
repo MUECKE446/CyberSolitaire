@@ -86,6 +86,7 @@
 		4CD6121B1AACAA5E0081F5A7 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */; };
 		4CDC2E3F218B8D97000C6101 /* StatisticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */; };
 		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
+		4CF511B9218DDC70009334D9 /* StatisticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */; };
 		C23CD9311E702DBF235042D0 /* Pods_CyberSolitaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,7 @@
 		4CD6121A1AACAA5E0081F5A7 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewController.swift; sourceTree = "<group>"; };
 		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewCell.swift; sourceTree = "<group>"; };
 		4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CyberSolitaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyberSolitaire.debug.xcconfig"; path = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 		4CABDD181AAF053200960D35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */,
 				4CABDD191AAF053200960D35 /* GameViewController.swift */,
 				4CA662C82183145B0005BC8C /* SelectGameTableViewController.swift */,
 				4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */,
@@ -609,6 +612,7 @@
 				4C5EDB921AD7D73600B0DC20 /* main.m in Sources */,
 				4CA9B5711AC2C3E3003C7388 /* Int+Extensions.swift in Sources */,
 				4CA662C92183145B0005BC8C /* SelectGameTableViewController.swift in Sources */,
+				4CF511B9218DDC70009334D9 /* StatisticViewCell.swift in Sources */,
 				4CD611EC1AACA6BF0081F5A7 /* AppDelegate.swift in Sources */,
 				4C2E5959217F586A0046667F /* GameSelectCell.swift in Sources */,
 				4C0B5EEB1AB1D13400ED27EF /* EventSubscription.swift in Sources */,

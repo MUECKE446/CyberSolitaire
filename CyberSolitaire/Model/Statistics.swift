@@ -23,10 +23,8 @@ struct GameStatistic {
 
 let gamesKey = "games"
 
-var totalPlayedGames  = 0
-var totalPlayedTime : TimeInterval = 0.0
+internal var gamesInStatisticsList = SwiftyPlistManager.shared.fetchValue(for: gamesKey, fromPlistWithName: statisticsListName) as! [Dictionary<String,Any>]
 
-var gamesInStatisticsList = SwiftyPlistManager.shared.fetchValue(for: gamesKey, fromPlistWithName: statisticsListName) as! [Dictionary<String,Any>]
 var gamesStatistics : [GameStatistic] = []
 
 func computeStatisticTotals() -> (totalPlayed : Int, totalWon : Int, totalTime : TimeInterval) {
@@ -41,7 +39,7 @@ func computeStatisticTotals() -> (totalPlayed : Int, totalWon : Int, totalTime :
     return (totalGames,totalWon,totalTime)
 }
 
-func getStatisticFor(_ name:String) -> GameStatistic? {
+func getStatisticFromGamesInStatisticsListFor(_ name:String) -> GameStatistic? {
     for gameInStatistics in gamesInStatisticsList {
         if gameInStatistics["gameName"] as! String == name {
             var gameStatistic = GameStatistic()
@@ -50,7 +48,6 @@ func getStatisticFor(_ name:String) -> GameStatistic? {
             gameStatistic.won = gameInStatistics["won"] as! Int
             gameStatistic.lost = gameStatistic.totalPlayed - gameStatistic.won
             gameStatistic.totalTime = gameInStatistics["totalTime"] as! TimeInterval
-            gamesStatistics.append(gameStatistic)
             return gameStatistic
         }
     }
@@ -67,25 +64,21 @@ func getGameStatisticFor(_ name: String) -> GameStatistic? {
     return nil
 }
 
-func updateStatisticsListFor(_ name:String, with:GameStatistic ) {
-    for (index,var gameInStatistic) in gamesInStatisticsList.enumerated() {
-        gameInStatistic["gameName"] = with.gameName
-        gameInStatistic["totalPlayed"] = with.totalPlayed
-        gameInStatistic["won"] = with.won
-        gameInStatistic["totalTime"] = with.totalTime
-        gamesInStatisticsList[index] = gameInStatistic
-        SwiftyPlistManager.shared.save(gamesInStatisticsList, forKey: gamesKey, toPlistWithName: statisticsListName)  { (err) in
-            if err != nil {
-                logSwiftyPlistManager(err)
-            }
+func updateStatisticsListFor(_ name:String, with gameStatistic:GameStatistic ) {
+    for (index,value) in gamesStatistics.enumerated() {
+        // aktualisiere gamesStatistics
+        if value.gameName == name {
+            gamesStatistics[index] = gameStatistic
         }
     }
+    writeStatisticsList()
 }
 
+// diese Function füllt gamesStatistics : [GameStatistic]
 func readStatisticsList() {
     let allGameNames = getAllGameNames()
     for gameName in allGameNames {
-        if let gameStatistic = getStatisticFor(gameName) {
+        if let gameStatistic = getStatisticFromGamesInStatisticsListFor(gameName) {
             gamesStatistics.append(gameStatistic)
         }
         else {
@@ -99,27 +92,30 @@ func readStatisticsList() {
             newGameDict["won"] = gameStatistic.won
             newGameDict["totalTime"] = gameStatistic.totalTime
             gamesInStatisticsList.append(newGameDict)
-            SwiftyPlistManager.shared.save(gamesInStatisticsList, forKey: gamesKey, toPlistWithName: statisticsListName)  { (err) in
-                if err != nil {
-                    logSwiftyPlistManager(err)
-                }
-            }
         }
     }
     // lösche Statistiken der nicht mehr vorhandenen Spiele
     for (index,gameInStatistic) in gamesInStatisticsList.enumerated() {
         if !allGameNames.contains(gameInStatistic["gameName"] as! String) {
             gamesInStatisticsList.remove(at: index)
-            SwiftyPlistManager.shared.save(gamesInStatisticsList, forKey: gamesKey, toPlistWithName: statisticsListName)  { (err) in
-                if err != nil {
-                    logSwiftyPlistManager(err)
-                }
+        }
+    }
+    writeStatisticsList()
+}
+
+// diese Function schreibt das gamesStatistics : [GameStatistic] in die plist
+func writeStatisticsList() {
+    for gameStatistic in gamesStatistics {
+        for (index,var gameInStatisticList) in gamesInStatisticsList.enumerated() {
+            if gameInStatisticList["gameName"] as! String == gameStatistic.gameName {
+                gameInStatisticList["totalPlayed"] = gameStatistic.totalPlayed
+                gameInStatisticList["won"] = gameStatistic.won
+                gameInStatisticList["totalTime"] = gameStatistic.totalTime
+                gamesInStatisticsList[index] = gameInStatisticList
+                break
             }
         }
     }
-}
-
-func writeStatisticsList() {
     SwiftyPlistManager.shared.save(gamesInStatisticsList, forKey: gamesKey, toPlistWithName: statisticsListName)  { (err) in
         if err != nil {
             logSwiftyPlistManager(err)

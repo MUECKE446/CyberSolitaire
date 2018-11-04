@@ -174,7 +174,6 @@ class SolitaireGame: NSObject {
         
         // hole Statistik
         self.gameStatistic = getGameStatisticFor(gameName)!
-        self.gameStatistic.totalPlayed += 1                 // wieder ein Spiel mehr
         
         // ermittle die Geometrie
         self.playingAreaRect = playingAreaRect

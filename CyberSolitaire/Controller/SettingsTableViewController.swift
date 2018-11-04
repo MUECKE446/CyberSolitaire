@@ -28,6 +28,8 @@ class SettingsTableViewController: UITableViewController,UIPopoverControllerDele
     @IBOutlet weak var settingsTonesSwitch: UISwitch!
     @IBOutlet weak var settingsPermitCheating: UISwitch!
     @IBOutlet weak var settingsPermitUndoRedo: UISwitch!
+    @IBOutlet weak var VersionLabel: UILabel!
+    @IBOutlet weak var settingsDoneButton: UIButton!
     
     @IBAction func settingsTonesChanged(_ sender: Any) {
         playTones = !playTones
@@ -48,6 +50,14 @@ class SettingsTableViewController: UITableViewController,UIPopoverControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingsDoneButton.backgroundColor = UIColor.white
+        settingsDoneButton.layer.cornerRadius = 5
+        settingsDoneButton.layer.borderWidth = 1
+        settingsDoneButton.layer.borderColor = UIColor.black.cgColor
+        
+        let versionText = "CyberSolitaire Version: " + CyberSolitaireVersion
+        VersionLabel.text = versionText
         
         readSettingList()
         settingsTonesSwitch.setOn(playTones, animated: false)

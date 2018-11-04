@@ -311,6 +311,8 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             game!.gameStatistic.lost += 1
         }
         game!.gameStatistic.totalTime = game!.totalTimeGame
+        game!.gameStatistic.totalPlayed += 1                 // wieder ein Spiel mehr
+
         updateStatisticsListFor(game!.gameName, with: game!.gameStatistic)
         
         let notificationCenter = NotificationCenter.default
