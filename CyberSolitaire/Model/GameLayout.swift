@@ -17,7 +17,6 @@ class GameLayout {
     var gameGroup = ""
     var numberOfDecks = 0
     var scoringType = TypeOfScoring(rawValue: 0)
-    var difficulty = 0
     var maxPoints = 0
     var numberOfPiles = 0
     var pileLayouts: [PileLayout] = []
@@ -35,7 +34,6 @@ class GameLayout {
                 tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
                 tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
                 tmpGameLayout.scoringType = convertToTypeOfScoring(foundGame, key: "scoringType")
-                tmpGameLayout.difficulty = foundGame["difficulty"] as! Int
                 tmpGameLayout.maxPoints = foundGame["maxPoints"] as! Int
                 let pilesLayoutPList = foundGame["piles"] as! [Dictionary<String,Any>]
                 for pileLayoutPList in pilesLayoutPList {
@@ -78,7 +76,6 @@ class GameLayout {
 //        log.info("gameGroup: \(self.gameGroup)")
 //        log.info("numberOfDecks: \(self.numberOfDecks)")
 //        log.info("scoringType: \(String(describing: self.scoringType?.description()))")
-//        log.info("difficulty: \(self.difficulty)")
 //        log.info("maxPoints: \(self.maxPoints)")
 //        log.info("numberOfPiles: \(self.numberOfPiles)")
 //        for i in 0 ..< self.numberOfPiles {
@@ -88,14 +85,4 @@ class GameLayout {
 //        }
     }
     
-/*
-    func convertToPropertyList() -> [AnyObject] {
-        var propertyList: [AnyObject] = [gameLayoutVersion as AnyObject,gameName as AnyObject,
-            gameGroup as AnyObject,numberOfDecks as AnyObject, scoringType!.rawValue as AnyObject,difficulty as AnyObject, maxPoints as AnyObject, numberOfPiles as AnyObject]
-        for pileLayout in pileLayouts {
-            propertyList.append(pileLayout.convertToPropertyList() as AnyObject)
-        }
-        return propertyList
-    }
-*/
 }

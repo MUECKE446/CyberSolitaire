@@ -136,7 +136,6 @@ class SolitaireGame: NSObject {
     let gameName : String
     let gameGroup: String
     let scoringType: TypeOfScoring
-    let difficulty: Int
     var maxPoints: Int
     
     var score = 0
@@ -230,7 +229,6 @@ class SolitaireGame: NSObject {
         
         self.gameGroup = gameLayout!.gameGroup
         self.scoringType = gameLayout!.scoringType!
-        self.difficulty = gameLayout!.difficulty
         self.maxPoints = gameLayout!.maxPoints
         
 
