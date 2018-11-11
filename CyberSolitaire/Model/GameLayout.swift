@@ -16,7 +16,7 @@ class GameLayout {
     var gameName = ""
     var gameGroup = ""
     var numberOfDecks = 0
-    var typeOfScoring = TypeOfScoring(rawValue: 0)
+    var scoringType = TypeOfScoring(rawValue: 0)
     var difficulty = 0
     var maxPoints = 0
     var numberOfPiles = 0
@@ -34,7 +34,7 @@ class GameLayout {
                 tmpGameLayout.gameName = foundGame["gameName"] as! String
                 tmpGameLayout.gameGroup = foundGame["gameGroup"] as! String
                 tmpGameLayout.numberOfDecks = foundGame["numberOfDecks"] as! Int
-                tmpGameLayout.typeOfScoring = convertToTypeOfScoring(foundGame, key: "scoringType")
+                tmpGameLayout.scoringType = convertToTypeOfScoring(foundGame, key: "scoringType")
                 tmpGameLayout.difficulty = foundGame["difficulty"] as! Int
                 tmpGameLayout.maxPoints = foundGame["maxPoints"] as! Int
                 let pilesLayoutPList = foundGame["piles"] as! [Dictionary<String,Any>]
@@ -77,7 +77,7 @@ class GameLayout {
 //        log.info("gameName: \(self.gameName)")
 //        log.info("gameGroup: \(self.gameGroup)")
 //        log.info("numberOfDecks: \(self.numberOfDecks)")
-//        log.info("typeOfScoring: \(String(describing: self.typeOfScoring?.description()))")
+//        log.info("scoringType: \(String(describing: self.scoringType?.description()))")
 //        log.info("difficulty: \(self.difficulty)")
 //        log.info("maxPoints: \(self.maxPoints)")
 //        log.info("numberOfPiles: \(self.numberOfPiles)")
@@ -88,12 +88,14 @@ class GameLayout {
 //        }
     }
     
+/*
     func convertToPropertyList() -> [AnyObject] {
         var propertyList: [AnyObject] = [gameLayoutVersion as AnyObject,gameName as AnyObject,
-            gameGroup as AnyObject,numberOfDecks as AnyObject, typeOfScoring!.rawValue as AnyObject,difficulty as AnyObject, maxPoints as AnyObject, numberOfPiles as AnyObject]
+            gameGroup as AnyObject,numberOfDecks as AnyObject, scoringType!.rawValue as AnyObject,difficulty as AnyObject, maxPoints as AnyObject, numberOfPiles as AnyObject]
         for pileLayout in pileLayouts {
             propertyList.append(pileLayout.convertToPropertyList() as AnyObject)
         }
         return propertyList
     }
+*/
 }

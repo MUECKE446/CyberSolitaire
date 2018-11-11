@@ -293,19 +293,19 @@ class Pile: NSObject {
     let pileType: TypeOfPile
     /*! enthält alle Karten des Stapels */
     var cards: [Card] = []
-    let pileOverlapMode : TypeOfOverlap
-    let pileSelectAndMoveMode: TypeOfUserSelectAndMove
+    let overlapType : TypeOfOverlap
+    let userSelectAndMoveType: TypeOfUserSelectAndMove
     
-    let indexEmptyPile: Int
+    let indexForEmptyPileImage: Int
     let numberOfCardsAtStart: Int
     let dealOrderAtStart: Int
     let faceAtStart : FaceAtStart
-    let depositFromUser: TypeOfDepositFromUser
-    let depositIfEmpty: TypeOfDepositIfEmpty
-    let permittedToPlay: TypeOfPermittedToPlay
-    let basicCard: TypeOfBasicCard
-    let dealingFromStock: TypeOfDealingFromStock
-    let redeal: TypeOfRedeal
+    let depositFromUserType: TypeOfDepositFromUser
+    let depositIfEmptyType: TypeOfDepositIfEmpty
+    let permittedToPlayType: TypeOfPermittedToPlay
+    let basicCardType: TypeOfBasicCard
+    let dealingFromStockType: TypeOfDealingFromStock
+    let redealType: TypeOfRedeal
     let numberPerMove: Int
     
     var pileEmptySize = CGSize.zero
@@ -331,33 +331,33 @@ class Pile: NSObject {
     // MARK: initialisierer
     
     init(pileID: Int,
-        typeOfPile: TypeOfPile,
-        overlapMode: TypeOfOverlap,
-        selectAndMoveMode: TypeOfUserSelectAndMove,
-        depositFromUser: TypeOfDepositFromUser,
-        depositIfEmpty: TypeOfDepositIfEmpty,
-        permittedToPlay: TypeOfPermittedToPlay,
-        basicCard: TypeOfBasicCard,
-        dealingFromStock: TypeOfDealingFromStock,
-        redeal: TypeOfRedeal,
+        pileType: TypeOfPile,
+        overlapType: TypeOfOverlap,
+        userSelectAndMoveType: TypeOfUserSelectAndMove,
+        depositFromUserType: TypeOfDepositFromUser,
+        depositIfEmptyType: TypeOfDepositIfEmpty,
+        permittedToPlayType: TypeOfPermittedToPlay,
+        basicCardType: TypeOfBasicCard,
+        dealingFromStockType: TypeOfDealingFromStock,
+        redealType: TypeOfRedeal,
         numberPerMove: Int,
-        indexOfEmptyPile: Int,
+        indexForEmptyPileImage: Int,
         numberOfCardsAtStart: Int,
         dealOrderAtStart: Int,
         faceAtStart: FaceAtStart) {
         // der Initialisierer enthält alle Komponenten aus dem PileLayout ausser der Position
         self.pileId = pileID
-        self.pileType = typeOfPile
-        self.pileOverlapMode = overlapMode
-        self.pileSelectAndMoveMode = selectAndMoveMode
-        self.depositFromUser = depositFromUser
-        self.depositIfEmpty = depositIfEmpty
-        self.permittedToPlay = permittedToPlay
-        self.basicCard = basicCard
-        self.dealingFromStock = dealingFromStock
-        self.redeal = redeal
+        self.pileType = pileType
+        self.overlapType = overlapType
+        self.userSelectAndMoveType = userSelectAndMoveType
+        self.depositFromUserType = depositFromUserType
+        self.depositIfEmptyType = depositIfEmptyType
+        self.permittedToPlayType = permittedToPlayType
+        self.basicCardType = basicCardType
+        self.dealingFromStockType = dealingFromStockType
+        self.redealType = redealType
         self.numberPerMove = numberPerMove
-        self.indexEmptyPile = indexOfEmptyPile
+        self.indexForEmptyPileImage = indexForEmptyPileImage
         self.numberOfCardsAtStart = numberOfCardsAtStart
         self.dealOrderAtStart = dealOrderAtStart
         self.faceAtStart = faceAtStart
@@ -486,7 +486,7 @@ class Pile: NSObject {
         oldPileSize = pileSize
         // die Positionen aller Karten im Pile werden gesetzt
         var tmpOverlapValue: CGFloat = 0.0
-        switch pileOverlapMode {
+        switch overlapType {
         case .notOverlapped:
             pileSize = pileEmptySize
             for card in cards {
@@ -549,7 +549,7 @@ class Pile: NSObject {
         // berechne die Stapelgröße mit den Standardwerten
         var retSize = pileEmptySize
         var tmpOverlapValue:CGFloat = 0.0
-        switch pileOverlapMode {
+        switch overlapType {
         case .notOverlapped:
             return retSize
         case .downOverlapped:
@@ -575,7 +575,7 @@ class Pile: NSObject {
         // verringert die Höhe des Stapels, sodass die maximal Höhe eingehalten wird
         var countBiggerCards = 0
         var countSmallerCards = 0
-        switch pileOverlapMode {
+        switch overlapType {
         case .notOverlapped:
             break
         case .downOverlapped:
@@ -604,7 +604,7 @@ class Pile: NSObject {
         // bis die Standardwerte erreicht sind
         var countBiggerCards = 0
         var countSmallerCards = 0
-        switch pileOverlapMode {
+        switch overlapType {
         case .notOverlapped:
             break
         case .downOverlapped:
@@ -637,7 +637,7 @@ class Pile: NSObject {
     
     func increasePileSizeToDefault() {
         // vergrößert die Größe des Stapels auf die Standardwerte
-        switch pileOverlapMode {
+        switch overlapType {
         case .notOverlapped:
             break
         case .downOverlapped:
@@ -738,7 +738,7 @@ class Pile: NSObject {
     }
     
     func conformsWithSelectAndMoveMode(_ card: Card) -> Bool {
-        switch self.pileSelectAndMoveMode {
+        switch self.userSelectAndMoveType {
         case .anySequenceInSuit:
             return isDownInSequenceAndSuitStartingAt(card)
         case .allSeqNoColorOrLast:
@@ -764,7 +764,7 @@ class Pile: NSObject {
         // zunächst gibt es die beiden Fälle leer oder nicht
         if isPileEmpty() {
             // leeren Pile bearbeiten
-            switch self.depositIfEmpty {
+            switch self.depositIfEmptyType {
             case .anyCard:
                 return true
             default:
@@ -777,7 +777,7 @@ class Pile: NSObject {
             // der Stapel enthält Karten
             //TODO: maximale Anzahl bearbeiten
             let lastCard = getLastCard()
-            switch self.depositFromUser {
+            switch self.depositFromUserType {
             case .upInSuit:
                 return lastCard!.isUpInSuitWithCard(card)
             case .downNoColor:
@@ -814,7 +814,7 @@ class Pile: NSObject {
             }
             else {
                 // es sind genau 13 Karten selektiert
-                switch self.depositFromUser {
+                switch self.depositFromUserType {
                 case .downInSuit:
                     return fromPile.isDownInSequenceAndSuitStartingAt(card)
                 case .downNoColor:
@@ -831,7 +831,7 @@ class Pile: NSObject {
     func isPermittedToPlayFromPile(_ forSelectedPile: Pile) -> Bool {
         // darf auf diesen Stapel vom forSelectedPile abgelegt werden?
         var destinationPilePermittedtoPlay = false
-        switch forSelectedPile.permittedToPlay {
+        switch forSelectedPile.permittedToPlayType {
         case .tableauPermittedToPlay:
             // der Zielstapel muss ein Tableau sein
             destinationPilePermittedtoPlay = pileType == .tableau

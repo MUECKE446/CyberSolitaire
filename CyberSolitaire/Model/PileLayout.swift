@@ -364,6 +364,7 @@ default:
         log.info("posY: \(self.posY)")
     }
     
+/*
     func convertToPropertyList() -> [AnyObject] {
         let propertyList: [AnyObject] = [pileLayoutVersion as AnyObject,
             pileType!.rawValue as AnyObject,
@@ -385,5 +386,5 @@ default:
             posX as AnyObject, posY as AnyObject]
         return propertyList
     }
-
+*/
 }

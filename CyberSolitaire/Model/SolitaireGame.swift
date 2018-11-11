@@ -135,7 +135,7 @@ class SolitaireGame: NSObject {
     var gamePiles: [Pile]? = []          // alle Kartenstapel des Spiels
     let gameName : String
     let gameGroup: String
-    let typeOfScoring: TypeOfScoring
+    let scoringType: TypeOfScoring
     let difficulty: Int
     var maxPoints: Int
     
@@ -202,15 +202,15 @@ class SolitaireGame: NSObject {
         for pileLayout in gameLayout!.pileLayouts {
         //for i in 0 ..< gameLayout!.numberOfPiles {
         //    let pileLayout = gameLayout!.pileLayouts[i] as PileLayout
-            let pile = Pile(pileID: id, typeOfPile: pileLayout.pileType!, overlapMode: pileLayout.typeOfOverlap!, selectAndMoveMode: pileLayout.typeOfUserSelectAndMove!,
-                depositFromUser: pileLayout.typeOfDepositFromUser!,
-                depositIfEmpty: pileLayout.typeOfDepositIfEmpty!,
-                permittedToPlay: pileLayout.typeOfPermittedToPlay!,
-                basicCard: pileLayout.typeOfBasicCard!,
-                dealingFromStock: pileLayout.typeOfDealingFromStock!,
-                redeal: pileLayout.typeOfRedeal!,
+            let pile = Pile(pileID: id, pileType: pileLayout.pileType!, overlapType: pileLayout.typeOfOverlap!, userSelectAndMoveType: pileLayout.typeOfUserSelectAndMove!,
+                depositFromUserType: pileLayout.typeOfDepositFromUser!,
+                depositIfEmptyType: pileLayout.typeOfDepositIfEmpty!,
+                permittedToPlayType: pileLayout.typeOfPermittedToPlay!,
+                basicCardType: pileLayout.typeOfBasicCard!,
+                dealingFromStockType: pileLayout.typeOfDealingFromStock!,
+                redealType: pileLayout.typeOfRedeal!,
                 numberPerMove: pileLayout.numberPerMove,
-                            indexOfEmptyPile: pileLayout.indexForEmptyPileImage, numberOfCardsAtStart: pileLayout.numberOfCardsAtStart,
+                            indexForEmptyPileImage: pileLayout.indexForEmptyPileImage, numberOfCardsAtStart: pileLayout.numberOfCardsAtStart,
                             dealOrderAtStart: pileLayout.dealOrderAtStart, faceAtStart: pileLayout.faceAtStart!)
             
             // Achtung: die Positionswerte im Layout sind Prozentwerte
@@ -229,7 +229,7 @@ class SolitaireGame: NSObject {
         }
         
         self.gameGroup = gameLayout!.gameGroup
-        self.typeOfScoring = gameLayout!.typeOfScoring!
+        self.scoringType = gameLayout!.scoringType!
         self.difficulty = gameLayout!.difficulty
         self.maxPoints = gameLayout!.maxPoints
         
@@ -267,7 +267,7 @@ class SolitaireGame: NSObject {
         // bei jedem Pile wird untersucht (falls es ein Pile mit veränderlicher Größe ist ->overlapped)
         // ob sich ein anderer Pile unter ihm befindet.
         for pile in gamePiles! {
-            if pile.pileOverlapMode == TypeOfOverlap.downOverlapped {
+            if pile.overlapType == TypeOfOverlap.downOverlapped {
                 // stelle fest, ob sich ein Pile unterhalb befindet; durchsuche alle anderen Piles
                 var pileShortestToPile: Pile? = nil
                 for anotherPile in gamePiles! {
@@ -312,15 +312,15 @@ class SolitaireGame: NSObject {
     func createStartPile(_ numberOfDecks: Int) -> Pile {
         // erzeugt einen Pile mit allen Karten des Spiels; der Pile liegt ausserhalb der Spielfläche
         // der Controller wird informiert, damit er Views für die erzeugten Karten erzeugen kann
-        let pile = Pile(pileID: -1, typeOfPile: TypeOfPile.stock, overlapMode: TypeOfOverlap.notOverlapped, selectAndMoveMode: TypeOfUserSelectAndMove.typeOfUserSelectAndMoveNA ,
-            depositFromUser: TypeOfDepositFromUser.typeOfDepositFromUserNA,
-            depositIfEmpty: TypeOfDepositIfEmpty.typeOfDepositIfEmptyNA,
-            permittedToPlay: TypeOfPermittedToPlay.typeOfPermittedToPlayNA,
-            basicCard: TypeOfBasicCard.typeOfBasicCardNA,
-            dealingFromStock: TypeOfDealingFromStock.typeOfDealingFromStockNA,
-            redeal: TypeOfRedeal.typeOfRedealNA,
+        let pile = Pile(pileID: -1, pileType: TypeOfPile.stock, overlapType: TypeOfOverlap.notOverlapped, userSelectAndMoveType: TypeOfUserSelectAndMove.typeOfUserSelectAndMoveNA ,
+            depositFromUserType: TypeOfDepositFromUser.typeOfDepositFromUserNA,
+            depositIfEmptyType: TypeOfDepositIfEmpty.typeOfDepositIfEmptyNA,
+            permittedToPlayType: TypeOfPermittedToPlay.typeOfPermittedToPlayNA,
+            basicCardType: TypeOfBasicCard.typeOfBasicCardNA,
+            dealingFromStockType: TypeOfDealingFromStock.typeOfDealingFromStockNA,
+            redealType: TypeOfRedeal.typeOfRedealNA,
             numberPerMove: -1,
-            indexOfEmptyPile: 2, numberOfCardsAtStart: 0, dealOrderAtStart: 0, faceAtStart: FaceAtStart.allFaceDown)
+            indexForEmptyPileImage: 2, numberOfCardsAtStart: 0, dealOrderAtStart: 0, faceAtStart: FaceAtStart.allFaceDown)
         
         pile.pilePosition = CGPoint(x: (playingAreaSize.width-cardSize.width)/2.0, y: playingAreaSize.height+cardSize.height)
         pile.pileSize = cardSize
@@ -660,7 +660,7 @@ class SolitaireGame: NSObject {
         // es wird untersucht, ob für eine Selektion von Karten ein oder mehrere Ziele existieren
         // diese Kartenstapel werden in einem [Pile] zurückgeliefert
         var targetPiles : [Pile] = []
-        switch pile.permittedToPlay {
+        switch pile.permittedToPlayType {
         case .foundationPermittedToPlay:
             //TODO: implementieren
             log.error("muss implementiert werden")
@@ -722,7 +722,7 @@ class SolitaireGame: NSObject {
         // FirstAction möglich, wenn
         switch pile.pileType {
         case .tableau:
-            // die Karte und der zugehörige Stapel müssen conform sein mit dem pileSelectAndMoveMode
+            // die Karte und der zugehörige Stapel müssen conform sein mit dem userSelectAndMoveType
             return pile.conformsWithSelectAndMoveMode(card)
         case .stock:
             // es wurde der Stock gewählt (zunächst reagiere ich nur auf die letzte Karte)
@@ -913,7 +913,7 @@ class SolitaireGame: NSObject {
         let fromPile = findStock()!
         let fromPiles = [fromPile]
         var toPiles: [Pile] = []
-        switch fromPile.dealingFromStock {
+        switch fromPile.dealingFromStockType {
         case .dealToTableaus:
             for pile in gamePiles! {
                 if pile.pileType == .tableau {
@@ -1020,7 +1020,7 @@ class SolitaireGame: NSObject {
     
     func evaluateScore() {
         var newScore = 0
-        switch typeOfScoring {
+        switch scoringType {
         case .scoringSequenceInSuitAndFoundation, .scoringSequenceInSuitAndKingUp:
             // alle Piles durchsuchen
             for pile in gamePiles! {
@@ -1030,7 +1030,7 @@ class SolitaireGame: NSObject {
                 }
                 if !pile.isPileEmpty() {
                     // für jeden im Foundation abgelegten Stapel gibt es einen Extrapunkt
-                    if pile.pileType == TypeOfPile.foundation && typeOfScoring == TypeOfScoring.scoringSequenceInSuitAndFoundation {
+                    if pile.pileType == TypeOfPile.foundation && scoringType == TypeOfScoring.scoringSequenceInSuitAndFoundation {
                         newScore += 1
                     }
                     // für jeden im MultiFoundation abgelegten Stapel gibt es einen Extrapunkt
@@ -1039,7 +1039,7 @@ class SolitaireGame: NSObject {
                     }
                     // bei einem nicht leeren Stapel muss es diese Karte geben
                     var prevCard = pile.cards.first!
-                    if prevCard.faceUp && prevCard.isKing() && typeOfScoring == TypeOfScoring.scoringSequenceInSuitAndKingUp {
+                    if prevCard.faceUp && prevCard.isKing() && scoringType == TypeOfScoring.scoringSequenceInSuitAndKingUp {
                         newScore += 1
                     }
                     var nextCard: Card!
@@ -1074,7 +1074,7 @@ class SolitaireGame: NSObject {
                     }
                     // bei einem nicht leeren Stapel muss es diese Karte geben
                     var prevCard = pile.cards.first!
-                    if prevCard.faceUp && prevCard.isKing() && typeOfScoring == TypeOfScoring.scoringSequenceInSuitAndKingUp {
+                    if prevCard.faceUp && prevCard.isKing() && scoringType == TypeOfScoring.scoringSequenceInSuitAndKingUp {
                         newScore += 1
                     }
                     var nextCard: Card!

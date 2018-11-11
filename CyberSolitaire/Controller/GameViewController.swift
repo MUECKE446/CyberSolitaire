@@ -356,13 +356,13 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     @objc func createNodeForEmptyPile(_ notification:Notification) {
         let pile = notification.object as! Pile
         statics.cardAndEmptyPileSize = pile.pileEmptySize
-        let pileEmptyNode = PileEmptyNode(pileEmptyID: pile.indexEmptyPile, pileID: pile.pileId)
+        let pileEmptyNode = PileEmptyNode(pileEmptyID: pile.indexForEmptyPileImage, pileID: pile.pileId)
         pileEmptyNode.delegate = self
         pileEmptyNode.position = convertPointFromModelToView(pile.pilePosition)
         let scaleFactor = (playableRect.width * kCardWidthRTW/100.0) / pileEmptyNode.size.width
         pileEmptyNode.setScale(scaleFactor)
         pileEmptyNode.zPosition = 0
-        //log.info("pile: \(pile.pileId) indexEmptyPile: \(pile.indexEmptyPile) location: \(pileEmptyNode.position)")
+        //log.info("pile: \(pile.pileId) indexForEmptyPileImage: \(pile.indexForEmptyPileImage) location: \(pileEmptyNode.position)")
         scene!.pileEmptyNodes!.append(pileEmptyNode)
     }
     
