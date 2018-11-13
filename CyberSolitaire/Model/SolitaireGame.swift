@@ -201,13 +201,13 @@ class SolitaireGame: NSObject {
         for pileLayout in gameLayout!.pileLayouts {
         //for i in 0 ..< gameLayout!.numberOfPiles {
         //    let pileLayout = gameLayout!.pileLayouts[i] as PileLayout
-            let pile = Pile(pileID: id, pileType: pileLayout.pileType!, overlapType: pileLayout.typeOfOverlap!, userSelectAndMoveType: pileLayout.typeOfUserSelectAndMove!,
-                depositFromUserType: pileLayout.typeOfDepositFromUser!,
-                depositIfEmptyType: pileLayout.typeOfDepositIfEmpty!,
-                permittedToPlayType: pileLayout.typeOfPermittedToPlay!,
-                basicCardType: pileLayout.typeOfBasicCard!,
-                dealingFromStockType: pileLayout.typeOfDealingFromStock!,
-                redealType: pileLayout.typeOfRedeal!,
+            let pile = Pile(pileID: id, pileType: pileLayout.pileType!, overlapType: pileLayout.overlapType!, userSelectAndMoveType: pileLayout.userSelectAndMoveType!,
+                depositFromUserType: pileLayout.depositFromUserType!,
+                depositIfEmptyType: pileLayout.depositIfEmptyType!,
+                permittedToPlayType: pileLayout.permittedToPlayType!,
+                basicCardType: pileLayout.basicCardType!,
+                dealingFromStockType: pileLayout.dealingFromStockType!,
+                redealType: pileLayout.redealType!,
                 numberPerMove: pileLayout.numberPerMove,
                             indexForEmptyPileImage: pileLayout.indexForEmptyPileImage, numberOfCardsAtStart: pileLayout.numberOfCardsAtStart,
                             dealOrderAtStart: pileLayout.dealOrderAtStart, faceAtStart: pileLayout.faceAtStart!)

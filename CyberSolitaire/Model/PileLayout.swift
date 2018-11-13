@@ -17,15 +17,15 @@ class PileLayout {
     var numberOfCardsAtStart = 0
     var dealOrderAtStart = 0
     var faceAtStart = FaceAtStart(rawValue: 0)
-    var typeOfOverlap = TypeOfOverlap(rawValue: 0)
-    var typeOfUserSelectAndMove = TypeOfUserSelectAndMove(rawValue: 0)
+    var overlapType = TypeOfOverlap(rawValue: 0)
+    var userSelectAndMoveType = TypeOfUserSelectAndMove(rawValue: 0)
     
-    var typeOfDepositFromUser = TypeOfDepositFromUser(rawValue: 0)
-    var typeOfDepositIfEmpty = TypeOfDepositIfEmpty(rawValue: 0)
-    var typeOfPermittedToPlay = TypeOfPermittedToPlay(rawValue: 0)
-    var typeOfBasicCard = TypeOfBasicCard(rawValue: 0)
-    var typeOfDealingFromStock = TypeOfDealingFromStock(rawValue: 0)
-    var typeOfRedeal = TypeOfRedeal(rawValue: 0)
+    var depositFromUserType = TypeOfDepositFromUser(rawValue: 0)
+    var depositIfEmptyType = TypeOfDepositIfEmpty(rawValue: 0)
+    var permittedToPlayType = TypeOfPermittedToPlay(rawValue: 0)
+    var basicCardType = TypeOfBasicCard(rawValue: 0)
+    var dealingFromStockType = TypeOfDealingFromStock(rawValue: 0)
+    var redealType = TypeOfRedeal(rawValue: 0)
     var numberPerMove = -1   // wieviele Karten können pro Zug abgelegt werden
     
     var indexForEmptyPileImage = 0
@@ -33,41 +33,6 @@ class PileLayout {
     var posY: CGFloat = 0.0
     
     // MARK: Klassen - Methoden
-    
-    class func pileLayoutWithPropertyList(_ inArr: [AnyObject]) -> PileLayout {
-        let tmpPileLayout = PileLayout()
-        tmpPileLayout.pileLayoutVersion = inArr[0] as! Int
-        let pt = TypeOfPile(rawValue: inArr[1] as! Int)
-        tmpPileLayout.pileType = pt
-        tmpPileLayout.numberOfCardsAtStart = inArr[2] as! Int
-        tmpPileLayout.dealOrderAtStart = inArr[3] as! Int
-        let fas = FaceAtStart(rawValue: inArr[4] as! Int)
-        tmpPileLayout.faceAtStart = fas
-        let to = TypeOfOverlap(rawValue: inArr[5] as! Int)
-        tmpPileLayout.typeOfOverlap = to
-        let tus = TypeOfUserSelectAndMove(rawValue: inArr[6] as! Int)
-        tmpPileLayout.typeOfUserSelectAndMove = tus
-        
-        let tdu = TypeOfDepositFromUser(rawValue: inArr[7] as! Int)
-        tmpPileLayout.typeOfDepositFromUser = tdu
-        let tde = TypeOfDepositIfEmpty(rawValue: inArr[8] as! Int)
-        tmpPileLayout.typeOfDepositIfEmpty = tde
-        let tpp = TypeOfPermittedToPlay(rawValue: inArr[9] as! Int)
-        tmpPileLayout.typeOfPermittedToPlay = tpp
-        let tbc = TypeOfBasicCard(rawValue: inArr[10] as! Int)
-        tmpPileLayout.typeOfBasicCard = tbc
-        let tds = TypeOfDealingFromStock(rawValue: inArr[11] as! Int)
-        tmpPileLayout.typeOfDealingFromStock = tds
-        let td = TypeOfRedeal(rawValue: inArr[12] as! Int)
-        tmpPileLayout.typeOfRedeal = td
-        tmpPileLayout.numberPerMove = inArr[13] as! Int
-        
-        tmpPileLayout.indexForEmptyPileImage = inArr[14] as! Int
-        tmpPileLayout.posX = inArr[15] as! CGFloat
-        tmpPileLayout.posY = inArr[16] as! CGFloat
-        tmpPileLayout.printForDebug()
-        return tmpPileLayout
-    }
     
     
     class func pileLayoutFromPList(pileLayoutPList : Dictionary<String,Any>) -> PileLayout {
@@ -79,14 +44,14 @@ class PileLayout {
         tmpPileLayout.numberOfCardsAtStart = pileLayoutPList["numberOfCardsAtStart"] as! Int
         tmpPileLayout.dealOrderAtStart = pileLayoutPList["dealOrderAtStart"] as! Int
         tmpPileLayout.faceAtStart = convertToFaceAtStart(pileLayoutPList, key: "faceAtStart")
-        tmpPileLayout.typeOfOverlap = convertToTypeOfOverlap(pileLayoutPList, key: "overlapType")
-        tmpPileLayout.typeOfUserSelectAndMove = convertToTypeOfUserSelectAndMove(pileLayoutPList, key: "userSelectAndMoveType")
-        tmpPileLayout.typeOfDepositFromUser = convertToTypeOfDepositFromUser(pileLayoutPList, key: "depositFromUserType")
-        tmpPileLayout.typeOfDepositIfEmpty = convertToTypeOfDepositIfEmpty(pileLayoutPList, key: "depositIfEmptyType")
-        tmpPileLayout.typeOfPermittedToPlay = convertToTypeOfPermittedToPlay(pileLayoutPList, key: "permittedToPlayType")
-        tmpPileLayout.typeOfBasicCard = convertToTypeOfBasicCard(pileLayoutPList, key: "basicCardType")
-        tmpPileLayout.typeOfDealingFromStock = convertToTypeOfDealingFromStock(pileLayoutPList, key: "dealingFromStockType")
-        tmpPileLayout.typeOfRedeal = convertToTypeOfRedeal(pileLayoutPList, key: "redealType")
+        tmpPileLayout.overlapType = convertToTypeOfOverlap(pileLayoutPList, key: "overlapType")
+        tmpPileLayout.userSelectAndMoveType = convertToTypeOfUserSelectAndMove(pileLayoutPList, key: "userSelectAndMoveType")
+        tmpPileLayout.depositFromUserType = convertToTypeOfDepositFromUser(pileLayoutPList, key: "depositFromUserType")
+        tmpPileLayout.depositIfEmptyType = convertToTypeOfDepositIfEmpty(pileLayoutPList, key: "depositIfEmptyType")
+        tmpPileLayout.permittedToPlayType = convertToTypeOfPermittedToPlay(pileLayoutPList, key: "permittedToPlayType")
+        tmpPileLayout.basicCardType = convertToTypeOfBasicCard(pileLayoutPList, key: "basicCardType")
+        tmpPileLayout.dealingFromStockType = convertToTypeOfDealingFromStock(pileLayoutPList, key: "dealingFromStockType")
+        tmpPileLayout.redealType = convertToTypeOfRedeal(pileLayoutPList, key: "redealType")
         tmpPileLayout.numberPerMove = pileLayoutPList["numberPerMove"] as! Int
         tmpPileLayout.indexForEmptyPileImage = pileLayoutPList["indexForEmptyPileImage"] as! Int
         tmpPileLayout.posX = CGFloat(((pileLayoutPList["posX"] as! String) as NSString).floatValue)
@@ -350,41 +315,18 @@ default:
         log.info("numberOfCardsAtStart: \(self.numberOfCardsAtStart)")
         log.info("dealOrderAtStart: \(self.dealOrderAtStart)")
         log.info("faceAtStart: \(String(describing: self.faceAtStart?.description()))")
-        log.info("typeOfOverlap: \(String(describing: self.typeOfOverlap?.description()))")
-        log.info("typeOfUserSelectAndMove: \(String(describing: self.typeOfUserSelectAndMove?.description()))")
-        log.info("typeOfDepositFromUser: \(String(describing: self.typeOfDepositFromUser?.description()))")
-        log.info("typeOfDepositIfEmpty: \(String(describing: self.typeOfDepositIfEmpty?.description()))")
-        log.info("typeOfPermittedToPlay: \(String(describing: self.typeOfPermittedToPlay?.description()))")
-        log.info("typeOfBasicCard: \(String(describing: self.typeOfBasicCard?.description()))")
-        log.info("typeOfDealingFromStock: \(String(describing: self.typeOfDealingFromStock?.description()))")
-        log.info("typeOfRedeal: \(String(describing: self.typeOfRedeal?.description()))")
+        log.info("overlapType: \(String(describing: self.overlapType?.description()))")
+        log.info("userSelectAndMoveType: \(String(describing: self.userSelectAndMoveType?.description()))")
+        log.info("depositFromUserType: \(String(describing: self.depositFromUserType?.description()))")
+        log.info("depositIfEmptyType: \(String(describing: self.depositIfEmptyType?.description()))")
+        log.info("permittedToPlayType: \(String(describing: self.permittedToPlayType?.description()))")
+        log.info("basicCardType: \(String(describing: self.basicCardType?.description()))")
+        log.info("dealingFromStockType: \(String(describing: self.dealingFromStockType?.description()))")
+        log.info("redealType: \(String(describing: self.redealType?.description()))")
         log.info("numberPerMove: \(self.numberPerMove)")
         log.info("indexForEmptyPileImage: \(self.indexForEmptyPileImage)")
         log.info("posX: \(self.posX)")
         log.info("posY: \(self.posY)")
     }
     
-/*
-    func convertToPropertyList() -> [AnyObject] {
-        let propertyList: [AnyObject] = [pileLayoutVersion as AnyObject,
-            pileType!.rawValue as AnyObject,
-            numberOfCardsAtStart as AnyObject,
-            dealOrderAtStart as AnyObject,
-            faceAtStart!.rawValue as AnyObject,
-            typeOfOverlap!.rawValue as AnyObject,
-            typeOfUserSelectAndMove!.rawValue as AnyObject,
-            
-            typeOfDepositFromUser!.rawValue as AnyObject,
-            typeOfDepositIfEmpty!.rawValue as AnyObject,
-            typeOfPermittedToPlay!.rawValue as AnyObject,
-            typeOfBasicCard!.rawValue as AnyObject,
-            typeOfDealingFromStock!.rawValue as AnyObject,
-            typeOfRedeal!.rawValue as AnyObject,
-            numberPerMove as AnyObject,
-            
-            indexForEmptyPileImage as AnyObject,
-            posX as AnyObject, posY as AnyObject]
-        return propertyList
-    }
-*/
 }
