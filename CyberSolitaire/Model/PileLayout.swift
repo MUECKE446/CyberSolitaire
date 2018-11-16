@@ -12,7 +12,7 @@ import UIKit
 let kPileLayoutVersion = 2
 
 class PileLayout {
-    var pileLayoutVersion = kGameLayoutVersion
+    var pileLayoutVersion = kPileLayoutVersion
     var pileType = TypeOfPile(rawValue: 0)
     var numberOfCardsAtStart = 0
     var dealOrderAtStart = 0
