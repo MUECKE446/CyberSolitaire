@@ -40,6 +40,8 @@
 		4C26CE57216BA99200FC41E7 /* icon-settings-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE54216BA99200FC41E7 /* icon-settings-1.png */; };
 		4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C26CE55216BA99200FC41E7 /* icon-undo-1.png */; };
 		4C2E5959217F586A0046667F /* GameSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E5958217F586A0046667F /* GameSelectCell.swift */; };
+		4C5214CF219F6355000139EB /* game(Blockade).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5214CE219F6355000139EB /* game(Blockade).plist */; };
+		4C5214D121A1C55F000139EB /* game(BlockadeTest).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5214D021A1C55F000139EB /* game(BlockadeTest).plist */; };
 		4C5950A721760A3E007F0DEE /* game(Black Widow hart).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */; };
 		4C5950A921760A69007F0DEE /* game(Black Widow weich).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */; };
 		4C5950AB21760A7F007F0DEE /* game(Spider).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C5950AA21760A7F007F0DEE /* game(Spider).plist */; };
@@ -126,6 +128,8 @@
 		4C26CE54216BA99200FC41E7 /* icon-settings-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings-1.png"; sourceTree = "<group>"; };
 		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
 		4C2E5958217F586A0046667F /* GameSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectCell.swift; sourceTree = "<group>"; };
+		4C5214CE219F6355000139EB /* game(Blockade).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game(Blockade).plist"; sourceTree = "<group>"; };
+		4C5214D021A1C55F000139EB /* game(BlockadeTest).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game(BlockadeTest).plist"; sourceTree = "<group>"; };
 		4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow hart).plist"; sourceTree = "<group>"; };
 		4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow weich).plist"; sourceTree = "<group>"; };
 		4C5950AA21760A7F007F0DEE /* game(Spider).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Spider).plist"; sourceTree = "<group>"; };
@@ -407,9 +411,11 @@
 			children = (
 				4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */,
 				4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */,
+				4C5214CE219F6355000139EB /* game(Blockade).plist */,
 				4C5950AA21760A7F007F0DEE /* game(Spider).plist */,
 				4CA5C15D216FD460009DC9CC /* SettingsList.plist */,
 				4C83ADD6218880EB00848BAE /* statisticsList.plist */,
+				4C5214D021A1C55F000139EB /* game(BlockadeTest).plist */,
 			);
 			path = "other Resources";
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				4CA5C15E216FD460009DC9CC /* SettingsList.plist in Resources */,
 				4C0B5ED61AB092F400ED27EF /* shuffle.caf in Resources */,
 				4C5950A921760A69007F0DEE /* game(Black Widow weich).plist in Resources */,
+				4C5214D121A1C55F000139EB /* game(BlockadeTest).plist in Resources */,
 				4C0B5ED81AB092F400ED27EF /* weird.caf in Resources */,
 				4C26CE58216BA99200FC41E7 /* icon-undo-1.png in Resources */,
 				4C0B5ECB1AB092F400ED27EF /* clapping.caf in Resources */,
@@ -521,6 +528,7 @@
 				4CD612191AACAA500081F5A7 /* CyberSol_Background1.png in Resources */,
 				4C0B5ED31AB092F400ED27EF /* mix.caf in Resources */,
 				4C8F15CF1AD3E03E00443A41 /* BackgroundWildWest.png in Resources */,
+				4C5214CF219F6355000139EB /* game(Blockade).plist in Resources */,
 				4CD611F51AACA6BF0081F5A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

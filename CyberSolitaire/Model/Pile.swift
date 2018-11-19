@@ -748,8 +748,15 @@ class Pile: NSObject {
                 return true
             }
             // prüfe, ob es sich um eine gesamte Sequenz handelt
-            // MARK: hier ist noch ein Fehler drin
             return isDownInWholeSequence(card)
+        case .allSeqInSuitOrLast:
+            // nur die letzte Karte oder alle Karten einer Sequenz (keine Stücke)
+            if getLastCard() == card {
+                // es ist die letzte Karte des Stapels
+                return true
+            }
+            // prüfe, ob es sich um eine gesamte Sequenz handelt
+            return isDownInSuitWholeSequence(card)
         case .anySeqNoColor:
             return isDownInSequenceStartingAt(card)
         default:
@@ -758,7 +765,7 @@ class Pile: NSObject {
         }
     }
     
-    func conformsToPlayOnTableau(_ card: Card) -> Bool {
+    func conformsToPlayOnTableau(_ card: Card, stockNotEmpty: Bool) -> Bool {
         assert(pileType == .tableau, "das hätte nicht passieren dürfen")
         // dürfen hier Karten abgelegt werden
         // zunächst gibt es die beiden Fälle leer oder nicht
@@ -767,6 +774,15 @@ class Pile: NSObject {
             switch self.depositIfEmptyType {
             case .anyCard:
                 return true
+            case .fromDealOrAny:
+                // falls noch Karten im Stock, dann wird ein leerer Pile automatisch vom Stock belegt,
+                // sonst beliebig
+                if stockNotEmpty {
+                    return false
+                }
+                else {
+                    return true
+                }
             default:
                 //TODO: implementieren
                 log.error("muss implementiert werden")
@@ -780,6 +796,8 @@ class Pile: NSObject {
             switch self.depositFromUserType {
             case .upInSuit:
                 return lastCard!.isUpInSuitWithCard(card)
+            case .downInSuit:
+                return lastCard!.isDownInSuitWithCard(card)
             case .downNoColor:
                 return lastCard!.isDownInSequenceWithCard(card)
             default:
@@ -794,10 +812,58 @@ class Pile: NSObject {
         assert((pileType == .foundation) || (pileType == .multiFoundation), "das hätte nicht passieren dürfen")
         // wie viele Karten dürfen auf einmal abgelegt werden
         if numberPerMove == 1 {
-            // es darf genau 1 Karte  abgelegt werden
-            //TODO: implementieren
-            log.error("muss implementiert werden")
-            return false
+            // es darf genau 1 Karte abgelegt werden
+            // es ist genau 1 Karte selektiert
+            if fromPile.selectedCards.count != 1 {
+                return false
+            }
+            
+            // falls der Pile noch leer ist
+            if self.isPileEmpty() {
+                // mit welcher Karte darf der leere Pile belegt werden
+                switch self.depositIfEmptyType {
+                case .ace:
+                    if !card.isAce() {
+                        return false
+                    }
+                case .king:
+                    if !card.isKing() {
+                        return false
+                    }
+                case .anyCard:
+                    break
+                default:
+                    //TODO: implementieren
+                    log.error("muss implementiert werden")
+                    return false
+               }
+            }
+            switch self.depositFromUserType {
+            case .downInSuit:
+                // falls der Pile nicht leer ist
+                if !self.isPileEmpty() {
+                    let lastCard = self.getLastCard()!
+                    return lastCard.isDownInSuitWithCard(card)
+                }
+            case .downNoColor:
+                // falls der Pile nicht leer ist
+                if !self.isPileEmpty() {
+                    let lastCard = self.getLastCard()!
+                    return lastCard.isDownInSequenceWithCard(card)
+                }
+                return self.isDownInSequenceStartingAt(card)
+            case .upInSuit:
+                // falls der Pile nicht leer ist
+                if !self.isPileEmpty() {
+                    let lastCard = self.getLastCard()!
+                    return lastCard.isUpInSuitWithCard(card)
+                }
+            default:
+                //TODO: implementieren
+                log.error("muss implementiert werden")
+                return false
+            }
+            return true
         }
         else {
             assert((numberPerMove == 13), "was anderes ist nicht bekannt")
@@ -902,7 +968,7 @@ class Pile: NSObject {
         return true
     }
     
-    // MARK: hier ist noch ein Fehler drin
+    // prüft, ob es sich um eine gesamte Sequenz handelt oder nur um eine Teilsequenz
     func isDownInWholeSequence(_ card: Card) -> Bool {
         // überprüft, ob es sich um eine komplette Sequenz handelt
         // stelle fest, ob es noch eine Karte über card im Stapel gibt
@@ -918,10 +984,48 @@ class Pile: NSObject {
         return isDownInSequenceStartingAt(card)
     }
     
+    
+    // prüft, ob es sich um eine gesamte Sequenz in Farbe handelt oder nur um eine Teilsequenz
+    func isDownInSuitWholeSequence(_ card: Card) -> Bool {
+        // überprüft, ob es sich um eine komplette Sequenz handelt
+        // stelle fest, ob es noch eine Karte über card im Stapel gibt
+        if let cardBefore = getCardBefore(card) {
+            // es werden nur aufgedeckte Karten untersucht
+            if cardBefore.faceUp && cardBefore.isDownInSuitWithCard(card) {
+                // es ist keine ganze Sequenz
+                return false
+            }
+            return isDownInSequenceStartingAt(card)
+        }
+        // es gibt keine Karte darüber
+        return isDownInSequenceAndSuitStartingAt(card)
+    }
+    
     func isSelectedCompleteDownInSequenceAndSuit() -> Bool {
         return isDownInSequenceAndSuitStartingAt(selectedCards.first!) && (selectedCards.count == 13)
     }
     
+
+    
+    func isUpInSequenceAndSuitStartingAt(_ card: Card) -> Bool {
+        /*! prüft, ob alle folgenden Karten des Stapels in aufsteigender Folge sind und
+         dieselbe Kartenkategorie haben */
+        // wenn es die letzte Karte im Stapel ist, braucht es keiner weiteren Prüfung
+        if card == cards.last {
+            return true
+        }
+        let startIndex = findIndexForCard(card)
+        // bilden alle folgenden Karten im Stapel eine Sequenz und
+        // haben alle folgenden Karten im Stapel diegleiche Kartenkategorie (Herz,Karo,...)
+        for i in startIndex ..< cards.count - 1 {
+            if !cards[i].isUpInSuitWithCard(cards[i+1]) {
+                return false
+            }
+        }
+        return true
+    }
+    
+
     // MARK: logging activities
     
     func logMoveSequence(_ sequence: [Card], fromPile: Pile) {

@@ -117,7 +117,7 @@ enum GameState : Int {
         self.action = action
     }
     deinit {
-        log.verbose("CardMovesDescription deinit")
+        //log.verbose("CardMovesDescription deinit")
     }
     
 }
@@ -276,7 +276,8 @@ class SolitaireGame: NSObject {
                     let anotherPileLeftX = anotherPile.pilePosition.x;
                     let anotherPileRightX = anotherPile.pilePosition.x + anotherPile.pileEmptySize.width;
                     let pileLeftX = pile.pilePosition.x;
-                    if (pileLeftX >= anotherPileLeftX) && (pileLeftX <= anotherPileRightX) {
+                    // hier war der logische Fehler, denn der untersuchte Pile muss auch unterhalb liegen
+                    if (pileLeftX >= anotherPileLeftX) && (pileLeftX <= anotherPileRightX) && (pile.pilePosition.y < anotherPile.pilePosition.y) {
                         // dieser ist ein Anwärter: ist er aber der nächstgelegene
                         if pileShortestToPile == nil {
                             // merke diesen vor
@@ -368,64 +369,64 @@ class SolitaireGame: NSObject {
         
         var cardsWithAction : [CardMovesDescription]? = [CardMovesDescription]()
         
-        var pilesWithDealOrderAtStart: [Int:Pile] = [:]
+        var pilesWithDealOrderAtStart: [Pile] = []
         for pile in self.gamePiles! {
             if pile.dealOrderAtStart > 0 {
-                pilesWithDealOrderAtStart[pile.dealOrderAtStart] = pile
+                pilesWithDealOrderAtStart.append(pile)
             }
         }
-        let maxDealOrder = pilesWithDealOrderAtStart.count
+        // sortiere nach dealOrderAtStart aufsteigend
+        pilesWithDealOrderAtStart.sort(by: {(first:Pile,second:Pile) in first.dealOrderAtStart < second.dealOrderAtStart})
         // solange geben, bis alle Stapel die vorgegebene Anzahl der Karten beim Start erreicht haben
         var cardsToDeal = 0
-        for i in 1 ... maxDealOrder {
-            let pile = pilesWithDealOrderAtStart[i] as Pile?
-            cardsToDeal += (pile?.numberOfCardsAtStart)!
+        for pile in pilesWithDealOrderAtStart {
+                cardsToDeal += pile.numberOfCardsAtStart
         }
         
-        var dealOrder = 1
-        for _ in 1 ... cardsToDeal {
-            let pile = pilesWithDealOrderAtStart[dealOrder] as Pile?
-            if pile?.numberOfCards < pile?.numberOfCardsAtStart {
-                // gib die nächste Karte
-                assert(pile!.pileType == TypeOfPile.tableau, "bisher wird nur auf Tableaus ausgeteilt")
-                switch pile!.faceAtStart {
-                case .lastFaceUp:
-                    if (pile?.numberOfCards)! == (pile?.numberOfCardsAtStart)! - 1 {
-                        // es ist die letzte Karte, die auf diesem Stapel gegeben wird
-                        // die letzte Karte wird gegeben und muss umgedreht werden
-                        let cardBefore = pile?.getLastCard()!
-                        // die Karte davor zum Schummeln markieren
-                        cardBefore?.toggleMarkForCheat()
-                        cardsWithAction!.append(CardMovesDescription(card: cardBefore!, fromPile: startPile!, toPile: pile!, action: .cheat))
-                        let card = startPile!.getLastCard()!
-                        // drehe die Karte
-                        card.faceUp = !card.faceUp
-                        pile?.putCard(card)
-                        startPile!.removeLastCard()
-                        card.zPosition = highestzPosition
-                        highestzPosition += 1
-                        cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile!, action: .moveAndTurn))
-                        movements.append((SKCardMoves.moveAndTurn,card,0.0))
+        var cardsDealed = 0
+        while cardsDealed < cardsToDeal {
+            for pile in pilesWithDealOrderAtStart {
+                
+                if pile.numberOfCards < pile.numberOfCardsAtStart {
+                    // gib die nächste Karte
+                    assert(pile.pileType == TypeOfPile.tableau, "bisher wird nur auf Tableaus ausgeteilt")
+                    switch pile.faceAtStart {
+                    case .lastFaceUp:
+                        if (pile.numberOfCards) == (pile.numberOfCardsAtStart) - 1 {
+                            // es ist die letzte Karte, die auf diesem Stapel gegeben wird
+                            // die letzte Karte wird gegeben und muss umgedreht werden
+                            if let cardBefore = pile.getLastCard() {
+                                // falls es schon eine Karte gibt, die Karte davor zum Schummeln markieren
+                                cardBefore.toggleMarkForCheat()
+                                cardsWithAction!.append(CardMovesDescription(card: cardBefore, fromPile: startPile!, toPile: pile, action: .cheat))
+                            }
+                            let card = startPile!.getLastCard()!
+                            // drehe die Karte
+                            card.faceUp = !card.faceUp
+                            pile.putCard(card)
+                            startPile!.removeLastCard()
+                            card.zPosition = highestzPosition
+                            highestzPosition += 1
+                            cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile, action: .moveAndTurn))
+                            movements.append((SKCardMoves.moveAndTurn,card,0.0))
+                        }
+                        else {
+                            // nehme die Karte vom startPile und verschiebe sie zum pile
+                            let card = startPile!.getLastCard()!
+                            pile.putCard(card)
+                            startPile!.removeLastCard()
+                            card.zPosition = highestzPosition
+                            highestzPosition += 1
+                            cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile, action: .move))
+                            movements.append((SKCardMoves.move,card,0.0))
+                        }
+                    default:
+                        //TODO:  die anderen Fälle müssen implementiert werden, falls sie auftreten
+                        log.error("dieser Fall muss noch implementiert werden")
                     }
-                    else {
-                        // nehme die Karte vom startPile und verschiebe sie zum pile
-                        let card = startPile!.getLastCard()!
-                        pile?.putCard(card)
-                        startPile!.removeLastCard()
-                        card.zPosition = highestzPosition
-                        highestzPosition += 1
-                        cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile!, action: .move))
-                        movements.append((SKCardMoves.move,card,0.0))
-                    }
-                default:
-                    //TODO:  die anderen Fälle müssen implementiert werden, falls sie auftreten
-                    log.error("dieser Fall muss noch implementiert werden")
                 }
             }
-            dealOrder += 1
-            if dealOrder > maxDealOrder {
-                dealOrder = 1
-            }
+            cardsDealed += 1
         }
 
         // Wartezeit beim Moven zurücksetzen
@@ -522,7 +523,7 @@ class SolitaireGame: NSObject {
         if timeSinceLastTimeCumulated <= kMaxLastTimeCumulated {
             totalTimeGame += timeSinceLastTimeCumulated
         }
-        log.verbose("totalGameTime ist: \(totalTimeGame)")
+        //log.verbose("totalGameTime ist: \(totalTimeGame)")
         // dann beginnt das ganze Spiel von Neuem
         lastTimeCumulated = now
     }
@@ -592,14 +593,14 @@ class SolitaireGame: NSObject {
         // hier sollten alle View Aktionen beendet sein
         resetzPositions()
 
-        // darf vom selektierten Stape auf den Stapel dieser Art abgelegt werden?
+        // darf vom selektierten Stapel auf den Stapel dieser Art abgelegt werden?
         if pile.isPermittedToPlayFromPile(forSelectedPile) {
             switch pile.pileType {
             case .tableau:
                 let sequence = forSelectedPile.createSequenceFromSelection()
                 moveSequence(sequence, fromPile: forSelectedPile, toPile: pile)
                 playMoveFinished()
-            case .multiFoundation:
+            case .multiFoundation,.foundation:
                 let sequence = forSelectedPile.createSequenceFromSelection()
                 moveSequence(sequence, fromPile: forSelectedPile, toPile: pile)
                 playMoveFinished()
@@ -616,6 +617,8 @@ class SolitaireGame: NSObject {
     }
 
     func playMoveFinished() {
+        // falls durch diesen Spielzug leere Piles entstanden sind, müssen diese eventuell automatisch mit neuen Karten belegt werden
+        checkAutoDeal()
         // berechne die bisherige Spielzeit
         cumulatePlayTime()
         unselectPiles()
@@ -624,6 +627,7 @@ class SolitaireGame: NSObject {
         playMove!.setInnerState(status: .idle, result: .executed, selectedPile: nil, secondSelectedPile: nil, selectedCard: nil, secondSelectedCard: nil)
         
     }
+    
     func playMoveCanceled(withoutEnableUndoRedo withoutEnable: Bool = false) {
         // berechne die bisherige Spielzeit
         cumulatePlayTime()
@@ -654,6 +658,28 @@ class SolitaireGame: NSObject {
         //log.debug("high: \(highestzPosition)")
     }
     
+    func checkAutoDeal() {
+        // checke, ob es leere Stapel gibt, die automatisch belegt werden
+        var pilesForAutoDeal : [Pile] = []
+        for pile in gamePiles! {
+            if pile.isPileEmpty() && pile.depositIfEmptyType == .fromDealOrAny {
+                pilesForAutoDeal.append(pile)
+            }
+        }
+        if pilesForAutoDeal.count != 0 {
+            for pile in pilesForAutoDeal {
+                if let stock = findStock() {
+                    if !stock.isPileEmpty() {
+                        dealCardsFrom([stock], toPiles: [pile])
+                    }
+                    else {
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
     func findTargetsForPlayMove(pile: Pile, card: Card) -> [Pile] {
         // es wird untersucht, ob für eine Selektion von Karten ein oder mehrere Ziele existieren
         // diese Kartenstapel werden in einem [Pile] zurückgeliefert
@@ -671,7 +697,7 @@ class SolitaireGame: NSObject {
                 }
                 switch aPile.pileType {
                 case .tableau:
-                    if aPile.conformsToPlayOnTableau(card) {
+                    if aPile.conformsToPlayOnTableau(card,stockNotEmpty: findStock()!.cards.count != 0) {
                         targetPiles.append(aPile)
                     }
                 case .foundation, .multiFoundation:
@@ -758,8 +784,8 @@ class SolitaireGame: NSObject {
                 if !(pile.cards.last == card) {
                     return false
                 }
-                return pile.conformsToPlayOnTableau(firstCard!)
-            case .multiFoundation:
+                return pile.conformsToPlayOnTableau(firstCard!,stockNotEmpty: findStock()!.cards.count != 0)
+            case .multiFoundation,.foundation:
                 return pile.conformsToPlayOnFoundation(firstCard!, fromPile: forSelectedPile)
             default:
                 //TODO: die anderen Fälle noch implementieren
@@ -777,8 +803,8 @@ class SolitaireGame: NSObject {
         if emptyPile.isPermittedToPlayFromPile(forSelectedPile) {
             switch emptyPile.pileType {
             case .tableau:
-                return emptyPile.conformsToPlayOnTableau(firstCard!)
-            case .multiFoundation:
+                return emptyPile.conformsToPlayOnTableau(firstCard!,stockNotEmpty: findStock()!.cards.count != 0)
+            case .multiFoundation,.foundation:
                 return emptyPile.conformsToPlayOnFoundation(firstCard!, fromPile: forSelectedPile)
             default:
                 //TODO: die anderen Fälle noch implementieren
@@ -921,8 +947,35 @@ class SolitaireGame: NSObject {
         default:
             assert(false, "muss noch implementiert werden")
         }
-        dealCardsFrom(fromPiles, toPiles: toPiles)
+        canDealCardsFrom(fromPiles, toPiles: toPiles)
     }
+    
+    func canDealCardsFrom(_ fromPiles: [Pile], toPiles: [Pile]) {
+        let numberOfCardsPerDeal = 1
+        var newFromPiles : [Pile] = []
+        var newToPiles : [Pile] = []
+        self.undoManager.beginUndoGrouping()
+        for fromPile in fromPiles {
+            var  numberOfCardsInFromPile = fromPile.numberOfCards
+            if  numberOfCardsInFromPile == 0 {
+                log.verbose("keine Karte mehr im fromPile")
+                break
+            }
+            newFromPiles.append(fromPile)
+            for toPile in toPiles {
+                if  numberOfCardsInFromPile == 0 {
+                    log.verbose("keine Karte mehr im fromPile")
+                    break
+                }
+                newToPiles.append(toPile)
+                numberOfCardsInFromPile -= numberOfCardsPerDeal
+            }
+            dealCardsFrom(newFromPiles, toPiles: newToPiles)
+            newToPiles = []; newFromPiles = []
+        }
+        self.undoManager.endUndoGrouping()
+    }
+    
     
     @objc func dealCardsFrom(_ fromPiles: [Pile], toPiles: [Pile]) {
         let theProxy: (AnyObject) = self.undoManager.prepare(withInvocationTarget: self) as (AnyObject)
@@ -934,7 +987,6 @@ class SolitaireGame: NSObject {
             for toPile in toPiles {
                 toPile.resetCardsRepositioned()
                 // bewege eine Karte vom fromPile auf den toPile
-                assert(fromPile.numberOfCards > 0 , "keine Karte mehr im fromPile")
                 let card = fromPile.getLastCard()!
                 // drehe die Karte
                 card.faceUp = !card.faceUp
@@ -978,7 +1030,7 @@ class SolitaireGame: NSObject {
                 // es ist ein Undo
                 if memoCardsRepositioned {
                     // der Stock wurde beim Undo repositioniert
-                    // positioniere alle Karten, die nicht zurückgespelt wurden neu
+                    // positioniere alle Karten, die nicht zurückgespielt wurden neu
                     let toPile = toPiles.first!
                     for card in toPile.cards[0 ..< toPile.cards.count - cardsPlayed] {
                         movements.append((SKCardMoves.reposition,card,0.0))
@@ -1092,11 +1144,7 @@ class SolitaireGame: NSObject {
         case .scoringCardOnFoundation:
             // alle Piles durchsuchen
             for pile in gamePiles! {
-                if (pile.pileType == .stock) || pile.isPileEmpty() {
-                    // der Stock wird nicht untersucht, auch kein leerer Stapel
-                    continue
-                }
-                if !pile.isPileEmpty() && pile.pileType == .foundation {
+                if !pile.isPileEmpty() && (pile.pileType == .foundation || pile.pileType == .multiFoundation ) {
                     newScore += pile.cards.count
                 }
             }

@@ -483,8 +483,8 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         // alle Koordinaten im Model beziehen sich auf diese Spielfläche mit dem Nullpunkt in der linken oberen Ecke
         // mit wachsendem x nach links und wachsendem y nach unten
         // dagegen hat die Spielfläche im SpriteKit ihren Ursprung in der linken unteren Ecke und es geht mit wachsendem y nach oben
-        // ausserdem ist die Spielfläche nur ein Teil der Scene
-        // Außerdem wird der AnchorPoint in die Mitte der Karte verlegt
+        // außerdem ist die Spielfläche nur ein Teil der Scene
+        // außerdem wird der AnchorPoint in die Mitte der Karte verlegt
         let dx = statics.cardAndEmptyPileSize.width / 2.0
         let dy = statics.cardAndEmptyPileSize.height / 2.0
         return CGPoint(x: point.x + dx, y: playableRect.height - point.y - dy)
