@@ -48,24 +48,11 @@ class GameLayout {
     }
     
     class func convertToTypeOfScoring(_ gameLayoutPList:Dictionary<String,Any>, key:String) -> TypeOfScoring {
-        let str = gameLayoutPList[key] as! String
-        switch str {
-        case "notAvaiable":
-            return .scoringTypeNA
-        case "scoringSequenceInSuitAndFoundation":
-            return .scoringSequenceInSuitAndFoundation
-        case "scoringSequenceNoColorAndFoundation":
-            return .scoringSequenceNoColorAndFoundation
-        case "scoringCardOnFoundation":
-            return .scoringCardOnFoundation
-        case "scoringSequenceInSuitAndKingUp":
-            return .scoringSequenceInSuitAndKingUp
-        default:
-            fatalError("falscher TypeOfScoring")
-        }
+        let description = gameLayoutPList[key] as! String
+        return TypeOfScoring.valueFromDescription(description)
     }
     
- 
+
     // MARK: Instance - Methoden
     
     

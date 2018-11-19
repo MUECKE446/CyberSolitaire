@@ -26,12 +26,25 @@ enum FaceAtStart: Int {
     
     func description() -> String {
         switch self {
-        case .faceAtStartNA:  return "FaceAtStartNA"
-        case .allFaceUp: return "AllFaceUp"
-        case .allFaceDown: return "AllFaceDown"
-        case .lastFaceUp: return "LastFaceUp"
-        case .oddFaceUp: return "OddFaceUp"
-        case .evenFaceUp: return "EvenFaceUp"
+        case .faceAtStartNA:  return "notAvailable"
+        case .allFaceUp: return "allFaceUp"
+        case .allFaceDown: return "allFaceDown"
+        case .lastFaceUp: return "lastFaceUp"
+        case .oddFaceUp: return "oddFaceUp"
+        case .evenFaceUp: return "evenFaceUp"
+        }
+    }
+    
+    
+    static func valueFromDescription(_ description:String) -> FaceAtStart {
+        switch description {
+        case "notAvailable": return .faceAtStartNA
+        case "allFaceUp": return .allFaceUp
+        case "allFaceDown": return .allFaceDown
+        case "lastFaceUp": return .lastFaceUp
+        case "oddFaceUp": return .oddFaceUp
+        case "evenFaceUp": return .evenFaceUp
+        default: fatalError("falscher FaceAtStart")
         }
     }
 }
@@ -45,11 +58,22 @@ enum TypeOfOverlap: Int {
     
     func description() -> String {
         switch self {
-        case .overlapModeNA:  return "OverlapModeNA"
-        case .notOverlapped: return "NotOverlapped"
-        case .downOverlapped: return "DownOverlapped"
+        case .overlapModeNA:  return "notAvailable"
+        case .notOverlapped: return "notOverlapped"
+        case .downOverlapped: return "downOverlapped"
         }
     }
+    
+    
+    static func valueFromDescription(_ description:String) -> TypeOfOverlap {
+        switch description {
+        case "notAvailable": return .overlapModeNA
+        case "notOverlapped": return .notOverlapped
+        case "downOverlapped": return .downOverlapped
+        default: fatalError("falscher TypeOfOverlap")
+        }
+    }
+    
 }
 
 enum TypeOfPile: Int {
@@ -63,7 +87,7 @@ enum TypeOfPile: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfPileNA:  return "TypeOfPileNA"
+        case .typeOfPileNA:  return "notAvailable"
         case .stock: return "Stock"
         case .tableau: return "Tableau"
         case .multiFoundation: return "MultiFoundation"
@@ -71,6 +95,19 @@ enum TypeOfPile: Int {
         case .waste: return "Waste"
         }
     }
+    
+    static func valueFromDescription(_ description:String) -> TypeOfPile {
+        switch description {
+        case "notAvailable": return .typeOfPileNA
+        case "Stock": return .stock
+        case "Tableau": return .tableau
+        case "MultiFoundation": return .multiFoundation
+        case "Foundation": return .foundation
+        case "Waste": return .waste
+        default: fatalError("falscher TypeOfPileType")
+        }
+    }
+    
 }
 
 // welche Sequenzen dürfen vom Spieler selektiert und bewegt werden
@@ -95,21 +132,42 @@ enum TypeOfUserSelectAndMove: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfUserSelectAndMoveNA:  return "TypeOfUserSelectAndMoveNA"
-        case .anySequenceInSuit: return "AnySequenceInSuit"
-        case .anySeqAlternate: return "AnySeqAlternate"
-        case .anySeqNoColor: return "AnySeqNoColor"
-        case .allSeqNoColorOrLast: return "AllSeqNoColorOrLast"
-        case .allSeqInSuitOrLast: return "AllSeqInSuitOrLast"
-        case .allSeqAlternateOrLast: return "AllSeqAlternateOrLast"
-        case .all: return "All"
-        case .onlyLast: return "OnlyLast"
-        case .exactOne: return "ExactOne"
-        case .allFaceUpCanSelect: return "AllFaceUpCanSelect"
-        case .pairsEqualValueCanSelect: return "PairsEqualValueCanSelect"
-        case .pairsValue13: return "PairsValue13"
+        case .typeOfUserSelectAndMoveNA:  return "notAvailable"
+        case .anySequenceInSuit: return "anySequenceInSuit"
+        case .anySeqAlternate: return "anySeqAlternate"
+        case .anySeqNoColor: return "anySeqNoColor"
+        case .allSeqNoColorOrLast: return "allSeqNoColorOrLast"
+        case .allSeqInSuitOrLast: return "allSeqInSuitOrLast"
+        case .allSeqAlternateOrLast: return "allSeqAlternateOrLast"
+        case .all: return "all"
+        case .onlyLast: return "onlyLast"
+        case .exactOne: return "exactOne"
+        case .allFaceUpCanSelect: return "allFaceUpCanSelect"
+        case .pairsEqualValueCanSelect: return "pairsEqualValueCanSelect"
+        case .pairsValue13: return "pairsValue13"
         }
     }
+    
+    
+    static func valueFromDescription(_ description:String) -> TypeOfUserSelectAndMove {
+        switch description {
+        case "notAvailable": return .typeOfUserSelectAndMoveNA
+        case "anySequenceInSuit": return .anySequenceInSuit
+        case "anySeqAlternate": return .anySeqAlternate
+        case "anySeqNoColor": return .anySeqNoColor
+        case "allSeqNoColorOrLast": return .allSeqNoColorOrLast
+        case "allSeqInSuitOrLast": return .allSeqInSuitOrLast
+        case "allSeqAlternateOrLast": return .allSeqAlternateOrLast
+        case "all": return .all
+        case "onlyLast": return .onlyLast
+        case "exactOne": return .exactOne
+        case "allFaceUpCanSelect": return .allFaceUpCanSelect
+        case "pairsEqualValueCanSelect": return .pairsEqualValueCanSelect
+        case "pairsValue13": return .pairsValue13
+        default: fatalError("falscher TypeOfUserSelectAndMove")
+        }
+    }
+    
 }
 
 // wie ist die Reihenfolge beim Ablegen durch den Benutzer
@@ -140,30 +198,60 @@ enum TypeOfDepositFromUser: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfDepositFromUserNA: return "TypeOfDepositFromUserNA"
-        case .downInSuit: return "DownInSuit"
-        case .downAlternate: return "DownAlternate"
-        case .downNoColor: return "DownNoColor"
-        case .upInSuit: return "UpInSuit"
-        case .upAlternate: return "UpAlternate"
-        case .upNoColor: return "UpNoColor"
-        case .withGaps: return "WithGaps"
-        case .onlyFromStock: return "OnlyFromStock"
-        case .nothing: return "Nothing"
-        case .downInSuitRolling: return "DownInSuitRolling"
-        case .upInSuitRolling: return "UpInSuitRolling"
-        case .downAlternateRolling: return "DownAlternateRolling"
-        case .upAlternateRolling: return "UpAlternateRolling"
-        case .pairsEqualValue: return "PairsEqualValue"
-        case .pairsValue13OrKing: return "PairsValue13OrKing"
-        case .upDownNoColorRolling: return "UpDownNoColorRolling"
-        case .oneFromTableauOrWaste: return "OneFromTableauOrWaste"
-        case .onlyFromTableau: return "OnlyFromTableau"
-        case .upSameColor: return "UpSameColor"
-        case .downSameColor: return "DownSameColor"
-        case .upDiff2InSuit: return "UpDiff2InSuit"
+        case .typeOfDepositFromUserNA: return "notAvailable"
+        case .downInSuit: return "downInSuit"
+        case .downAlternate: return "downAlternate"
+        case .downNoColor: return "downNoColor"
+        case .upInSuit: return "upInSuit"
+        case .upAlternate: return "upAlternate"
+        case .upNoColor: return "upNoColor"
+        case .withGaps: return "withGaps"
+        case .onlyFromStock: return "onlyFromStock"
+        case .nothing: return "nothing"
+        case .downInSuitRolling: return "downInSuitRolling"
+        case .upInSuitRolling: return "upInSuitRolling"
+        case .downAlternateRolling: return "downAlternateRolling"
+        case .upAlternateRolling: return "upAlternateRolling"
+        case .pairsEqualValue: return "pairsEqualValue"
+        case .pairsValue13OrKing: return "pairsValue13OrKing"
+        case .upDownNoColorRolling: return "upDownNoColorRolling"
+        case .oneFromTableauOrWaste: return "oneFromTableauOrWaste"
+        case .onlyFromTableau: return "onlyFromTableau"
+        case .upSameColor: return "upSameColor"
+        case .downSameColor: return "downSameColor"
+        case .upDiff2InSuit: return "upDiff2InSuit"
         }
     }
+    
+    
+    static func valueFromDescription(_ description:String) -> TypeOfDepositFromUser {
+        switch description {
+        case "notAvailable": return .typeOfDepositFromUserNA
+        case "downInSuit": return .downInSuit
+        case "downAlternate": return .downAlternate
+        case "downNoColor": return .downNoColor
+        case "upInSuit": return .upInSuit
+        case "upAlternate": return .upAlternate
+        case "upNoColor": return .upNoColor
+        case "withGaps": return .withGaps
+        case "onlyFromStock": return .onlyFromStock
+        case "nothing": return .nothing
+        case "downInSuitRolling": return .downInSuitRolling
+        case "upInSuitRolling": return .upInSuitRolling
+        case "downAlternateRolling": return .downAlternateRolling
+        case "upAlternateRolling": return .upAlternateRolling
+        case "pairsEqualValue": return .pairsEqualValue
+        case "pairsValue13OrKing": return .pairsValue13OrKing
+        case "upDownNoColorRolling": return .upDownNoColorRolling
+        case "oneFromTableauOrWaste": return .oneFromTableauOrWaste
+        case "onlyFromTableau": return .onlyFromTableau
+        case "upSameColor": return .upSameColor
+        case "downSameColor": return .downSameColor
+        case "upDiff2InSuit": return .upDiff2InSuit
+        default: fatalError("falscher TypeOfDepositFromUser")
+        }
+    }
+    
 }
 
 // womit kann ein leerer Stapel belegt werden
@@ -183,19 +271,37 @@ enum TypeOfDepositIfEmpty: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfDepositIfEmptyNA: return "TypeOfDepositIfEmptyNA"
-        case .noCard: return "NoCard"
-        case .basicCard: return "BasicCard"
-        case .basicCardMinus1: return "BasicCardMinus1"
-        case .ace: return "Ace"
-        case .king: return "King"
-        case .fromDealOrAny: return "FromDealOrAny"
-        case .anyCard: return "AnyCard"
-        case .onlyFromStockCanDepositIfEmpty: return "OnlyFromStockCanDepositIfEmpty"
-        case .onlyFromAutoDealCanDepositIfEmpty: return "OnlyFromAutoDealCanDepositIfEmpty"
-        case .onlyFromTableauCanDepositIfEmpty: return "OnlyFromTableauCanDepositIfEmpty"
+        case .typeOfDepositIfEmptyNA: return "notAvailable"
+        case .noCard: return "noCard"
+        case .basicCard: return "basicCard"
+        case .basicCardMinus1: return "basicCardMinus1"
+        case .ace: return "ace"
+        case .king: return "king"
+        case .fromDealOrAny: return "fromDealOrAny"
+        case .anyCard: return "anyCard"
+        case .onlyFromStockCanDepositIfEmpty: return "onlyFromStockCanDepositIfEmpty"
+        case .onlyFromAutoDealCanDepositIfEmpty: return "onlyFromAutoDealCanDepositIfEmpty"
+        case .onlyFromTableauCanDepositIfEmpty: return "onlyFromTableauCanDepositIfEmpty"
         }
     }
+    
+    static func valueFromDescription(_ description:String) -> TypeOfDepositIfEmpty {
+        switch description {
+        case "notAvailable": return .typeOfDepositIfEmptyNA
+        case "noCard": return .noCard
+        case "basicCard": return .basicCard
+        case "basicCardMinus1": return .basicCardMinus1
+        case "ace": return .ace
+        case "king": return .king
+        case "fromDealOrAny": return .fromDealOrAny
+        case "anyCard": return .anyCard
+        case "onlyFromStockCanDepositIfEmpty": return .onlyFromStockCanDepositIfEmpty
+        case "onlyFromAutoDealCanDepositIfEmpty": return .onlyFromAutoDealCanDepositIfEmpty
+        case "onlyFromTableauCanDepositIfEmpty": return .onlyFromTableauCanDepositIfEmpty
+        default: fatalError("falscher TypeOfDepositIfEmpty")
+        }
+    }
+    
 }
 
 // auf welche Piles darf von diesem Stapel gespielt werden (durch eine Aktion des Users)
@@ -211,14 +317,27 @@ enum TypeOfPermittedToPlay: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfPermittedToPlayNA: return "TypeOfPermittedToPlayNA"
-        case .tableauPermittedToPlay: return "TableauPermittedToPlay"
-        case .wastePermittedToPlay: return "WastePermittedToPlay"
-        case .foundationPermittedToPlay: return "FoundationPermittedToPlay"
-        case .tableauOrFoundationPermittedToPlay: return "TableauOrFoundationPermittedToPlay"
-        case .waste_Tableau_FoundationPermittedToPlay: return "Waste_Tableau_FoundationPermittedToPlay"
+        case .typeOfPermittedToPlayNA: return "notAvailable"
+        case .tableauPermittedToPlay: return "tableauPermittedToPlay"
+        case .wastePermittedToPlay: return "wastePermittedToPlay"
+        case .foundationPermittedToPlay: return "foundationPermittedToPlay"
+        case .tableauOrFoundationPermittedToPlay: return "tableauOrFoundationPermittedToPlay"
+        case .waste_Tableau_FoundationPermittedToPlay: return "waste_Tableau_FoundationPermittedToPlay"
         }
     }
+    
+    static func valueFromDescription(_ description:String) -> TypeOfPermittedToPlay {
+        switch description {
+        case "notAvailable": return .typeOfPermittedToPlayNA
+        case "tableauPermittedToPlay": return .tableauPermittedToPlay
+        case "wastePermittedToPlay": return .wastePermittedToPlay
+        case "foundationPermittedToPlay": return .foundationPermittedToPlay
+        case "tableauOrFoundationPermittedToPlay": return .tableauOrFoundationPermittedToPlay
+        case "waste_Tableau_FoundationPermittedToPlay": return .waste_Tableau_FoundationPermittedToPlay
+        default: fatalError("falscher TypeOfPermittedToPlay")
+        }
+    }
+    
 }
 
 // welcher Art ist die Basiskarte eines Foundations
@@ -232,13 +351,26 @@ enum TypeOfBasicCard: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfBasicCardNA: return "TypeOfBasicCardNA"
-        case .firstPlayed: return "FirstPlayed"
-        case .fixedButNotLie: return "FixedButNotLie"
-        case .fixedLie: return "FixedLie"
-        case .fromStock: return "FromStock"
+        case .typeOfBasicCardNA: return "notAvailable"
+        case .firstPlayed: return "firstPlayed"
+        case .fixedButNotLie: return "fixedButNotLie"
+        case .fixedLie: return "fixedLie"
+        case .fromStock: return "fromStock"
         }
     }
+    
+    
+    static func valueFromDescription(_ description:String) -> TypeOfBasicCard {
+        switch description {
+        case "notAvailable": return .typeOfBasicCardNA
+        case "firstPlayed": return .firstPlayed
+        case "fixedButNotLie": return .fixedButNotLie
+        case "fixedLie": return .fixedLie
+        case "fromStock": return .fromStock
+        default: fatalError("falscher TypeOfBasicCard")
+        }
+    }
+    
 }
 
 enum TypeOfDealingFromStock: Int {
@@ -249,11 +381,22 @@ enum TypeOfDealingFromStock: Int {
     
     func description() -> String {
         switch self {
-        case .typeOfDealingFromStockNA: return "TypeOfDealingFromStockNA"
-            case .dealToTableaus: return "DealToTableaus"
-            case .dealToWaste: return "DealToWaste"
+        case .typeOfDealingFromStockNA: return "notAvailable"
+        case .dealToTableaus: return "dealToTableaus"
+        case .dealToWaste: return "dealToWaste"
         }
     }
+    
+    
+    static func valueFromDescription(_ description:String) -> TypeOfDealingFromStock {
+        switch description {
+        case "notAvailable": return .typeOfDealingFromStockNA
+        case "dealToTableaus": return .dealToTableaus
+        case "dealToWaste": return .dealToWaste
+        default: fatalError("falscher TypeOfDealingFromStock")
+        }
+    }
+    
 }
 
 enum TypeOfRedeal: Int {
@@ -266,13 +409,26 @@ enum TypeOfRedeal: Int {
     
     func description() -> String {
         switch self {
-            case .typeOfRedealNA: return "TypeOfRedealNA"
-            case .redealToTableaus: return "RedealToTableaus"
-            case .redealToTableausMix: return "RedealToTableausMix"
-            case .redealToWaste: return "RedealToWaste"
-            case .redealToWasteMix: return "RedealToWasteMix"
+        case .typeOfRedealNA: return "notAvailable"
+        case .redealToTableaus: return "redealToTableaus"
+        case .redealToTableausMix: return "redealToTableausMix"
+        case .redealToWaste: return "redealToWaste"
+        case .redealToWasteMix: return "redealToWasteMix"
         }
     }
+    
+    
+    static func valueFromDescription(_ description:String) -> TypeOfRedeal {
+        switch description {
+        case "notAvailable": return .typeOfRedealNA
+        case "redealToTableaus": return .redealToTableaus
+        case "redealToTableausMix": return .redealToTableausMix
+        case "redealToWaste": return .redealToWaste
+        case "redealToWasteMix": return .redealToWasteMix
+        default: fatalError("falscher TypeOfRedeal")
+        }
+    }
+    
 }
 
 class Pile: NSObject {

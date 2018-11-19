@@ -76,11 +76,22 @@ enum TypeOfScoring: Int {
     
     func description() -> String {
         switch self {
-        case .scoringTypeNA: return "notAvaiable"
-        case .scoringSequenceInSuitAndFoundation: return "ScoringSequenceInSuitAndFoundation"
-        case .scoringSequenceNoColorAndFoundation: return "ScoringSequenceNoColorAndFoundation"
-        case .scoringCardOnFoundation: return "ScoringCardOnFoundation"
-        case .scoringSequenceInSuitAndKingUp: return "ScoringSequenceInSuitAndKingUp"
+        case .scoringTypeNA: return "notAvailable"
+        case .scoringSequenceInSuitAndFoundation: return "scoringSequenceInSuitAndFoundation"
+        case .scoringSequenceNoColorAndFoundation: return "scoringSequenceNoColorAndFoundation"
+        case .scoringCardOnFoundation: return "scoringCardOnFoundation"
+        case .scoringSequenceInSuitAndKingUp: return "scoringSequenceInSuitAndKingUp"
+        }
+    }
+    
+    static func valueFromDescription(_ description:String) -> TypeOfScoring {
+        switch description {
+        case "notAvailable": return .scoringTypeNA
+        case "scoringSequenceInSuitAndFoundation": return .scoringSequenceInSuitAndFoundation
+        case "scoringSequenceNoColorAndFoundation": return .scoringSequenceNoColorAndFoundation
+        case "scoringCardOnFoundation": return .scoringCardOnFoundation
+        case "scoringSequenceInSuitAndKingUp": return .scoringSequenceInSuitAndKingUp
+        default: fatalError("falscher TypeOfScoring")
         }
     }
 }
