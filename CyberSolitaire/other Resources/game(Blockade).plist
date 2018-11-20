@@ -9,7 +9,7 @@
 		<key>gameDescription</key>
 		<dict>
 			<key>difficulty</key>
-			<string>leicht</string>
+			<string>mittel</string>
 			<key>disposal</key>
 			<string>&lt;bold&gt;Start:&lt;/bold&gt;
 Fünf Kartenreihen mit je 10 Karten verdeckt auslegen, wobei sich die Reihen überlappen. Eine weitere Karte auf jeden der ersten vier Stapel legen.
