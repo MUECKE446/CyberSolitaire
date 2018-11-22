@@ -267,13 +267,15 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             }
         }
         
-        someChangedOnCard!.afterChange += {
+        zPositionCard!.afterChange += {
             let cardNew = $1 as Card
             // finde den entsprechenden CardNode
             for cardNode in self.scene!.cardNodes! {
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
-                    //log.verbose("card \(cardNew.cardId) someChangedOn")
+                    cardNode.scene?.view?.setNeedsDisplay()
+                    cardNode.changeZPositionCard()
+                    //log.verbose("card \(cardNew.cardId) updateZPositionOn")
                 }
             }
         }
@@ -332,7 +334,7 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
         repositionCard = nil
         shakeCard = nil
         cheatCard = nil
-        someChangedOnCard = nil
+        zPositionCard = nil
         waitForDuration = nil
     }
     

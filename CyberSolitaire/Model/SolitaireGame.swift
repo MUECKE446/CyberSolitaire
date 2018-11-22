@@ -33,7 +33,7 @@ enum SKCardMoves {
     reposition,
     shake,
     cheat,
-    someChanged
+    updateZPosition
 }
 
 // Observables
@@ -44,7 +44,7 @@ var turnCard : Observable? = Observable(Card(cardID: 1))  // initialize with dum
 var repositionCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
 var shakeCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
 var cheatCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
-var someChangedOnCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
+var zPositionCard : Observable? = Observable(Card(cardID: 1))  // initialize with dummy Card
 var waitForDuration : Observable? = Observable(Double(0.0))
 
 var scoreValue : Observable? = Observable(Int(-1))
@@ -202,7 +202,7 @@ class SolitaireGame: NSObject {
         repositionCard = Observable(Card(cardID: 1))  // initialize with dummy Card
         shakeCard = Observable(Card(cardID: 1))  // initialize with dummy Card
         cheatCard = Observable(Card(cardID: 1))  // initialize with dummy Card
-        someChangedOnCard = Observable(Card(cardID: 1))  // initialize with dummy Card
+        zPositionCard = Observable(Card(cardID: 1))  // initialize with dummy Card
         waitForDuration = Observable(Double(0.0))
         scoreValue = Observable(Int(-1))
         
@@ -563,7 +563,6 @@ class SolitaireGame: NSObject {
             if targets.count != 0 {
                 // behandle die Targets
                 if targets.count == 1 {
-                    // dorthin kann automatisch abgelegt werden
                     unselectCards()
                     moveSequence(pile.createSequenceFromSelection(), fromPile: pile, toPile: targets.first!)
                     playMoveFinished()
@@ -656,14 +655,14 @@ class SolitaireGame: NSObject {
             for card in startPile!.cards {
                 card.zPosition = highestzPosition
                 highestzPosition += 1
-                someChangedOnCard! <- card
+                zPositionCard! <- card
             }
         }
         for pile in gamePiles! {
             for card in pile.cards {
                 card.zPosition = highestzPosition
                 highestzPosition += 1
-                someChangedOnCard! <- card
+                zPositionCard! <- card
             }
         }
         //log.debug("high: \(highestzPosition)")
@@ -931,10 +930,8 @@ class SolitaireGame: NSObject {
                     shakeCard! <- movement.1
                 case .cheat:
                     cheatCard! <- movement.1
-                    //            case .SomeChanged:
-                    //                someChangedOnCard! <- movement.1
-                default:
-                    log.error("muss noch implementiert werden")
+                case .updateZPosition:
+                    zPositionCard! <- movement.1
                 }
             }
 

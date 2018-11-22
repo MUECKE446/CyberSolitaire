@@ -476,6 +476,12 @@ class Pile: NSObject {
         }
     }
     
+    var autoLayDown : Bool {
+        get {
+            return pileType == .foundation
+        }
+    }
+    
     var pileSizeHasChanged: Bool {
         get {
             return (pileSize.width != oldPileSize.width) || (pileSize.height != oldPileSize.height)
@@ -853,6 +859,15 @@ class Pile: NSObject {
         return self.selectedCards
     }
     
+    
+    func createRevertedSequenceFromSelection() -> [Card] {
+        var tmpReverted : [Card] = []
+        for card in selectedCards.reversed() {
+            tmpReverted.append(card)
+        }
+        return tmpReverted
+    }
+    
     func getLastCard() -> Card? {
         // liefert die oberste Karte vom Stapel, falls der Stapel leer ist "nil" 
         // die Karte wird nicht vom Stapel entfernt
@@ -969,11 +984,64 @@ class Pile: NSObject {
         // wie viele Karten dürfen auf einmal abgelegt werden
         if numberPerMove == 1 {
             // es darf genau 1 Karte abgelegt werden
-            // es ist genau 1 Karte selektiert
+            // falls mehrere Karten selektiert sind, wird die auto - Ablage geprüft
             if fromPile.selectedCards.count != 1 {
-                return false
+                // bisher können sowieso nur Sequenzen abgelegt werden
+                // deshalb wird zuerst geprüft, ob die Selektion eine Sequenz ist
+                // in den bisher implementierten Spielen ist das immer eine Sequenz nach unten
+                if !fromPile.isDownInSequenceStartingAt(card) {
+                    // ist gar keine Sequenz
+                    return false
+                }
+                // falls der Pile noch leer ist
+                if self.isPileEmpty() {
+                    // mit welcher Karte darf der leere Pile belegt werden
+                    switch self.depositIfEmptyType {
+                    case .ace:
+                        if !fromPile.selectedCards.last!.isAce() {
+                            return false
+                        }
+                    case .king:
+                        if !fromPile.selectedCards.last!.isKing() {
+                            return false
+                        }
+                    case .anyCard:
+                        break
+                    default:
+                        //TODO: implementieren
+                        log.error("muss implementiert werden")
+                        return false
+                    }
+                }
+                // wie kann abgelegt werden ?
+                // leere Stapel wurden vorher untersucht! bei depositeIfEmptyType.any wird daher true zurückgegeben
+                switch self.depositFromUserType {
+                case .downInSuit:
+                    // falls der Pile nicht leer ist
+                    if !self.isPileEmpty() {
+                        let lastCard = self.getLastCard()!
+                        return lastCard.isDownInSuitWithCard(fromPile.selectedCards.last!)
+                    }
+                case .downNoColor:
+                    // falls der Pile nicht leer ist
+                    if !self.isPileEmpty() {
+                        let lastCard = self.getLastCard()!
+                        return lastCard.isDownInSequenceWithCard(fromPile.selectedCards.last!)
+                    }
+                case .upInSuit:
+                    // falls der Pile nicht leer ist
+                    if !self.isPileEmpty() {
+                        let lastCard = self.getLastCard()!
+                        return lastCard.isUpInSuitWithCard(fromPile.selectedCards.last!)
+                    }
+                default:
+                    //TODO: implementieren
+                    log.error("muss implementiert werden")
+                    return false
+                }
+                return true
             }
-            
+            // es ist genau 1 Karte selektiert
             // falls der Pile noch leer ist
             if self.isPileEmpty() {
                 // mit welcher Karte darf der leere Pile belegt werden
@@ -1007,7 +1075,6 @@ class Pile: NSObject {
                     let lastCard = self.getLastCard()!
                     return lastCard.isDownInSequenceWithCard(card)
                 }
-                return self.isDownInSequenceStartingAt(card)
             case .upInSuit:
                 // falls der Pile nicht leer ist
                 if !self.isPileEmpty() {
@@ -1207,4 +1274,14 @@ class Pile: NSObject {
         memoCardsRepositioned = false
     }
     
+    func resetzPositions() {
+        for card in cards {
+            card.zPosition = highestzPosition
+            highestzPosition += 1
+            zPositionCard! <- card
+        }
+        //log.debug("high: \(highestzPosition)")
+    }
+    
+
 }
