@@ -239,10 +239,6 @@ class CardNode: SKSpriteNode {
         let sequence = SKAction.sequence([flip,wait,flip])
         self.run(sequence)
     }
-
-    func changeZPositionCard() {
-        self.run(SKAction.move(to: self.position, duration: TimeInterval.init()))
-    }
     
     func selectCard(_ showSelected: Bool) {
         if showSelected {

@@ -274,7 +274,6 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
                 if cardNode.cardId == cardNew.cardId {
                     cardNode.zPosition = cardNew.zPosition
                     cardNode.scene?.view?.setNeedsDisplay()
-                    cardNode.changeZPositionCard()
                     //log.verbose("card \(cardNew.cardId) updateZPositionOn")
                 }
             }
