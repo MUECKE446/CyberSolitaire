@@ -67,7 +67,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>3.4385</string>
 				<key>posY</key>
-				<string>1.0981</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -103,7 +103,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>17.3998</string>
 				<key>posY</key>
-				<string>1.0981</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -139,7 +139,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>80.8467</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -175,7 +175,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>27.2910</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -211,7 +211,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>37.1821</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -247,7 +247,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>47.0733</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -283,7 +283,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>56.9644</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -319,7 +319,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>66.8556</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -355,7 +355,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>17.3998</string>
 				<key>posY</key>
-				<string>48.0867</string>
+				<string>50.5000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -391,7 +391,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>27.2910</string>
 				<key>posY</key>
-				<string>48.2430</string>
+				<string>50.5000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -427,7 +427,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>37.1821</string>
 				<key>posY</key>
-				<string>48.2430</string>
+				<string>50.5000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -463,7 +463,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>47.0733</string>
 				<key>posY</key>
-				<string>48.2430</string>
+				<string>50.5000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -499,7 +499,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>56.9644</string>
 				<key>posY</key>
-				<string>48.2430</string>
+				<string>50.5000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -535,7 +535,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>66.8556</string>
 				<key>posY</key>
-				<string>48.2430</string>
+				<string>50.5000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -571,7 +571,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>90.4943</string>
 				<key>posY</key>
-				<string>1.2544</string>
+				<string>1.0000</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -607,7 +607,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>80.7454</string>
 				<key>posY</key>
-				<string>21.5436</string>
+				<string>21.3740</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -643,7 +643,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>90.2869</string>
 				<key>posY</key>
-				<string>21.5436</string>
+				<string>21.3740</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -679,7 +679,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>80.6442</string>
 				<key>posY</key>
-				<string>41.8327</string>
+				<string>41.7479</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
@@ -715,7 +715,7 @@ Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis z
 				<key>posX</key>
 				<string>90.2688</string>
 				<key>posY</key>
-				<string>41.8327</string>
+				<string>41.7479</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>

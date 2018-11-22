@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #8 in GameViewController.viewDidLoad():GameViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SolitaireGame.startPlayMoveFor(_:withCard:):SolitaireGame.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SolitaireGame.moveSequence(_:fromPile:toPile:):SolitaireGame.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in GameViewController.viewDidLoad():GameViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Pile.updatePileGeometryWithResize(_:):Pile.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PlayMove.invokeForTapOnEmptyPile(_:):PlayMove.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Pile.decreasePileSize():Pile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "faceDownOverlapPercent">
+            </PersistentString>
+            <PersistentString
+               value = "pileOverlapRatio">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Pile.moveSequence(_:fromPile:reversed:):Pile.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #5 in GameViewController.viewDidLoad():GameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cardNode.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Pile.conformsToPlayOnFoundation(_:fromPile:):Pile.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Pile.moveSequence(_:fromPile:):Pile.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
