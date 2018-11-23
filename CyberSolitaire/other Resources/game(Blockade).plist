@@ -12,18 +12,22 @@
 			<string>mittel</string>
 			<key>disposal</key>
 			<string>&lt;bold&gt;Start:&lt;/bold&gt;
-Fünf Kartenreihen mit je 10 Karten verdeckt auslegen, wobei sich die Reihen überlappen. Eine weitere Karte auf jeden der ersten vier Stapel legen.
-Die unterste Karte jeden Stapels aufdecken.
-Der Rest kommt verdeckt auf den Vorratsstapel.</string>
+Zwölf Stapel in zwei Reihen mit je einer Karte offen auslegen.
+Acht Ablagestapel in vier Reihen daneben aufbauen.
+Der Rest der Karten kommt verdeckt auf den Vorratsstapel.</string>
 			<key>howToPlay</key>
 			<string>&lt;bold&gt;Spiel:&lt;/bold&gt;
-Karten werden in absteigender Folge ohne Rücksicht auf Farbe gelegt. 
-Jede Kartensequenz oder Teile davon kann als Einheit bewegt werden. 
-Freie Plätze können mit einer beliebigen Karte belegt werden. 
+Karten in Farbfolge in absteigender Ordnung legen. Die oberste Karte
+kann auf einen anderen Stapel oder eine Grundkarte gespielt werden. Karten einer Farbsequenz
+lassen sich auch als Ganzes auf einen Alagestapel legen, sofern die unterste Karte der Sequenz
+in Farbfolge mit der letzten Karte des Ablagestapels ist.
+Karten einer Farbsequenz können als Einheit von einem Stapel auf einen anderen bewegt werden.
+Freie Plätze werden vom Vorratsstapel automatisch gefüllt. Wenn der Vorratsstapel leer ist,
+können freie Plätze mit einer beliebigen Karte belegt werden.
 Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorratsstapel auf das Kartenbild gezogen werden.</string>
 			<key>target</key>
 			<string>&lt;bold&gt;Ziel:&lt;/bold&gt;
-Alle 8 Sequenzen ohne Rücksicht auf Farbe mit allen 13 Karten, vom König bis zum As, als Einheit ablegen.</string>
+Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 		</dict>
 		<key>gameGroup</key>
 		<string>Spider</string>
