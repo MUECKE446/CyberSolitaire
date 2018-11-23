@@ -834,23 +834,14 @@ class Pile: NSObject {
     
     func moveSequence(_ sequence: [Card], fromPile: Pile) {
         // verbringe alle Karten in den neuen Stapel
-        if let firstCard = sequence.first {
-            cards = cards + sequence
-            if let startIndex = fromPile.cards.index(of: firstCard) {
-//            if let startIndex = find(fromPile.cards,firstCard) {
-                // entferne die Karten aus dem fromPile
-                let range = (startIndex ..< fromPile.cards.count) // start ..< end
-                fromPile.cards.removeSubrange(range)
-                self.updatePileGeometryWithResize(true)
-                fromPile.updatePileGeometryWithResize(true)
-            }
-            else {
-                log.error("die firstCard der Sequenz gehört nicht zum fromPile")
-            }
+        cards = cards + sequence
+        // lösche die Karten aus dem fromPile
+        for card in sequence {
+            let removeIndex = fromPile.cards.index(of: card)
+            fromPile.cards.remove(at: removeIndex!)
         }
-        else {
-            log.error("die Sequenz hat keine firstCard -> sie muss leer sein")
-        }
+        self.updatePileGeometryWithResize(true)
+        fromPile.updatePileGeometryWithResize(true)
     }
     
     // MARK: Getter

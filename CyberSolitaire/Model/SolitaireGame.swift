@@ -832,8 +832,11 @@ class SolitaireGame: NSObject {
         let theProxy: (AnyObject) = self.undoManager.prepare(withInvocationTarget: self) as (AnyObject)
         fromPile.resetCardsRepositioned()
         toPile.resetCardsRepositioned()
-        toPile.moveSequence(sequence, fromPile: fromPile)
-        toPile.logMoveSequence(sequence,fromPile:fromPile)
+        var moveSequence = sequence
+        if toPile.autoLayDown || fromPile.autoLayDown {
+            moveSequence = sequence.reversed()
+        }
+        toPile.moveSequence(moveSequence, fromPile: fromPile)
         if fromPile.isCardsRepositioned() {
             // alle Karten des Stapels müssen neu positioniert werden
             for card in fromPile.cards {
@@ -851,10 +854,10 @@ class SolitaireGame: NSObject {
             }
             //log.debug("toPile \(toPile.pileId) repositioned")
         }
-        for card in sequence {
+        for card in moveSequence {
             movements.append((SKCardMoves.move,card,0.0))
         }
-        theProxy.moveSequence(sequence, fromPile: toPile, toPile: fromPile)
+        theProxy.moveSequence(moveSequence, fromPile: toPile, toPile: fromPile)
         if !(self.undoManager.isUndoing || self.undoManager.isRedoing) {
             // falls fromPile jetzt nicht leer ist und die letzte Karte verdeckt ist, muss diese jetzt umgedreht werden
             if !fromPile.isPileEmpty() {
@@ -990,7 +993,11 @@ class SolitaireGame: NSObject {
         var playedCards = [Card]()
         var memoCardsRepositioned = false
         var cardsPlayed = 0
-        for fromPile in fromPiles {
+        var newFromPiles = fromPiles
+        if undoManager.isUndoing {
+            newFromPiles = newFromPiles.reversed()
+        }
+        for fromPile in newFromPiles {
             fromPile.resetCardsRepositioned()
             for toPile in toPiles {
                 toPile.resetCardsRepositioned()
@@ -1055,10 +1062,10 @@ class SolitaireGame: NSObject {
                 }
             }
         }
-        logDealCards(playedCards, fromPiles: fromPiles, toPiles: toPiles)
+        logDealCards(playedCards, fromPiles: newFromPiles, toPiles: toPiles)
         // führe alle Bewegungnen durch
         makeMovements()
-        theProxy.dealCardsFrom(toPiles, toPiles: fromPiles)
+        theProxy.dealCardsFrom(toPiles, toPiles: newFromPiles)
     }
     
     // MARK: Selektionen
