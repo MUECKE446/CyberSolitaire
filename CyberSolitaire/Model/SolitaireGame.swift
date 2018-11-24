@@ -611,10 +611,79 @@ class SolitaireGame: NSObject {
                 playMoveCanceled(withoutEnableUndoRedo: true)
             }
         case .stock:
-            dealCardsFromStock()
-            // das ist der ganze Spielzug
-            playMoveFinished()
-        default:
+            if dealCardsFromStock() {
+                // das ist der ganze Spielzug
+                playMoveFinished()
+            }
+            else {
+                // die Karten müssen händisch bewegt werden
+                // selektiere die Karte(n) für diesen Spielzug
+                pile.selectCardOrSequenceWithCard(withCard)
+                // finde mögliche Ziele
+                let targets = findTargetsForPlayMove(pile:pile, card:withCard)
+                if targets.count != 0 {
+                    // behandle die Targets
+                    if targets.count == 1 {
+                        unselectCards()
+                        moveSequence(pile.createSequenceFromSelection(), fromPile: pile, toPile: targets.first!)
+                        playMoveFinished()
+                        return
+                    }
+                    else {
+                        // mehrere Zielstapel sind möglich
+                        // verdunkle alle nicht möglichen Stapel
+                        var notPossibleTargets: [Pile] = gamePiles!
+                        for pile in targets {
+                            let index = notPossibleTargets.index(of: pile)
+                            notPossibleTargets.remove(at: index!)
+                        }
+                        // es wird eine Benachrichtigung verschickt, damit die selektierten Piles optisch im View verändert werden können
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: selectPilesNotification), object: self, userInfo: (NSDictionary(object: notPossibleTargets, forKey: "selectPiles" as NSCopying) as! [AnyHashable: Any]))
+                        // playMoveAwaitFurtherAction()
+                        playMove!.setInnerState(status: .awaitFurtherAction, selectedPile: pile, secondSelectedPile: nil, selectedCard: withCard, secondSelectedCard: nil)
+                    }
+                }
+                else {
+                    // es gibt keine Möglichkeit zu Ablegen
+                    // der Zug wird abgebrochen
+                    shakeCard! <- withCard
+                    playMoveCanceled(withoutEnableUndoRedo: true)
+                }
+            }
+        case .waste:
+            // selektiere die Karte(n) für diesen Spielzug
+            pile.selectCardOrSequenceWithCard(withCard)
+            // finde mögliche Ziele
+            let targets = findTargetsForPlayMove(pile:pile, card:withCard)
+            if targets.count != 0 {
+                // behandle die Targets
+                if targets.count == 1 {
+                    unselectCards()
+                    moveSequence(pile.createSequenceFromSelection(), fromPile: pile, toPile: targets.first!)
+                    playMoveFinished()
+                    return
+                }
+                else {
+                    // mehrere Zielstapel sind möglich
+                    // verdunkle alle nicht möglichen Stapel
+                    var notPossibleTargets: [Pile] = gamePiles!
+                    for pile in targets {
+                        let index = notPossibleTargets.index(of: pile)
+                        notPossibleTargets.remove(at: index!)
+                    }
+                    // es wird eine Benachrichtigung verschickt, damit die selektierten Piles optisch im View verändert werden können
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: selectPilesNotification), object: self, userInfo: (NSDictionary(object: notPossibleTargets, forKey: "selectPiles" as NSCopying) as! [AnyHashable: Any]))
+                    // playMoveAwaitFurtherAction()
+                    playMove!.setInnerState(status: .awaitFurtherAction, selectedPile: pile, secondSelectedPile: nil, selectedCard: withCard, secondSelectedCard: nil)
+                }
+            }
+            else {
+                // es gibt keine Möglichkeit zu Ablegen
+                // der Zug wird abgebrochen
+                shakeCard! <- withCard
+                playMoveCanceled(withoutEnableUndoRedo: true)
+            }
+default:
             //TODO: die anderen Fälle noch implementieren
             assert(false, "muss noch implementiert werden")
         }
@@ -632,6 +701,10 @@ class SolitaireGame: NSObject {
                 moveSequence(sequence, fromPile: forSelectedPile, toPile: pile)
                 playMoveFinished()
             case .multiFoundation,.foundation:
+                let sequence = forSelectedPile.createSequenceFromSelection()
+                moveSequence(sequence, fromPile: forSelectedPile, toPile: pile)
+                playMoveFinished()
+            case .waste:
                 let sequence = forSelectedPile.createSequenceFromSelection()
                 moveSequence(sequence, fromPile: forSelectedPile, toPile: pile)
                 playMoveFinished()
@@ -755,8 +828,38 @@ class SolitaireGame: NSObject {
             //TODO: implementieren
             log.error("muss implementiert werden")
         case .waste_Tableau_FoundationPermittedToPlay:
-            //TODO: implementieren
-            log.error("muss implementiert werden")
+            // untersuche alle Stapel des Spiels
+            for aPile in gamePiles! {
+                if aPile == pile {
+                    // ich kann nicht den zuvor gewählten Stapel betrachten
+                    continue
+                }
+                switch aPile.pileType {
+                case .tableau:
+                    if aPile.conformsToPlayOnTableau(card,stockNotEmpty: findStock()!.cards.count != 0) {
+                        targetPiles.append(aPile)
+                    }
+                case .foundation, .multiFoundation:
+                    if aPile.conformsToPlayOnFoundation(card, fromPile: pile) {
+                        // falls es sich zusätzlich um ein Spiel handelt, indem nur eine ganze 13er Sequenz abgelegt werden kann, können wir direkt ablegen
+                        if aPile.numberPerMove == 13 {
+                            // lösche alle bisherigen targets
+                            targetPiles.removeAll(keepingCapacity: false)
+                            // das ist dann der Stapel, auf den automatisch abgelegt wird
+                            targetPiles.append(aPile)    // verlasse die func
+                            return targetPiles
+                        }
+                        // sonst nimm aPile in die Liste der targets auf
+                        targetPiles.append(aPile)
+                    }
+                case .waste:
+                    if aPile.conformsToPlayOnWaste(card, fromPile: pile) {
+                        targetPiles.append(aPile)
+                    }
+                default:
+                    continue
+                }
+            }
         case .wastePermittedToPlay:
             //TODO: implementieren
             log.error("muss implementiert werden")
@@ -787,9 +890,8 @@ class SolitaireGame: NSObject {
             // diese Stapel können nur als Ziel dienen und sind deshalb nicht zu einer FirstAction fähig
             return false
         case .waste:
-            //TODO: die anderen Fälle noch implementieren
-            assert(false, "muss noch implementiert werden")
-            return false
+            // die Karte und der zugehörige Stapel müssen conform sein mit dem userSelectAndMoveType
+            return pile.conformsWithSelectAndMoveMode(card)
         default:
             assert(false, "dieser Fall darf nicht vorkommen")
             return false
@@ -807,7 +909,7 @@ class SolitaireGame: NSObject {
         if pile == forSelectedPile {
             return false
         }
-        // darf vom selektierten Stape auf den Stapel dieser Art abgelegt werden?
+        // darf vom selektierten Stapel auf den Stapel dieser Art abgelegt werden?
         if pile.isPermittedToPlayFromPile(forSelectedPile) {
             switch pile.pileType {
             case .tableau:
@@ -818,6 +920,8 @@ class SolitaireGame: NSObject {
                 return pile.conformsToPlayOnTableau(firstCard!,stockNotEmpty: findStock()!.cards.count != 0)
             case .multiFoundation,.foundation:
                 return pile.conformsToPlayOnFoundation(firstCard!, fromPile: forSelectedPile)
+            case .waste:
+                return pile.conformsToPlayOnWaste(firstCard!, fromPile: forSelectedPile)
             default:
                 //TODO: die anderen Fälle noch implementieren
                 assert(false, "muss noch implementiert werden")
@@ -837,6 +941,8 @@ class SolitaireGame: NSObject {
                 return emptyPile.conformsToPlayOnTableau(firstCard!,stockNotEmpty: findStock()!.cards.count != 0)
             case .multiFoundation,.foundation:
                 return emptyPile.conformsToPlayOnFoundation(firstCard!, fromPile: forSelectedPile)
+            case .waste:
+                return emptyPile.conformsToPlayOnWaste(firstCard!, fromPile: forSelectedPile)
             default:
                 //TODO: die anderen Fälle noch implementieren
                 assert(false, "muss noch implementiert werden")
@@ -965,7 +1071,7 @@ class SolitaireGame: NSObject {
     
     // MARK: Kartenaktionen, die nicht in den UndoManager eingespeist werden
     
-    func dealCardsFromStock() {
+    func dealCardsFromStock() -> Bool {
         let fromPile = findStock()!
         let fromPiles = [fromPile]
         var toPiles: [Pile] = []
@@ -976,10 +1082,15 @@ class SolitaireGame: NSObject {
                     toPiles.append(pile)
                 }
             }
+        case .typeOfDealingFromStockNA:
+            // es passiert kein automatisches Austeilen von Karten
+            // der Spieler muss die Karten bewegen
+            return false
         default:
             assert(false, "muss noch implementiert werden")
         }
         canDealCardsFrom(fromPiles, toPiles: toPiles)
+        return true
     }
     
     func canDealCardsFrom(_ fromPiles: [Pile], toPiles: [Pile]) {

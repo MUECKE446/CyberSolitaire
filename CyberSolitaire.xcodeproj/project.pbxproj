@@ -129,7 +129,6 @@
 		4C26CE55216BA99200FC41E7 /* icon-undo-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-1.png"; sourceTree = "<group>"; };
 		4C2E5958217F586A0046667F /* GameSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectCell.swift; sourceTree = "<group>"; };
 		4C5214CE219F6355000139EB /* game(Blockade).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game(Blockade).plist"; sourceTree = "<group>"; };
-		4C5214D021A1C55F000139EB /* game(BlockadeTest).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game(BlockadeTest).plist"; sourceTree = "<group>"; };
 		4C5214D421A94EF7000139EB /* game(Napoleons Square).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "game(Napoleons Square).plist"; sourceTree = "<group>"; };
 		4C5950A621760A3E007F0DEE /* game(Black Widow hart).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow hart).plist"; sourceTree = "<group>"; };
 		4C5950A821760A69007F0DEE /* game(Black Widow weich).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "game(Black Widow weich).plist"; sourceTree = "<group>"; };
@@ -417,7 +416,6 @@
 				4C5950AA21760A7F007F0DEE /* game(Spider).plist */,
 				4CA5C15D216FD460009DC9CC /* SettingsList.plist */,
 				4C83ADD6218880EB00848BAE /* statisticsList.plist */,
-				4C5214D021A1C55F000139EB /* game(BlockadeTest).plist */,
 			);
 			path = "other Resources";
 			sourceTree = "<group>";

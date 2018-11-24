@@ -12,9 +12,10 @@
 			<string>leicht</string>
 			<key>disposal</key>
 			<string>&lt;bold&gt;Start:&lt;/bold&gt;
-Zwölf Stapel in zwei Reihen mit je einer Karte offen auslegen.
+Zwölf Stapel in zwei Reihen mit je einer Karte offen auslegen. Drei weitere Kartenreihen offen auf jeden Stapel legen.
 Acht Ablagestapel in vier Reihen daneben aufbauen.
-Der Rest der Karten kommt verdeckt auf den Vorratsstapel.</string>
+Der Rest der Karten kommt offen auf den Vorratsstapel.
+Unterhalb des Vorratsstapels wird ein weiterer leerer Stapel (der Stoß) gelegt</string>
 			<key>howToPlay</key>
 			<string>&lt;bold&gt;Spiel:&lt;/bold&gt;
 Karten in Farbfolge in absteigender Ordnung legen. Die oberste Karte
@@ -22,9 +23,9 @@ kann auf einen anderen Stapel oder eine Grundkarte gespielt werden. Karten einer
 lassen sich auch als Ganzes auf einen Alagestapel legen, sofern die unterste Karte der Sequenz
 in Farbfolge mit der letzten Karte des Ablagestapels ist.
 Karten einer Farbsequenz können als Einheit von einem Stapel auf einen anderen bewegt werden.
-Freie Plätze werden vom Vorratsstapel automatisch gefüllt. Wenn der Vorratsstapel leer ist,
-können freie Plätze mit einer beliebigen Karte belegt werden.
-Zu jedem Zeitpunkt kann eine weitere Kartenreihe vom Vorratsstapel auf das Kartenbild gezogen werden.</string>
+Freie Plätze können mit einer beliebigen Karte belegt werden.
+Die oberste Karte des Vorratsstapels ist spielbar oder kann auf dem Stoß abgelegt werden.
+Die oberste Karte des Stoßes ist spielbar</string>
 			<key>target</key>
 			<string>&lt;bold&gt;Ziel:&lt;/bold&gt;
 Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
@@ -159,13 +160,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -195,13 +196,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -231,13 +232,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -267,13 +268,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -303,13 +304,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -339,13 +340,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -375,13 +376,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -411,13 +412,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -447,13 +448,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -483,13 +484,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -519,13 +520,13 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>depositFromUserType</key>
 				<string>downInSuit</string>
 				<key>depositIfEmptyType</key>
-				<string>fromDealOrAny</string>
+				<string>anyCard</string>
 				<key>faceAtStart</key>
-				<string>lastFaceUp</string>
+				<string>allFaceUp</string>
 				<key>indexForEmptyPileImage</key>
 				<integer>3</integer>
 				<key>numberOfCardsAtStart</key>
-				<integer>1</integer>
+				<integer>4</integer>
 				<key>numberPerMove</key>
 				<integer>1</integer>
 				<key>overlapType</key>
@@ -805,7 +806,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>dealingFromStockType</key>
 				<string>notAvailable</string>
 				<key>depositFromUserType</key>
-				<string>notAvailable</string>
+				<string>onlyFromStock</string>
 				<key>depositIfEmptyType</key>
 				<string>notAvailable</string>
 				<key>faceAtStart</key>

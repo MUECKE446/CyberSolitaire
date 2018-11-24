@@ -921,6 +921,8 @@ class Pile: NSObject {
             return isDownInSuitWholeSequence(card)
         case .anySeqNoColor:
             return isDownInSequenceStartingAt(card)
+        case .onlyLast:
+            return getLastCard() == card
         default:
             log.error("für andere Spiele muss dies noch implementiert werden")
             return false
@@ -1105,6 +1107,22 @@ class Pile: NSObject {
                     return false
                 }
             }
+        }
+    }
+    
+    
+    func conformsToPlayOnWaste(_ card: Card, fromPile: Pile) -> Bool {
+        assert(pileType == .waste, "das hätte nicht passieren dürfen")
+        // dürfen hier Karten abgelegt werden
+        switch self.depositFromUserType {
+        case .onlyFromStock:
+            return fromPile.pileType == .stock
+        case .onlyFromTableau:
+            return fromPile.pileType == .tableau
+        default:
+            //TODO: implementieren
+            log.error("muss implementiert werden")
+            return false
         }
     }
     
