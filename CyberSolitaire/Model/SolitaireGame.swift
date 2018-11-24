@@ -431,6 +431,17 @@ class SolitaireGame: NSObject {
                             cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile, action: .move))
                             movements.append((SKCardMoves.move,card,0.0))
                         }
+                    case .allFaceUp:
+                        // nehme die Karte vom startPile und verschiebe sie zum pile
+                        let card = startPile!.getLastCard()!
+                        // drehe die Karte
+                        card.faceUp = !card.faceUp
+                        pile.putCard(card)
+                        startPile!.removeLastCard()
+                        card.zPosition = highestzPosition
+                        highestzPosition += 1
+                        cardsWithAction!.append(CardMovesDescription(card: card, fromPile: startPile!, toPile: pile, action: .moveAndTurn))
+                        movements.append((SKCardMoves.moveAndTurn,card,0.0))
                     default:
                         //TODO:  die anderen Fälle müssen implementiert werden, falls sie auftreten
                         log.error("dieser Fall muss noch implementiert werden")
@@ -453,8 +464,19 @@ class SolitaireGame: NSObject {
             startPile!.removeLastCard()
             card.zPosition = highestzPosition
             highestzPosition += 1
-            cardsWithAction!.append(CardMovesDescription(card: card, fromPile: fromPile, toPile: toPile, action: .move))
-            movements.append((SKCardMoves.move,card,0.0))
+            switch findStock()!.faceAtStart {
+            case .allFaceDown:
+                cardsWithAction!.append(CardMovesDescription(card: card, fromPile: fromPile, toPile: toPile, action: .move))
+                movements.append((SKCardMoves.move,card,0.0))
+            case .allFaceUp:
+                // drehe Karte
+                card.faceUp = !card.faceUp
+                cardsWithAction!.append(CardMovesDescription(card: card, fromPile: fromPile, toPile: toPile, action: .moveAndTurn))
+                movements.append((SKCardMoves.moveAndTurn,card,0.0))
+            default:
+                //TODO:  die anderen Fälle müssen implementiert werden, falls sie auftreten
+                log.error("dieser Fall muss noch implementiert werden")
+            }
         }
         // das Austeilen der Karten soll nicht mehr rückgängig gemacht werden können, deshalb auskommentiert
         //undoRedoCardActions(cardsWithAction!)
@@ -573,7 +595,6 @@ class SolitaireGame: NSObject {
                     // verdunkle alle nicht möglichen Stapel
                     var notPossibleTargets: [Pile] = gamePiles!
                     for pile in targets {
-//                        let index = find(notPossibleTargets,pile)
                         let index = notPossibleTargets.index(of: pile)
                         notPossibleTargets.remove(at: index!)
                     }
