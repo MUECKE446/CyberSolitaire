@@ -42,12 +42,12 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
         _ = self.tableView.indexPath(for: cell)
 
 
-        if sender.titleLabel?.text == "zeige Beschreibung" {
-            sender.setTitle("verberge Beschreibung", for: UIControl.State.normal)
+        if sender.titleLabel?.text == "Beschreibung anzeigen" {
+            sender.setTitle("Beschreibung verbergen", for: UIControl.State.normal)
             cell.withDescription = true
         }
         else {
-            sender.setTitle("zeige Beschreibung", for: UIControl.State.normal)
+            sender.setTitle("Beschreibung anzeigen", for: UIControl.State.normal)
             cell.withDescription = false
         }
         self.tableView.reloadData()

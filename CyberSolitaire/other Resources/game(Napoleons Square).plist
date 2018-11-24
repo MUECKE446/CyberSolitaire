@@ -70,7 +70,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Stock</string>
 				<key>posX</key>
-				<string>3.4385</string>
+				<string>65.6854</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -106,7 +106,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>17.3998</string>
+				<string>1.0683</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -178,7 +178,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>27.2910</string>
+				<string>10.9595</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -214,7 +214,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>37.1821</string>
+				<string>20.8506</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -250,7 +250,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>47.0733</string>
+				<string>30.7418</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -286,7 +286,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>56.9644</string>
+				<string>40.6329</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -322,7 +322,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>66.8556</string>
+				<string>50.5241</string>
 				<key>posY</key>
 				<string>1.0000</string>
 				<key>redealType</key>
@@ -358,7 +358,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>17.3998</string>
+				<string>1.0683</string>
 				<key>posY</key>
 				<string>50.5000</string>
 				<key>redealType</key>
@@ -394,7 +394,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>27.2910</string>
+				<string>10.9595</string>
 				<key>posY</key>
 				<string>50.5000</string>
 				<key>redealType</key>
@@ -430,7 +430,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>37.1821</string>
+				<string>20.8506</string>
 				<key>posY</key>
 				<string>50.5000</string>
 				<key>redealType</key>
@@ -466,7 +466,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>47.0733</string>
+				<string>30.7418</string>
 				<key>posY</key>
 				<string>50.5000</string>
 				<key>redealType</key>
@@ -502,7 +502,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>56.9644</string>
+				<string>40.6329</string>
 				<key>posY</key>
 				<string>50.5000</string>
 				<key>redealType</key>
@@ -538,7 +538,7 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Tableau</string>
 				<key>posX</key>
-				<string>66.8556</string>
+				<string>50.5241</string>
 				<key>posY</key>
 				<string>50.5000</string>
 				<key>redealType</key>
@@ -826,9 +826,9 @@ Acht Grundkarten in Farbfolge vom As zum König aufbauen</string>
 				<key>pileType</key>
 				<string>Waste</string>
 				<key>posX</key>
-				<string>3.4385</string>
+				<string>65.6854</string>
 				<key>posY</key>
-				<string>20.7648</string>
+				<string>21.3740</string>
 				<key>redealType</key>
 				<string>notAvailable</string>
 				<key>userSelectAndMoveType</key>
