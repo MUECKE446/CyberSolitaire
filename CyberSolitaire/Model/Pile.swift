@@ -837,7 +837,7 @@ class Pile: NSObject {
         cards = cards + sequence
         // lösche die Karten aus dem fromPile
         for card in sequence {
-            let removeIndex = fromPile.cards.index(of: card)
+            let removeIndex = fromPile.cards.firstIndex(of: card)
             fromPile.cards.remove(at: removeIndex!)
         }
         self.updatePileGeometryWithResize(true)
@@ -867,7 +867,7 @@ class Pile: NSObject {
 
     func getCardBefore(_ card: Card) -> Card? {
         // liefert die Karte bevor card, falls diese existiert
-        if let cardIndex = cards.index(of: card) {
+        if let cardIndex = cards.firstIndex(of: card) {
 //        if let cardIndex = find(cards, card) {
             // die Karte befindet sich im Stapel
             if cardIndex > 0 {

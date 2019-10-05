@@ -19,6 +19,11 @@ let selectCardsNotification = "selectCardsNotification"
 let selectPilesNotification = "selectPilesNotification"
 
 
+
+
+var audioPlayer: AVAudioPlayer?
+
+
 class GameViewController: UIViewController, TouchesProtocolDelegate, UserInteractionProtocolDelegate {
     struct statics {
         static var cardAndEmptyPileSize = CGSize.zero
@@ -31,7 +36,6 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
     
     var scene: GameScene? = nil
     var scaleFactorForView: CGFloat = 1.0
-    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     
     var game: SolitaireGame? = nil
     var lastPoint: CGPoint? = nil
@@ -397,8 +401,8 @@ class GameViewController: UIViewController, TouchesProtocolDelegate, UserInterac
             // Achtung: der audioPlayer darf nicht in dieser Methode lokal ezeugt werden, sonst wird er deallociiert
             // bevor er den Sound abspielen kann !!!
             audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
+            audioPlayer!.prepareToPlay()
+            audioPlayer!.play()
             //log.info("sound: \(soundName) played")
         }
     }

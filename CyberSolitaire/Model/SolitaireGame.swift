@@ -595,7 +595,7 @@ class SolitaireGame: NSObject {
                     // verdunkle alle nicht möglichen Stapel
                     var notPossibleTargets: [Pile] = gamePiles!
                     for pile in targets {
-                        let index = notPossibleTargets.index(of: pile)
+                        let index = notPossibleTargets.firstIndex(of: pile)
                         notPossibleTargets.remove(at: index!)
                     }
                     // es wird eine Benachrichtigung verschickt, damit die selektierten Piles optisch im View verändert werden können
@@ -634,7 +634,7 @@ class SolitaireGame: NSObject {
                         // verdunkle alle nicht möglichen Stapel
                         var notPossibleTargets: [Pile] = gamePiles!
                         for pile in targets {
-                            let index = notPossibleTargets.index(of: pile)
+                            let index = notPossibleTargets.firstIndex(of: pile)
                             notPossibleTargets.remove(at: index!)
                         }
                         // es wird eine Benachrichtigung verschickt, damit die selektierten Piles optisch im View verändert werden können
@@ -668,7 +668,7 @@ class SolitaireGame: NSObject {
                     // verdunkle alle nicht möglichen Stapel
                     var notPossibleTargets: [Pile] = gamePiles!
                     for pile in targets {
-                        let index = notPossibleTargets.index(of: pile)
+                        let index = notPossibleTargets.firstIndex(of: pile)
                         notPossibleTargets.remove(at: index!)
                     }
                     // es wird eine Benachrichtigung verschickt, damit die selektierten Piles optisch im View verändert werden können

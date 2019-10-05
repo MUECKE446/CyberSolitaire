@@ -117,8 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func incrementActivityLogFileVersion(_ logFile: inout String!) {
         // finde die die Nummer im activityLogFileName
         //let index1 = find(logFile,"_")!
-        let index1 = logFile.index((logFile.index(of: "_"))!, offsetBy: 1)
-        let index2 = logFile.index(of: ".")
+        let index1 = logFile.index((logFile.firstIndex(of: "_"))!, offsetBy: 1)
+        let index2 = logFile.firstIndex(of: ".")
         //!!! Achtung !!!
         let versionNumberStr = logFile[index1 ..< index2!]  // this is now a Substring type under Swift 4
         //var versionNumberStr = logFile.substring(with: (index1 ..< index2!))

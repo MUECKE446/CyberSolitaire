@@ -33,7 +33,7 @@ import Foundation
 public extension Array where Array.Element == Range<String.Index> {
 	
 	/// Convert an array of `String.Index` to an array of `NSRange`
-	public var nsRanges: [NSRange] {
+    var nsRanges: [NSRange] {
 		return self.map({ $0.nsRange })
 	}
 	
@@ -43,9 +43,12 @@ public extension Range where Bound == String.Index {
 	
 	/// Return `NSRange` from standard `Range<String.Index>` range.
 	var nsRange:NSRange {
-		return NSRange(location: self.lowerBound.encodedOffset,
-					   length: self.upperBound.encodedOffset -
-						self.lowerBound.encodedOffset)
+        return NSRange(location: self.lowerBound.utf16Offset(in: "dummy"),
+                       length: self.upperBound.utf16Offset(in: "dummy") -
+                        self.lowerBound.utf16Offset(in: "dummy"))
+//		return NSRange(location: self.lowerBound.encodedOffset,
+//					   length: self.upperBound.encodedOffset -
+//						self.lowerBound.encodedOffset)
 	}
 }
 
@@ -55,7 +58,7 @@ public extension NSRange {
 	///
 	/// - Parameter str: source string
 	/// - Returns: range, `nil` if invalid
-	public func `in`(_ str: String) -> Range<String.Index>? {
+    func `in`(_ str: String) -> Range<String.Index>? {
 		return Range(self, in: str)
 	}
 	
@@ -80,7 +83,7 @@ public extension String {
 	///   - from: starting index.
 	///   - length: length of string,
 	/// - Returns: substring
-	public func substring(from: Int?, length: Int) -> String? {
+    func substring(from: Int?, length: Int) -> String? {
 		guard length > 0 else { return nil }
 		let start = from ?? 0
 		let end = min(count, max(0, start) + length)
@@ -93,7 +96,7 @@ public extension String {
 	///
 	/// - Parameter index: index of the character
 	/// - Returns: `Character` instance at passed index, `nil` if range is out of bounds.
-	public subscript(index: Int) -> Character? {
+    subscript(index: Int) -> Character? {
 		guard !self.isEmpty, let stringIndex = self.index(startIndex, offsetBy: index, limitedBy: self.index(before: endIndex)) else { return nil }
 		return self[stringIndex]
 	}
@@ -103,7 +106,7 @@ public extension String {
 	/// `String[0..<1]`
 	///
 	/// - Parameter value: substring
-	public subscript(range: Range<Int>) -> Substring? {
+    subscript(range: Range<Int>) -> Substring? {
 		guard let left = offset(by: range.lowerBound) else { return nil }
 		guard let right = index(left, offsetBy: range.upperBound - range.lowerBound,
 								limitedBy: endIndex) else { return nil }
@@ -114,7 +117,7 @@ public extension String {
 	/// `String[..<1]`
 	///
 	/// - Parameter value: substring
-	public subscript(value: PartialRangeUpTo<Int>) -> Substring? {
+    subscript(value: PartialRangeUpTo<Int>) -> Substring? {
 		if value.upperBound < 0 {
 			guard abs(value.upperBound) <= count else { return nil }
 			return self[..<(count - abs(value.upperBound))]
@@ -127,7 +130,7 @@ public extension String {
 	/// `String[...1]`
 	///
 	/// - Parameter range: closed subrange.
-	public subscript(range: ClosedRange<Int>) -> Substring? {
+    subscript(range: ClosedRange<Int>) -> Substring? {
 		if range.upperBound < 0 {
 			guard abs(range.lowerBound) <= count else { return nil }
 			return self[(count - abs(range.lowerBound))...]
@@ -141,7 +144,7 @@ public extension String {
 	/// `String[1...]`
 	///
 	/// - Parameter value: substring
-	public subscript(value: PartialRangeFrom<Int>) -> Substring? {
+    subscript(value: PartialRangeFrom<Int>) -> Substring? {
 		guard let left = self.offset(by: value.lowerBound) else { return nil }
 		return self[left...]
 	}
@@ -150,7 +153,7 @@ public extension String {
 	/// `String[...2]`
 	///
 	/// - Parameter value: substring
-	public subscript(value: PartialRangeThrough<Int>) -> Substring? {
+    subscript(value: PartialRangeThrough<Int>) -> Substring? {
 		guard let right = self.offset(by: value.upperBound) else { return nil }
 		return self[...right]
 	}
@@ -160,20 +163,20 @@ public extension String {
 		return index(startIndex, offsetBy: distance, limitedBy: endIndex)
 	}
 	
-	/// Return a new string by removing given prefix.
+    /// Renew string by removing given prefix.
 	///
 	/// - Parameter prefix: prefix to remove.
 	/// - Returns: new instance of the string without the prefix
-	public func removing(prefix: String) -> String {
-		if hasPrefix(prefix) {
-			let start = index(startIndex, offsetBy: prefix.count)
-			//			return substring(from: start)
-			return self[start...].string
-		}
-		return self
-	}
+//    func removing(prefix: String) -> String {
+//		if hasPrefix(prefix) {
+//            start = index(startIndex, offsetBy: prefix.count)
+//			//			return substring(from: start)
+//			return self[start...].string
+//		}
+//		return self
+//	}
 	
-	public func removing(suffix: String) -> String {
+    func removing(suffix: String) -> String {
 		if hasSuffix(suffix) {
 			let end = index(startIndex, offsetBy: self.count-suffix.count)
 			return self[..<end].string

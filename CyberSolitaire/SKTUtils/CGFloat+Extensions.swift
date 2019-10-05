@@ -29,21 +29,21 @@ public extension CGFloat {
   /**
    * Converts an angle in degrees to radians.
    */
-  public func degreesToRadians() -> CGFloat {
+    func degreesToRadians() -> CGFloat {
     return π * self / 180.0
   }
 
   /**
    * Converts an angle in radians to degrees.
    */
-  public func radiansToDegrees() -> CGFloat {
+    func radiansToDegrees() -> CGFloat {
     return self * 180.0 / π
   }
 
   /**
    * Ensures that the float value stays between the given values, inclusive.
    */
-  public func clamped(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+    func clamped(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     let min = v1 < v2 ? v1 : v2
     let max = v1 > v2 ? v1 : v2
     return self < min ? min : (self > max ? max : self)
@@ -52,7 +52,7 @@ public extension CGFloat {
   /**
    * Ensures that the float value stays between the given values, inclusive.
    */
-  public mutating func clamp(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
+    mutating func clamp(_ v1: CGFloat, _ v2: CGFloat) -> CGFloat {
     self = clamped(v1, v2)
     return self
   }
@@ -60,21 +60,22 @@ public extension CGFloat {
   /**
    * Returns 1.0 if a floating point value is positive; -1.0 if it is negative.
    */
-  public func sign() -> CGFloat {
+    func sign() -> CGFloat {
     return (self >= 0.0) ? 1.0 : -1.0
   }
 
   /**
    * Returns a random floating point number between 0.0 and 1.0, inclusive.
    */
-  public static func random() -> CGFloat {
-    return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+    static func random() -> CGFloat {
+        return random(in: 0.0 ... 1.0)
+    //return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
   }
 
   /**
    * Returns a random floating point number in the range min...max, inclusive.
    */
-  public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
+    static func random(min: CGFloat, max: CGFloat) -> CGFloat {
     assert(min < max)
     return CGFloat.random() * (max - min) + min
   }
@@ -82,7 +83,7 @@ public extension CGFloat {
   /**
    * Randomly returns either 1.0 or -1.0.
    */
-  public static func randomSign() -> CGFloat {
+    static func randomSign() -> CGFloat {
     return (arc4random_uniform(2) == 0) ? 1.0 : -1.0
   }
 }

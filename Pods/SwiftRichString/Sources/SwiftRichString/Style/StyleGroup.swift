@@ -57,10 +57,12 @@ public class StyleGroup: StyleProtocol {
 		private func processWholeTag() {
 			isOpeningTag = !wholeTag.hasPrefix("</")
 			
-			let strippedTag = wholeTag.removing(prefix: isOpeningTag ? "<":"</").removing(suffix: ">").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+			let strippedTag = wholeTag.removing(suffix: isOpeningTag ? "<":"</").removing(suffix: ">").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+//            let strippedTag = wholeTag.removing(prefix: isOpeningTag ? "<":"</").removing(suffix: ">").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
 			name = strippedTag.components(separatedBy: CharacterSet.whitespacesAndNewlines).first ?? ""
 			if isOpeningTag {
-				paramString = strippedTag.removing(prefix: name).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                paramString = strippedTag.removing(suffix: name).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+//				paramString = strippedTag.removing(prefix: name).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
 				if paramString?.count == 0 { paramString = nil }
 			}
 		}
@@ -258,7 +260,7 @@ public extension Array where Array.Element == StyleProtocol {
 	/// Merge is made in order where each n+1 elements may replace existing keys defined by n-1 elements.
 	///
 	/// - Returns: merged style
-	public func mergeStyle() -> Style {
+    func mergeStyle() -> Style {
 		var attributes: [NSAttributedString.Key:Any] = [:]
 		self.forEach { attributes.merge($0.attributes, uniquingKeysWith: { (_, new) in return new }) }
 		return Style(dictionary: attributes)
