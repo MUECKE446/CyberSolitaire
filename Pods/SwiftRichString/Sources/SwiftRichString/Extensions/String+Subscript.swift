@@ -43,12 +43,9 @@ public extension Range where Bound == String.Index {
 	
 	/// Return `NSRange` from standard `Range<String.Index>` range.
 	var nsRange:NSRange {
-        return NSRange(location: self.lowerBound.utf16Offset(in: "dummy"),
-                       length: self.upperBound.utf16Offset(in: "dummy") -
-                        self.lowerBound.utf16Offset(in: "dummy"))
-//		return NSRange(location: self.lowerBound.encodedOffset,
-//					   length: self.upperBound.encodedOffset -
-//						self.lowerBound.encodedOffset)
+		return NSRange(location: self.lowerBound.encodedOffset,
+					   length: self.upperBound.encodedOffset -
+						self.lowerBound.encodedOffset)
 	}
 }
 
@@ -163,18 +160,18 @@ public extension String {
 		return index(startIndex, offsetBy: distance, limitedBy: endIndex)
 	}
 	
-    /// Renew string by removing given prefix.
+	/// Return a new string by removing given prefix.
 	///
 	/// - Parameter prefix: prefix to remove.
 	/// - Returns: new instance of the string without the prefix
-//    func removing(prefix: String) -> String {
-//		if hasPrefix(prefix) {
-//            start = index(startIndex, offsetBy: prefix.count)
-//			//			return substring(from: start)
-//			return self[start...].string
-//		}
-//		return self
-//	}
+    func removing(prefix: String) -> String {
+		if hasPrefix(prefix) {
+			let start = index(startIndex, offsetBy: prefix.count)
+			//			return substring(from: start)
+			return self[start...].string
+		}
+		return self
+	}
 	
     func removing(suffix: String) -> String {
 		if hasSuffix(suffix) {
