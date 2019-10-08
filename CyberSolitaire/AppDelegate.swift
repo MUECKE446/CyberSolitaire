@@ -13,7 +13,7 @@ import SwiftyPlistManager
 let log = ActionLogger.defaultLogger()
 var gameName = ""
 // !!! Achtung: bei jeder Änderung der Version muss diese händisch auch in LaunchScreen.xib gemacht werden !!!
-let CyberSolitaireVersion = "1.3.1"
+let CyberSolitaireVersion = "1.4.0"
 
 // Konstanten für SwiftyPlistManger
 let allGamePListNames = getAllGamePListNames()
