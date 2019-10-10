@@ -31,21 +31,21 @@
 import Foundation
 
 public extension Array where Array.Element == Range<String.Index> {
-	
+
 	/// Convert an array of `String.Index` to an array of `NSRange`
     var nsRanges: [NSRange] {
 		return self.map({ $0.nsRange })
 	}
-	
+
 }
 
 public extension Range where Bound == String.Index {
-	
+
 	/// Return `NSRange` from standard `Range<String.Index>` range.
 	var nsRange:NSRange {
-		return NSRange(location: self.lowerBound.encodedOffset,
-					   length: self.upperBound.encodedOffset -
-						self.lowerBound.encodedOffset)
+        return NSRange(location: self.lowerBound.utf16Offset(in:""),
+                       length: self.upperBound.utf16Offset(in:"") -
+                        self.lowerBound.utf16Offset(in:""))
 	}
 }
 
