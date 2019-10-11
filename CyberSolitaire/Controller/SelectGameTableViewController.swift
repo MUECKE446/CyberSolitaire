@@ -78,6 +78,9 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
             }
         }
         
+        // sortiere in Aufsteigender Folge der Game-Namen
+        gamesWithDescriptionCanBeSelected.sort(by: {$0.gameName < $1.gameName}) // dabei wird das Array neu sortiert
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
