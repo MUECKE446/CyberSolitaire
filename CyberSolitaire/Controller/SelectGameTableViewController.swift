@@ -81,6 +81,50 @@ class SelectGameTableViewController: UITableViewController,UIPopoverPresentation
         // sortiere in Aufsteigender Folge der Game-Namen
         gamesWithDescriptionCanBeSelected.sort(by: {$0.gameName < $1.gameName}) // dabei wird das Array neu sortiert
         
+//        // falls ich später noch mal die Sortierung ändern möchte (z.B. über die Einstellungen ) dann schon mal der Code dafür
+//        // sortiert nach aufsteigender Schwierigkeit von leicht nach schwer
+//        gamesWithDescriptionCanBeSelected.sort() {
+//            let arg0ToCompare = $0.gameDescription["difficulty"]
+//            let arg1ToCompare = $1.gameDescription["difficulty"]
+//            if arg0ToCompare != nil && arg1ToCompare != nil {
+//                return arg0ToCompare! < arg1ToCompare!
+//            }
+//            else {
+//                return false
+//            }
+//        }
+//
+//        // oder umgekehrte Sortierung von schwer nach leicht
+//        gamesWithDescriptionCanBeSelected.sort() {
+//            let arg0ToCompare = $0.gameDescription["difficulty"]
+//            let arg1ToCompare = $1.gameDescription["difficulty"]
+//            if arg0ToCompare != nil && arg1ToCompare != nil {
+//                return arg0ToCompare! > arg1ToCompare!
+//            }
+//            else {
+//                return false
+//            }
+//        }
+//
+//        // jetzt noch bei gleicher Schwierigkeit alphabetisch nach Spiel-Name
+//        gamesWithDescriptionCanBeSelected.sort() {
+//            let arg0ToCompare = $0.gameDescription["difficulty"]
+//            let arg1ToCompare = $1.gameDescription["difficulty"]
+//            if arg0ToCompare != nil && arg1ToCompare != nil {
+//                if arg0ToCompare! > arg1ToCompare! {
+//                    return true
+//                }
+//                else {
+//                    return $0.gameName < $1.gameName
+//                }
+//            }
+//            else {
+//                return false
+//            }
+//        }
+
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
