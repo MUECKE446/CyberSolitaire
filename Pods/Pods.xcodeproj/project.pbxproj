@@ -360,7 +360,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					0C6A63074C6BED6C83C00578C80D7E6A = {
 						LastSwiftMigration = 1100;
@@ -508,6 +508,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -557,7 +558,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftRichString/SwiftRichString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftRichString/SwiftRichString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftRichString/SwiftRichString.modulemap";
 				PRODUCT_MODULE_NAME = SwiftRichString;
@@ -589,7 +590,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftRichString/SwiftRichString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftRichString/SwiftRichString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftRichString/SwiftRichString.modulemap";
 				PRODUCT_MODULE_NAME = SwiftRichString;
@@ -623,7 +624,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.modulemap";
@@ -658,7 +659,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyPlistManager/SwiftyPlistManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyPlistManager/SwiftyPlistManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyPlistManager/SwiftyPlistManager.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyPlistManager;
@@ -701,6 +702,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -756,7 +758,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyPlistManager/SwiftyPlistManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyPlistManager/SwiftyPlistManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyPlistManager/SwiftyPlistManager.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyPlistManager;
@@ -790,7 +792,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.modulemap";
