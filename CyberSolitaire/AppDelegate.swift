@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyPlistManager
+
 
 
 let log = ActionLogger.defaultLogger()

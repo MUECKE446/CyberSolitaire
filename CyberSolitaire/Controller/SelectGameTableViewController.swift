@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftRichString
+
 
 // styles
 let normal = Style {

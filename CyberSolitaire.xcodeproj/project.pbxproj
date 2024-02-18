@@ -78,6 +78,27 @@
 		4CABDD1C1AAF091700960D35 /* PileEmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CABDD1B1AAF091700960D35 /* PileEmptyNode.swift */; };
 		4CB12B42217CBD5A00277F0B /* icon-undo-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB12B40217CBD5A00277F0B /* icon-undo-48.png */; };
 		4CB12B45217CBDC200277F0B /* icon-redo-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB12B44217CBDC100277F0B /* icon-redo-48.png */; };
+		4CB383CA2B82331000D46E8F /* SwiftyPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383C92B82331000D46E8F /* SwiftyPlistManager.swift */; };
+		4CB383E62B82339900D46E8F /* AssociatedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383DC2B82339900D46E8F /* AssociatedValues.swift */; };
+		4CB383E72B82339900D46E8F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D92B82339900D46E8F /* Style.swift */; };
+		4CB383E82B82339900D46E8F /* FontInfoAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D62B82339800D46E8F /* FontInfoAttribute.swift */; };
+		4CB383E92B82339900D46E8F /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D02B82339800D46E8F /* Compatibility.swift */; };
+		4CB383EA2B82339900D46E8F /* StyleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383CE2B82339800D46E8F /* StyleGroup.swift */; };
+		4CB383EB2B82339900D46E8F /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D72B82339800D46E8F /* String+Subscript.swift */; };
+		4CB383EC2B82339900D46E8F /* FontConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D42B82339800D46E8F /* FontConvertible.swift */; };
+		4CB383ED2B82339900D46E8F /* StyleRegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383DA2B82339900D46E8F /* StyleRegEx.swift */; };
+		4CB383EE2B82339900D46E8F /* AttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383CF2B82339800D46E8F /* AttributedString+Ext.swift */; };
+		4CB383EF2B82339900D46E8F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383CD2B82339800D46E8F /* String+Ext.swift */; };
+		4CB383F02B82339900D46E8F /* StylesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D12B82339800D46E8F /* StylesManager.swift */; };
+		4CB383F12B82339900D46E8F /* SwiftRichString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383E12B82339900D46E8F /* SwiftRichString-dummy.m */; };
+		4CB383F22B82339900D46E8F /* ColorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D32B82339800D46E8F /* ColorConvertible.swift */; };
+		4CB383F32B82339900D46E8F /* UIKit+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383DD2B82339900D46E8F /* UIKit+Extras.swift */; };
+		4CB383F42B82339900D46E8F /* StyleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383CC2B82339800D46E8F /* StyleProtocol.swift */; };
+		4CB383F52B82339900D46E8F /* SystemFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383DB2B82339900D46E8F /* SystemFonts.swift */; };
+		4CB383F62B82339900D46E8F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D82B82339800D46E8F /* Extensions.swift */; };
+		4CB383F72B82339900D46E8F /* CommonsAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D52B82339800D46E8F /* CommonsAttributes.swift */; };
+		4CB383F82B82339900D46E8F /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383D22B82339800D46E8F /* OrderedDictionary.swift */; };
+		4CB383F92B82339900D46E8F /* FontData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB383DE2B82339900D46E8F /* FontData.swift */; };
 		4CC06B731AB99D1C001C2D14 /* icon-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC06B711AB99D1C001C2D14 /* icon-redo.png */; };
 		4CC06B741AB99D1C001C2D14 /* icon-undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC06B721AB99D1C001C2D14 /* icon-undo.png */; };
 		4CD611EC1AACA6BF0081F5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD611EB1AACA6BF0081F5A7 /* AppDelegate.swift */; };
@@ -89,11 +110,9 @@
 		4CDC2E3F218B8D97000C6101 /* StatisticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */; };
 		4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */; };
 		4CF511B9218DDC70009334D9 /* StatisticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */; };
-		C23CD9311E702DBF235042D0 /* Pods_CyberSolitaire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18C0BF398E392AF6D6D30F78 /* Pods-CyberSolitaire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyberSolitaire.release.xcconfig"; path = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.release.xcconfig"; sourceTree = "<group>"; };
 		4C0B5EB71AB092F400ED27EF /* bearings.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bearings.caf; sourceTree = "<group>"; };
 		4C0B5EB81AB092F400ED27EF /* bing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bing.caf; sourceTree = "<group>"; };
 		4C0B5EB91AB092F400ED27EF /* boing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = boing.caf; sourceTree = "<group>"; };
@@ -166,6 +185,32 @@
 		4CABDD1B1AAF091700960D35 /* PileEmptyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PileEmptyNode.swift; sourceTree = "<group>"; };
 		4CB12B40217CBD5A00277F0B /* icon-undo-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo-48.png"; sourceTree = "<group>"; };
 		4CB12B44217CBDC100277F0B /* icon-redo-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo-48.png"; sourceTree = "<group>"; };
+		4CB383C92B82331000D46E8F /* SwiftyPlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPlistManager.swift; sourceTree = "<group>"; };
+		4CB383CC2B82339800D46E8F /* StyleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleProtocol.swift; sourceTree = "<group>"; };
+		4CB383CD2B82339800D46E8F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		4CB383CE2B82339800D46E8F /* StyleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGroup.swift; sourceTree = "<group>"; };
+		4CB383CF2B82339800D46E8F /* AttributedString+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Ext.swift"; sourceTree = "<group>"; };
+		4CB383D02B82339800D46E8F /* Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
+		4CB383D12B82339800D46E8F /* StylesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesManager.swift; sourceTree = "<group>"; };
+		4CB383D22B82339800D46E8F /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		4CB383D32B82339800D46E8F /* ColorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConvertible.swift; sourceTree = "<group>"; };
+		4CB383D42B82339800D46E8F /* FontConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConvertible.swift; sourceTree = "<group>"; };
+		4CB383D52B82339800D46E8F /* CommonsAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonsAttributes.swift; sourceTree = "<group>"; };
+		4CB383D62B82339800D46E8F /* FontInfoAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfoAttribute.swift; sourceTree = "<group>"; };
+		4CB383D72B82339800D46E8F /* String+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Subscript.swift"; sourceTree = "<group>"; };
+		4CB383D82B82339800D46E8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4CB383D92B82339900D46E8F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		4CB383DA2B82339900D46E8F /* StyleRegEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleRegEx.swift; sourceTree = "<group>"; };
+		4CB383DB2B82339900D46E8F /* SystemFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemFonts.swift; sourceTree = "<group>"; };
+		4CB383DC2B82339900D46E8F /* AssociatedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedValues.swift; sourceTree = "<group>"; };
+		4CB383DD2B82339900D46E8F /* UIKit+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extras.swift"; sourceTree = "<group>"; };
+		4CB383DE2B82339900D46E8F /* FontData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontData.swift; sourceTree = "<group>"; };
+		4CB383E02B82339900D46E8F /* SwiftRichString.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SwiftRichString.xcconfig; sourceTree = "<group>"; };
+		4CB383E12B82339900D46E8F /* SwiftRichString-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SwiftRichString-dummy.m"; sourceTree = "<group>"; };
+		4CB383E22B82339900D46E8F /* SwiftRichString-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftRichString-Info.plist"; sourceTree = "<group>"; };
+		4CB383E32B82339900D46E8F /* SwiftRichString-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftRichString-prefix.pch"; sourceTree = "<group>"; };
+		4CB383E42B82339900D46E8F /* SwiftRichString.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = SwiftRichString.modulemap; sourceTree = "<group>"; };
+		4CB383E52B82339900D46E8F /* SwiftRichString-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftRichString-umbrella.h"; sourceTree = "<group>"; };
 		4CC06B711AB99D1C001C2D14 /* icon-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-redo.png"; sourceTree = "<group>"; };
 		4CC06B721AB99D1C001C2D14 /* icon-undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-undo.png"; sourceTree = "<group>"; };
 		4CD611E61AACA6BF0081F5A7 /* CyberSolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyberSolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,8 +226,6 @@
 		4CDC2E3E218B8D97000C6101 /* StatisticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewController.swift; sourceTree = "<group>"; };
 		4CEFD892216BBCD1009A729A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4CF511B8218DDC70009334D9 /* StatisticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewCell.swift; sourceTree = "<group>"; };
-		4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CyberSolitaire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyberSolitaire.debug.xcconfig"; path = "Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +233,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C23CD9311E702DBF235042D0 /* Pods_CyberSolitaire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +285,7 @@
 			children = (
 				4C0B5EF51AB1F09100ED27EF /* Helper.swift */,
 				4C5950AC21761031007F0DEE /* GamesPListHelpers.swift */,
+				4CB383C92B82331000D46E8F /* SwiftyPlistManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -305,14 +348,52 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		4CB383CB2B82339800D46E8F /* SwiftRichString */ = {
+			isa = PBXGroup;
+			children = (
+				4CB383DC2B82339900D46E8F /* AssociatedValues.swift */,
+				4CB383CF2B82339800D46E8F /* AttributedString+Ext.swift */,
+				4CB383D32B82339800D46E8F /* ColorConvertible.swift */,
+				4CB383D52B82339800D46E8F /* CommonsAttributes.swift */,
+				4CB383D02B82339800D46E8F /* Compatibility.swift */,
+				4CB383D82B82339800D46E8F /* Extensions.swift */,
+				4CB383D42B82339800D46E8F /* FontConvertible.swift */,
+				4CB383DE2B82339900D46E8F /* FontData.swift */,
+				4CB383D62B82339800D46E8F /* FontInfoAttribute.swift */,
+				4CB383D22B82339800D46E8F /* OrderedDictionary.swift */,
+				4CB383CD2B82339800D46E8F /* String+Ext.swift */,
+				4CB383D72B82339800D46E8F /* String+Subscript.swift */,
+				4CB383D92B82339900D46E8F /* Style.swift */,
+				4CB383CE2B82339800D46E8F /* StyleGroup.swift */,
+				4CB383CC2B82339800D46E8F /* StyleProtocol.swift */,
+				4CB383DA2B82339900D46E8F /* StyleRegEx.swift */,
+				4CB383D12B82339800D46E8F /* StylesManager.swift */,
+				4CB383DB2B82339900D46E8F /* SystemFonts.swift */,
+				4CB383DD2B82339900D46E8F /* UIKit+Extras.swift */,
+				4CB383DF2B82339900D46E8F /* Support Files */,
+			);
+			path = SwiftRichString;
+			sourceTree = "<group>";
+		};
+		4CB383DF2B82339900D46E8F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CB383E42B82339900D46E8F /* SwiftRichString.modulemap */,
+				4CB383E02B82339900D46E8F /* SwiftRichString.xcconfig */,
+				4CB383E12B82339900D46E8F /* SwiftRichString-dummy.m */,
+				4CB383E22B82339900D46E8F /* SwiftRichString-Info.plist */,
+				4CB383E32B82339900D46E8F /* SwiftRichString-prefix.pch */,
+				4CB383E52B82339900D46E8F /* SwiftRichString-umbrella.h */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		4CD611DD1AACA6BF0081F5A7 = {
 			isa = PBXGroup;
 			children = (
 				4CD611E81AACA6BF0081F5A7 /* CyberSolitaire */,
 				4CD612021AACA6BF0081F5A7 /* CyberSolitaire_Tests */,
-				4CD612161AACA8220081F5A7 /* Frameworks */,
 				4CD611E71AACA6BF0081F5A7 /* Products */,
-				7C36EE36E56ED716429505A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -327,6 +408,7 @@
 		4CD611E81AACA6BF0081F5A7 /* CyberSolitaire */ = {
 			isa = PBXGroup;
 			children = (
+				4CB383CB2B82339800D46E8F /* SwiftRichString */,
 				4CA9B5611AC2C3E3003C7388 /* SKTUtils */,
 				4C0B5EF41AB1F06900ED27EF /* Helper */,
 				4C0B5EDC1AB1D13400ED27EF /* Observable-Swift */,
@@ -381,14 +463,6 @@
 			path = ActionLogger;
 			sourceTree = "<group>";
 		};
-		4CD612161AACA8220081F5A7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4EDE41D2A2FE88B3FE52DE27 /* Pods_CyberSolitaire.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4CD612171AACAA500081F5A7 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,15 +492,6 @@
 				4C83ADD6218880EB00848BAE /* statisticsList.plist */,
 			);
 			path = "other Resources";
-			sourceTree = "<group>";
-		};
-		7C36EE36E56ED716429505A4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */,
-				18C0BF398E392AF6D6D30F78 /* Pods-CyberSolitaire.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,7 +605,7 @@
 		4C5EDB901AD7D4F000B0DC20 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -572,7 +637,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CyberSolitaire/Pods-CyberSolitaire-frameworks.sh\"\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 		D0831CB64B98590388FD2DE4 /* [CP] Check Pods Manifest.lock */ = {
@@ -594,7 +660,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -606,11 +673,14 @@
 			files = (
 				4CDC2E3F218B8D97000C6101 /* StatisticTableViewController.swift in Sources */,
 				4CA9B5731AC2C3E3003C7388 /* SKAction+SpecialEffects.swift in Sources */,
+				4CB383F82B82339900D46E8F /* OrderedDictionary.swift in Sources */,
+				4CB383EB2B82339900D46E8F /* String+Subscript.swift in Sources */,
 				4C0B5EED1AB1D13400ED27EF /* Observable.swift in Sources */,
 				4C0B5EF31AB1D13400ED27EF /* TupleObservable.swift in Sources */,
 				4CABDD171AAF051B00960D35 /* GameScene.swift in Sources */,
 				4C0B5EEE1AB1D13400ED27EF /* ObservableChainingProxy.swift in Sources */,
 				4CABDD0F1AAF050400960D35 /* GameLayout.swift in Sources */,
+				4CB383E72B82339900D46E8F /* Style.swift in Sources */,
 				4C0B5EF81AB3871300ED27EF /* TouchesProtocolDelegate.swift in Sources */,
 				4CA9B5751AC2C3E3003C7388 /* SKNode+Extensions.swift in Sources */,
 				4CA9B55E1ABF448A003C7388 /* PlayMove.swift in Sources */,
@@ -622,20 +692,33 @@
 				4C5EDB921AD7D73600B0DC20 /* main.m in Sources */,
 				4CA9B5711AC2C3E3003C7388 /* Int+Extensions.swift in Sources */,
 				4CA662C92183145B0005BC8C /* SelectGameTableViewController.swift in Sources */,
+				4CB383F22B82339900D46E8F /* ColorConvertible.swift in Sources */,
 				4CF511B9218DDC70009334D9 /* StatisticViewCell.swift in Sources */,
 				4CD611EC1AACA6BF0081F5A7 /* AppDelegate.swift in Sources */,
+				4CB383EF2B82339900D46E8F /* String+Ext.swift in Sources */,
 				4C2E5959217F586A0046667F /* GameSelectCell.swift in Sources */,
 				4C0B5EEB1AB1D13400ED27EF /* EventSubscription.swift in Sources */,
 				4C0B5EF11AB1D13400ED27EF /* OwningEventReference.swift in Sources */,
+				4CB383F92B82339900D46E8F /* FontData.swift in Sources */,
 				4CA9B5701AC2C3E3003C7388 /* CGVector+Extensions.swift in Sources */,
+				4CB383CA2B82331000D46E8F /* SwiftyPlistManager.swift in Sources */,
+				4CB383EE2B82339900D46E8F /* AttributedString+Ext.swift in Sources */,
 				4C5950AD21761031007F0DEE /* GamesPListHelpers.swift in Sources */,
 				4C0B5EF21AB1D13400ED27EF /* Protocols.swift in Sources */,
+				4CB383F42B82339900D46E8F /* StyleProtocol.swift in Sources */,
+				4CB383EC2B82339900D46E8F /* FontConvertible.swift in Sources */,
 				4CA9B56F1AC2C3E3003C7388 /* CGPoint+Extensions.swift in Sources */,
 				4CABDD101AAF050400960D35 /* Pile.swift in Sources */,
 				4CABDD1C1AAF091700960D35 /* PileEmptyNode.swift in Sources */,
+				4CB383F02B82339900D46E8F /* StylesManager.swift in Sources */,
 				4CABDD121AAF050400960D35 /* SolitaireGame.swift in Sources */,
 				4CA9B5741AC2C3E3003C7388 /* SKColor+Extensions.swift in Sources */,
 				4CA9B5771AC2C3E3003C7388 /* SKTEffects.swift in Sources */,
+				4CB383F12B82339900D46E8F /* SwiftRichString-dummy.m in Sources */,
+				4CB383E92B82339900D46E8F /* Compatibility.swift in Sources */,
+				4CB383F52B82339900D46E8F /* SystemFonts.swift in Sources */,
+				4CB383EA2B82339900D46E8F /* StyleGroup.swift in Sources */,
+				4CB383E82B82339900D46E8F /* FontInfoAttribute.swift in Sources */,
 				4CA9B5781AC2C3E3003C7388 /* SKTTimingFunctions.swift in Sources */,
 				4CABDD111AAF050400960D35 /* PileLayout.swift in Sources */,
 				4C83ADD9218881EE00848BAE /* Statistics.swift in Sources */,
@@ -643,12 +726,17 @@
 				4CA9B56E1AC2C3E3003C7388 /* CGFloat+Extensions.swift in Sources */,
 				4CABDD1A1AAF053200960D35 /* GameViewController.swift in Sources */,
 				4CABDD0E1AAF050400960D35 /* Card.swift in Sources */,
+				4CB383F72B82339900D46E8F /* CommonsAttributes.swift in Sources */,
 				4C0B5EE91AB1D13400ED27EF /* Event.swift in Sources */,
 				4C0B5EF61AB1F09100ED27EF /* Helper.swift in Sources */,
+				4CB383F62B82339900D46E8F /* Extensions.swift in Sources */,
+				4CB383F32B82339900D46E8F /* UIKit+Extras.swift in Sources */,
 				4C0B5EF01AB1D13400ED27EF /* ObservableReference.swift in Sources */,
 				4CEFD893216BBCD1009A729A /* SettingsTableViewController.swift in Sources */,
 				4CA9B5791AC2C3E3003C7388 /* Vector3.swift in Sources */,
 				4C0B5EEF1AB1D13400ED27EF /* ObservableProxy.swift in Sources */,
+				4CB383E62B82339900D46E8F /* AssociatedValues.swift in Sources */,
+				4CB383ED2B82339900D46E8F /* StyleRegEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +872,6 @@
 		};
 		4CD6120A1AACA6BF0081F5A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5544E28090BC866C1944CB9D /* Pods-CyberSolitaire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CyberSolitaire/CyberSolitaire.entitlements;
@@ -794,10 +881,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CyberSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.muecke-software.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -809,7 +893,6 @@
 		};
 		4CD6120B1AACA6BF0081F5A7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18C0BF398E392AF6D6D30F78 /* Pods-CyberSolitaire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CyberSolitaire/CyberSolitaire.entitlements;
@@ -819,10 +902,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CyberSolitaire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.muecke-software.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

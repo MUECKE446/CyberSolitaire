@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyPlistManager
+
 
 // Konstanten für SwiftyPlistManger
 let statisticsListName = "statisticsList"

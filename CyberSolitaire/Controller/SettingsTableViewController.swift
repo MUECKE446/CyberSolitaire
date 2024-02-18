@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyPlistManager
+
 
 
 // Konstanten für SwiftyPlistManger
